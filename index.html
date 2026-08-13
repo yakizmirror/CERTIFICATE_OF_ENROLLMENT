@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ASCB - Certificate of Enrollment System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- =====================================================
+         SYSTEM HEADER
+    ====================================================== -->
+    <header class="system-header">
+
+        <div>
+            <h1>Certificate of Enrollment System</h1>
+            <p>Office of the Registrar</p>
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="clearForm()"
+            >
+                Clear
+            </button>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                onclick="generateCertificate()"
+            >
+                Generate Certificate
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+    <main class="main-content">
+
+        <!-- STUDENT INFORMATION -->
+        <section class="card">
+
+            <div class="card-title">
+
+                <div>
+                    <h2>Student Enrollment Information</h2>
+                    <p>
+                        Enter the student's enrollment details.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <!-- STUDENT NAME -->
+                <div class="form-group">
+
+                    <label for="studentName">
+                        Student Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="LAST NAME, FIRST NAME M.I."
+                    >
+
+                </div>
+
+
+                <!-- STUDENT ID -->
+                <div class="form-group">
+
+                    <label for="studentId">
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="studentId"
+                        placeholder="Student ID Number"
+                    >
+
+                </div>
+
+
+                <!-- PROGRAM -->
+                <div class="form-group">
+
+                    <label for="program">
+                        Course / Program
+                    </label>
+
+                    <select
+                        id="program"
+                        onchange="loadSubjects()"
+                    >
+
+                        <option value="">
+                            Select Program
+                        </option>
+
+                        <option value="BSCS">
+                            Bachelor of Science in Computer Science (BSCS)
+                        </option>
+
+                        <option value="BSIS">
+                            Bachelor of Science in Information Systems (BSIS)
+                        </option>
+
+                        <option value="BSIT">
+                            Bachelor of Science in Information Technology (BSIT)
+                        </option>
+
+                        <option value="BSCRIM">
+                            Bachelor of Science in Criminology (BS Crim)
+                        </option>
+
+                        <option value="BSA">
+                            Bachelor of Science in Accountancy (BSA)
+                        </option>
+
+                        <option value="BSBA-FM">
+                            BSBA - Financial Management
+                        </option>
+
+                        <option value="BSBA-HRDM">
+                            BSBA - Human Resource Development Management
+                        </option>
+
+                        <option value="BSBA-MM">
+                            BSBA - Marketing Management
+                        </option>
+
+                        <option value="BEED">
+                            Bachelor of Elementary Education (BEED)
+                        </option>
+
+                        <option value="BSED-ENGLISH">
+                            BSED - English
+                        </option>
+
+                        <option value="BSED-MATH">
+                            BSED - Mathematics
+                        </option>
+
+                        <option value="BSED-SOCIAL">
+                            BSED - Social Studies
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- YEAR -->
+                <div class="form-group">
+
+                    <label for="yearLevel">
+                        Year Level
+                    </label>
+
+                    <select id="yearLevel">
+
+                        <option value="">
+                            Select Year Level
+                        </option>
+
+                        <option>
+                            1ST YEAR
+                        </option>
+
+                        <option>
+                            2ND YEAR
+                        </option>
+
+                        <option>
+                            3RD YEAR
+                        </option>
+
+                        <option>
+                            4TH YEAR
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TRIMESTER -->
+                <div class="form-group">
+
+                    <label for="trimester">
+                        Semester / Trimester
+                    </label>
+
+                    <select id="trimester">
+
+                        <option value="">
+                            Select Trimester
+                        </option>
+
+                        <option>
+                            1ST TRIMESTER
+                        </option>
+
+                        <option>
+                            2ND TRIMESTER
+                        </option>
+
+                        <option>
+                            3RD TRIMESTER
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ACADEMIC YEAR -->
+                <div class="form-group">
+
+                    <label for="academicYear">
+                        Academic Year
+                    </label>
+
+                    <input
+                        type="text"
+                        id="academicYear"
+                        value="2026–2027"
+                        placeholder="2026–2027"
+                    >
+
+                </div>
+
+
+                <!-- DATE OF ENROLLMENT -->
+                <div class="form-group">
+
+                    <label for="enrollmentDate">
+                        Date of Enrollment
+                    </label>
+
+                    <input
+                        type="date"
+                        id="enrollmentDate"
+                    >
+
+                </div>
+
+
+                <!-- STATUS -->
+                <div class="form-group">
+
+                    <label for="status">
+                        Enrollment Status
+                    </label>
+
+                    <select id="status">
+
+                        <option>
+                            OFFICIALLY ENROLLED
+                        </option>
+
+                        <option>
+                            ENROLLED
+                        </option>
+
+                        <option>
+                            REGULAR
+                        </option>
+
+                        <option>
+                            IRREGULAR
+                        </option>
+
+                        <option>
+                            FOR VALIDATION
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SUBJECTS
+        ================================================== -->
+        <section class="card">
+
+            <div class="subjects-header">
+
+                <div>
+
+                    <h2>
+                        Enrollment Subjects
+                    </h2>
+
+                    <p>
+                        Select subjects from the prospectus or add your own subject.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="btn btn-add"
+                    onclick="addSubjectRow()"
+                >
+                    + Add Subject
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="subject-input-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th width="17%">
+                                Course Code
+                            </th>
+
+                            <th>
+                                Course Description
+                            </th>
+
+                            <th width="11%">
+                                Grade
+                            </th>
+
+                            <th width="10%">
+                                Units
+                            </th>
+
+                            <th width="7%">
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="subjectRows">
+                        <!-- JavaScript generated rows -->
+                    </tbody>
+
+
+                    <tfoot>
+
+                        <tr>
+
+                            <td
+                                colspan="3"
+                                class="total-label"
+                            >
+                                TOTAL UNITS
+                            </td>
+
+                            <td
+                                id="totalUnitsInput"
+                                class="total-value"
+                            >
+                                0
+                            </td>
+
+                            <td></td>
+
+                        </tr>
+
+                    </tfoot>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     CERTIFICATE MODAL
+========================================================== -->
+
+<div
+    class="modal"
+    id="certificateModal"
+>
+
+    <div
+        class="modal-overlay"
+        onclick="closeCertificate()"
+    ></div>
+
+
+    <div class="modal-window">
+
+
+        <!-- MODAL TOOLBAR -->
+        <div class="modal-toolbar">
+
+            <div>
+
+                <strong>
+                    Certificate Preview
+                </strong>
+
+                <span>
+                    Ready for printing
+                </span>
+
+            </div>
+
+
+            <div class="toolbar-buttons">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onclick="closeCertificate()"
+                >
+                    Close
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="printCertificate()"
+                >
+                    Print Certificate
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PRINT AREA
+             LETTER / SHORT BOND
+             8.5 x 11 INCHES
+        ================================================== -->
+
+        <div
+            class="print-area"
+            id="printArea"
+        >
+
+
+            <!-- =================================================
+                 OFFICIAL HEADER
+            ================================================== -->
+
+            <div class="document-header">
+
+                <img
+                    src="Capture.JPG"
+                    class="header-image"
+                    alt="ASCB Official Header"
+                >
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CENTER WATERMARK
+                 IMPORTANT:
+                 Actual IMG instead of CSS background
+            ================================================== -->
+
+            <div
+                class="watermark-container"
+                aria-hidden="true"
+            >
+
+                <img
+                    src="ASCB_LOGO.png"
+                    class="document-watermark"
+                    alt=""
+                >
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DOCUMENT CONTENT
+            ================================================== -->
+
+            <div class="document-content">
+
+
+                <!-- TITLE -->
+
+                <h1 class="certificate-title">
+                    CERTIFICATE OF ENROLLMENT
+                </h1>
+
+
+
+                <!-- INTRODUCTION -->
+
+                <p class="certificate-intro">
+
+                    This is to certify that
+
+                    <strong id="previewStudentName">
+                        ______________________________
+                    </strong>
+
+                    is officially enrolled at
+
+                    <strong>
+                        Andres Soriano Colleges of Bislig, Inc.
+                    </strong>
+
+                    in the
+
+                    <strong id="previewProgram">
+                        ______________________________
+                    </strong>
+
+                    program for the
+
+                    <strong id="previewTrimester">
+                        ______________________________
+                    </strong>,
+
+                    Academic Year
+
+                    <strong id="previewAcademicYear">
+                        ____________
+                    </strong>.
+
+                </p>
+
+
+
+                <!-- SUMMARY -->
+
+                <p class="summary-title">
+
+                    Below is the summary of the student's enrollment:
+
+                </p>
+
+
+
+                <!-- =================================================
+                     STUDENT DETAILS
+                ================================================== -->
+
+                <div class="student-details">
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Student Name
+                        </span>
+
+                        <span class="colon">
+                            :
+                        </span>
+
+                        <span
+                            id="previewName2"
+                            class="detail-value"
+                        ></span>
+
+                    </div>
+
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Student ID
+                        </span>
+
+                        <span class="colon">
+                            :
+                        </span>
+
+                        <span
+                            id="previewStudentId"
+                            class="detail-value"
+                        ></span>
+
+                    </div>
+
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Course / Program
+                        </span>
+
+                        <span class="colon">
+                            :
+                        </span>
+
+                        <span
+                            id="previewCourse"
+                            class="detail-value"
+                        ></span>
+
+                    </div>
+
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Year Level
+                        </span>
+
+                        <span class="colon">
+                            :
+                        </span>
+
+                        <span
+                            id="previewYearLevel"
+                            class="detail-value"
+                        ></span>
+
+                    </div>
+
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Semester / Trimester
+                        </span>
+
+                        <span class="colon">
+                            :
+                        </span>
+
+                        <span
+                            id="previewTerm"
+                            class="detail-value"
+                        ></span>
+
+                    </div>
+
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Date of Enrollment
+                        </span>
+
+                        <span class="colon">
+                            :
+                        </span>
+
+                        <span
+                            id="previewEnrollmentDate"
+                            class="detail-value"
+                        ></span>
+
+                    </div>
+
+
+
+                    <div class="detail-row">
+
+                        <span class="detail-label">
+                            Status
+                        </span>
+
+                        <span class="colon">
+                            :
+                        </span>
+
+                        <strong
+                            id="previewStatus"
+                            class="detail-value status-text"
+                        ></strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SUBJECT TABLE
+                ================================================== -->
+
+                <table class="certificate-table">
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th class="code-column">
+                                Course Code
+                            </th>
+
+                            <th>
+                                Course Description
+                            </th>
+
+                            <th class="grade-column">
+                                Grades
+                            </th>
+
+                            <th class="units-column">
+                                Units
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="previewSubjects">
+
+                        <!-- JavaScript -->
+
+                    </tbody>
+
+
+                    <tfoot>
+
+                        <tr>
+
+                            <td colspan="3">
+                                TOTAL UNITS
+                            </td>
+
+                            <td id="previewTotalUnits">
+                                0
+                            </td>
+
+                        </tr>
+
+                    </tfoot>
+
+
+                </table>
+
+
+
+                <!-- =================================================
+                     CERTIFICATION
+                ================================================== -->
+
+                <div class="certification-text">
+
+                    <h2>
+
+                        This certification is issued upon the request
+                        of the student for whatever lawful purpose it
+                        may serve.
+
+                    </h2>
+
+
+                    <h2>
+
+                        Issued this
+
+                        <span id="previewIssuedDate">
+                            ____________________
+                        </span>
+
+                        at Andres Soriano Colleges of Bislig, Inc.,
+                        Mangagoy, Bislig City, Surigao del Sur.
+
+                    </h2>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIGNATURE
+                ================================================== -->
+
+                <div class="signature-area">
+
+
+                    <div class="signature-box">
+
+
+
+
+
+                        <div class="signature-space">
+                            &nbsp;
+                        </div>
+
+
+                        <div class="signature-line">
+
+                            REBECCA P. CAPONONG, MAEd
+
+                        </div>
+
+
+                        <div class="signature-position">
+
+                            School Registrar
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SCHOOL SEAL NOTICE
+                 FIXED AT VERY BOTTOM LEFT
+            ================================================== -->
+
+            <div class="school-seal-warning">
+
+                <strong>
+                    NOT VALID WITHOUT
+                </strong>
+
+                <strong>
+                    SCHOOL SEAL
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- SCRIPT -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

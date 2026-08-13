@@ -1,0 +1,1576 @@
+/* =========================================================
+   ASCB CERTIFICATE OF ENROLLMENT SYSTEM
+   OFFICIAL REGISTRAR DESIGN
+   SHORT BOND / LETTER — 8.5 x 11 INCHES
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
+
+
+/* =========================================================
+   ROOT VARIABLES
+   ========================================================= */
+
+:root {
+    --navy: #123e67;
+    --navy-dark: #0b2d4a;
+    --blue: #17649a;
+    --blue-light: #eef5fa;
+    --gold: #b89445;
+
+    --ink: #1d2730;
+    --muted: #667482;
+    --line: #c9d2da;
+
+    --paper: #ffffff;
+
+    --danger: #a92720;
+    --success: #17633e;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    color: var(--ink);
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(23, 100, 154, 0.08),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #edf2f6,
+            #f7f9fb
+        );
+}
+
+
+/* =========================================================
+   APPLICATION
+   ========================================================= */
+
+.app-container {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SYSTEM HEADER
+   ========================================================= */
+
+.system-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    min-height: 82px;
+    padding: 15px 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0a3152 0%,
+            #124f7e 55%,
+            #17649a 100%
+        );
+
+    border-bottom: 3px solid rgba(184, 148, 69, 0.9);
+
+    box-shadow:
+        0 8px 28px rgba(12, 43, 68, 0.18);
+}
+
+.system-header h1 {
+    margin: 0;
+
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.system-header p {
+    margin: 4px 0 0;
+
+    font-size: 11px;
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.header-actions,
+.toolbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.btn {
+    min-height: 40px;
+
+    padding: 9px 17px;
+
+    border: 1px solid transparent;
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    color: var(--navy);
+    background: #ffffff;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary:hover {
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.18);
+}
+
+.btn-secondary {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border-color:
+        rgba(255, 255, 255, 0.25);
+}
+
+.btn-secondary:hover {
+    background:
+        rgba(255, 255, 255, 0.20);
+}
+
+.btn-add {
+    color: #ffffff;
+    background: var(--navy);
+
+    box-shadow:
+        0 4px 12px rgba(18, 62, 103, 0.18);
+}
+
+.btn-add:hover {
+    background: var(--navy-dark);
+}
+
+.btn-danger {
+    min-height: 32px;
+
+    padding: 6px 10px;
+
+    color: var(--danger);
+    background: #fff5f4;
+
+    border-color: #f0cfcc;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+    width: min(1240px, calc(100% - 40px));
+
+    margin:
+        28px auto 45px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card {
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    background: var(--paper);
+
+    border:
+        1px solid #dce3e9;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 9px 28px rgba(16, 39, 57, 0.065);
+}
+
+.card-title,
+.subjects-header {
+    min-height: 70px;
+
+    padding: 17px 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid #e5e9ed;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff,
+            #fbfcfd
+        );
+}
+
+.card-title h2,
+.subjects-header h2 {
+    margin: 0;
+
+    color: var(--navy);
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card-title p,
+.subjects-header p {
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.form-grid {
+    padding: 23px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        16px 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.form-group label {
+    color: #354553;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 42px;
+
+    padding:
+        0 11px;
+
+    color: #1c2730;
+    background: #ffffff;
+
+    border:
+        1px solid #cbd5de;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    transition:
+        border-color 0.18s,
+        box-shadow 0.18s;
+}
+
+.form-group input::placeholder {
+    color: #9aa6b1;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(23, 100, 154, 0.09);
+}
+
+
+/* =========================================================
+   SUBJECT INPUT TABLE
+   ========================================================= */
+
+.table-wrapper {
+    padding:
+        18px 23px 23px;
+
+    overflow-x: auto;
+}
+
+.subject-input-table {
+    width: 100%;
+
+    min-width: 780px;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    overflow: hidden;
+
+    border:
+        1px solid #d4dde4;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+}
+
+.subject-input-table th {
+    padding:
+        10px 9px;
+
+    color: #ffffff;
+
+    background:
+        var(--navy);
+
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    text-align: center;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.45px;
+}
+
+.subject-input-table th:last-child {
+    border-right: 0;
+}
+
+.subject-input-table td {
+    padding: 6px;
+
+    background: #ffffff;
+
+    border-top:
+        1px solid #dbe2e8;
+
+    border-right:
+        1px solid #dbe2e8;
+
+    text-align: center;
+    vertical-align: middle;
+}
+
+.subject-input-table td:last-child {
+    border-right: 0;
+}
+
+.subject-input-table tbody tr:nth-child(even) td {
+    background: #fafcfd;
+}
+
+.subject-input-table input,
+.subject-input-table select {
+    width: 100%;
+    height: 35px;
+
+    padding:
+        0 8px;
+
+    border:
+        1px solid #cbd5de;
+
+    border-radius: 5px;
+
+    background: #ffffff;
+
+    font-family: inherit;
+    font-size: 11px;
+
+    outline: none;
+}
+
+.subject-input-table input:focus,
+.subject-input-table select:focus {
+    border-color:
+        var(--blue);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(23, 100, 154, 0.07);
+}
+
+.subject-input-table tfoot td {
+    background:
+        var(--blue-light);
+
+    font-weight: 700;
+
+    border-top:
+        1px solid #bfcbd5;
+}
+
+.total-label {
+    text-align: right;
+
+    color:
+        var(--navy);
+
+    font-size: 11px !important;
+}
+
+.total-value {
+    text-align: center;
+
+    color:
+        var(--navy);
+
+    font-size: 14px !important;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+
+    z-index: 9999;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(5, 21, 34, 0.76);
+
+    backdrop-filter:
+        blur(2px);
+}
+
+.modal-window {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #dfe5ea;
+}
+
+.modal-toolbar {
+    flex:
+        0 0 auto;
+
+    min-height: 66px;
+
+    padding:
+        10px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid #cbd4dc;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0, 0, 0, 0.08);
+}
+
+.modal-toolbar strong {
+    display: block;
+
+    color: var(--navy);
+
+    font-size: 14px;
+}
+
+.modal-toolbar span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #788592;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   PRINT AREA
+   SHORT BOND / LETTER
+   ========================================================= */
+
+.print-area {
+    position: relative;
+
+    width: 8.5in;
+    height: 11in;
+
+    min-height: 11in;
+    max-height: 11in;
+
+    flex:
+        0 0 auto;
+
+    margin:
+        22px auto;
+
+    overflow: hidden;
+
+    background:
+        #ffffff;
+
+    color:
+        #151a1f;
+
+    box-shadow:
+        0 12px 38px
+        rgba(10, 28, 44, 0.25);
+}
+
+
+/* =========================================================
+   OFFICIAL HEADER
+   ========================================================= */
+
+.document-header {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    z-index: 5;
+
+    line-height: 0;
+
+    border-bottom:
+        1px solid #d7dde2;
+}
+
+.header-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   WATERMARK
+   USE ONLY .document-watermark
+   ========================================================= */
+
+#printArea .document-watermark {
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 57% !important;
+
+    width: 3.10in !important;
+    height: 3.10in !important;
+
+    transform:
+        translate(-50%, -50%) !important;
+
+    display: block !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    /*
+       0.05 = visible but formal
+       Hindi dapat matakpan ang text.
+    */
+    opacity: 0.05 !important;
+
+    z-index: 1 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* =========================================================
+   CONTENT ABOVE WATERMARK
+   ========================================================= */
+
+#printArea .document-content {
+    position: relative;
+
+    z-index: 3;
+}
+
+#printArea .document-header {
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   DOCUMENT CONTENT
+   ========================================================= */
+
+.document-content {
+    padding:
+        0.20in
+        0.55in
+        0.28in;
+}
+
+
+/* =========================================================
+   CERTIFICATE TITLE
+   ========================================================= */
+
+.certificate-title {
+    position: relative;
+
+    margin:
+        0.08in
+        0
+        0.15in;
+
+    color:
+        var(--navy);
+
+    text-align:
+        center;
+
+    font-family:
+        "Libre Baskerville",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.25;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.7px;
+
+    text-transform:
+        uppercase;
+}
+
+.certificate-title::after {
+    content: "";
+
+    display: block;
+
+    width:
+        1.05in;
+
+    height:
+        1px;
+
+    margin:
+        6px auto 0;
+
+    background:
+        var(--gold);
+}
+
+
+/* =========================================================
+   CERTIFICATE INTRO
+   ========================================================= */
+
+.certificate-intro {
+    margin:
+        10px 0 14px;
+
+    padding:
+        0 18px;
+
+    text-indent:
+        35px;
+
+    font-family:
+        "Libre Baskerville",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+
+    text-align:
+        justify;
+}
+
+.certificate-intro strong {
+    font-weight:
+        700;
+}
+
+
+/* =========================================================
+   SUMMARY TITLE
+   ========================================================= */
+
+.summary-title {
+    margin:
+        0 0 0.07in;
+
+    color:
+        #252b31;
+
+    font-family:
+        "Libre Baskerville",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        9.6px;
+
+    font-weight:
+        700;
+}
+
+
+/* =========================================================
+   STUDENT DETAILS
+   ========================================================= */
+
+.student-details {
+    margin-bottom:
+        0.13in;
+
+    padding:
+        5px 9px 6px;
+
+    border-top:
+        1px solid #d6dde3;
+
+    border-bottom:
+        1px solid #d6dde3;
+
+    background:
+        rgba(247, 249, 251, 0.80);
+}
+
+.detail-row {
+    min-height:
+        19px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.65in
+        0.12in
+        1fr;
+
+    align-items:
+        center;
+
+    color:
+        #22282e;
+
+    font-family:
+        "Libre Baskerville",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        9.4px;
+}
+
+.detail-label {
+    font-weight:
+        700;
+}
+
+.colon {
+    text-align:
+        center;
+}
+
+.detail-value {
+    font-weight:
+        400;
+}
+
+.status-text {
+    color:
+        var(--success);
+
+    font-weight:
+        700;
+}
+
+
+/* =========================================================
+   CERTIFICATE SUBJECT TABLE
+   ========================================================= */
+
+.certificate-table {
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+
+    table-layout:
+        fixed;
+
+    margin:
+        0.08in 0 0;
+
+    font-family:
+        "Poppins",
+        Arial,
+        sans-serif;
+
+    font-size:
+        8.5px;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+}
+
+.certificate-table th {
+    padding:
+        5px;
+
+    color:
+        #ffffff;
+
+    background:
+        var(--navy);
+
+    border:
+        1px solid #0c3557;
+
+    text-align:
+        center !important;
+
+    vertical-align:
+        middle !important;
+
+    font-size:
+        8px;
+
+    font-weight:
+        600;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.2px;
+}
+
+.certificate-table td {
+    height:
+        19px;
+
+    padding:
+        3px 5px;
+
+    color:
+        #20272d;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    border:
+        1px solid #aeb8c1;
+
+    text-align:
+        center !important;
+
+    vertical-align:
+        middle !important;
+}
+
+.certificate-table tbody tr:nth-child(even) td {
+    background:
+        rgba(247, 249, 251, 0.90);
+}
+
+.certificate-table td:first-child {
+    font-weight:
+        600;
+}
+
+.code-column {
+    width:
+        1.05in;
+}
+
+.grade-column {
+    width:
+        0.72in;
+}
+
+.units-column {
+    width:
+        0.55in;
+}
+
+.certificate-table tfoot td {
+    height:
+        21px;
+
+    background:
+        #eef3f7;
+
+    color:
+        var(--navy);
+
+    font-weight:
+        700;
+
+    text-align:
+        center !important;
+
+    vertical-align:
+        middle !important;
+}
+
+
+/* =========================================================
+   CERTIFICATION
+   ========================================================= */
+
+.certification-text {
+    margin-top:
+        0.16in;
+
+    color:
+        #252a2f;
+
+    font-family:
+        "Libre Baskerville",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        9.2px;
+
+    line-height:
+        1.55;
+
+    text-align:
+        justify;
+}
+
+.certification-text p {
+    margin:
+        0 0 0.09in;
+}
+
+
+/* =========================================================
+   SIGNATURE AREA
+   ========================================================= */
+
+.signature-area {
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    margin-top:
+        0.18in;
+
+    min-height:
+        0.90in;
+
+    display:
+        flex;
+
+    justify-content:
+        flex-end;
+
+    align-items:
+        flex-end;
+
+    padding-right:
+        0.08in;
+
+    page-break-inside:
+        avoid;
+}
+
+.signature-box {
+    width:
+        2.45in;
+
+    text-align:
+        center;
+
+    font-family:
+        "Libre Baskerville",
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+
+/* Very truly yours */
+.signature-box::before {
+    content:
+        "Very truly yours,";
+
+    display:
+        block;
+
+    margin-bottom:
+        0.25in;
+
+    color:
+        #252a2f;
+
+    text-align:
+        left;
+
+    font-family:
+        "Libre Baskerville",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        9.2px;
+
+    font-weight:
+        400;
+}
+
+.signature-line {
+    padding-bottom:
+        2px;
+
+    border-bottom:
+        1px solid #30353a;
+
+    color:
+        #111111;
+
+    font-size:
+        9.2px;
+
+    font-weight:
+        700;
+}
+
+.signature-position {
+    margin-top:
+        3px;
+
+    color:
+        #333333;
+
+    font-size:
+        8.7px;
+}
+
+
+/* =========================================================
+   NOT VALID WITHOUT SCHOOL SEAL
+   BOTTOM LEFT
+   ========================================================= */
+
+.school-seal-warning {
+    position:
+        absolute !important;
+
+    left:
+        0.55in !important;
+
+    bottom:
+        1.25in !important;
+
+    width:
+        1.70in !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    color:
+        #333333;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.25;
+
+    text-align:
+        left;
+
+    text-transform:
+        uppercase;
+
+    z-index:
+        10 !important;
+}
+
+.school-seal-warning strong {
+    display:
+        block;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.15px;
+}
+
+.school-seal-warning span {
+    display:
+        block;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .system-header {
+        position:
+            relative;
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+    }
+
+    .header-actions {
+        width:
+            100%;
+    }
+
+    .header-actions .btn {
+        flex:
+            1;
+    }
+
+    .form-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .system-header {
+        padding:
+            15px 18px;
+    }
+
+    .system-header h1 {
+        font-size:
+            18px;
+    }
+
+    .main-content {
+        width:
+            calc(100% - 20px);
+
+        margin-top:
+            15px;
+    }
+
+    .form-grid {
+        grid-template-columns:
+            1fr;
+
+        padding:
+            17px;
+    }
+
+    .card-title,
+    .subjects-header {
+        padding:
+            15px 17px;
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+    .subjects-header .btn {
+        width:
+            100%;
+    }
+
+    .toolbar-buttons {
+        width:
+            100%;
+    }
+
+    .toolbar-buttons .btn {
+        flex:
+            1;
+    }
+}
+
+
+/* =========================================================
+   PRINT SETTINGS
+   SHORT BOND / LETTER
+   ========================================================= */
+
+@page {
+    size:
+        Letter portrait;
+
+    margin:
+        0;
+}
+
+
+@media print {
+
+    html,
+    body {
+        width:
+            8.5in !important;
+
+        height:
+            11in !important;
+
+        margin:
+            0 !important;
+
+        padding:
+            0 !important;
+
+        background:
+            #ffffff !important;
+
+        -webkit-print-color-adjust:
+            exact !important;
+
+        print-color-adjust:
+            exact !important;
+    }
+
+
+    /* Hide entire application */
+    body * {
+        visibility:
+            hidden !important;
+    }
+
+
+    /* Show ONLY certificate */
+    #printArea,
+    #printArea * {
+        visibility:
+            visible !important;
+    }
+
+
+    /* Exact paper size */
+    #printArea {
+        position:
+            absolute !important;
+
+        left:
+            0 !important;
+
+        top:
+            0 !important;
+
+        width:
+            8.5in !important;
+
+        height:
+            11in !important;
+
+        min-height:
+            11in !important;
+
+        max-height:
+            11in !important;
+
+        margin:
+            0 !important;
+
+        padding:
+            0 !important;
+
+        overflow:
+            hidden !important;
+
+        background:
+            #ffffff !important;
+
+        box-shadow:
+            none !important;
+    }
+
+
+    /* Header */
+    #printArea .document-header {
+        position:
+            relative !important;
+
+        width:
+            100% !important;
+
+        height:
+            auto !important;
+
+        overflow:
+            hidden !important;
+
+        z-index:
+            5 !important;
+    }
+
+    #printArea .header-image {
+        display:
+            block !important;
+
+        width:
+            100% !important;
+
+        height:
+            auto !important;
+
+        max-width:
+            none !important;
+    }
+
+
+    /* =====================================================
+       WATERMARK PRINT
+       ===================================================== */
+
+    #printArea .document-watermark {
+        position:
+            absolute !important;
+
+        left:
+            50% !important;
+
+        top:
+            57% !important;
+
+        width:
+            3.10in !important;
+
+        height:
+            3.10in !important;
+
+        transform:
+            translate(-50%, -50%) !important;
+
+        display:
+            block !important;
+
+        visibility:
+            visible !important;
+
+        object-fit:
+            contain !important;
+
+        object-position:
+            center !important;
+
+        opacity:
+            0.05 !important;
+
+        z-index:
+            1 !important;
+
+        pointer-events:
+            none !important;
+    }
+
+
+    /* Content */
+    #printArea .document-content {
+        position:
+            relative !important;
+
+        z-index:
+            3 !important;
+    }
+
+
+    #printArea .signature-area {
+        position:
+            relative !important;
+
+        z-index:
+            4 !important;
+    }
+
+
+    #printArea .school-seal-warning {
+        position:
+            absolute !important;
+
+        z-index:
+            10 !important;
+    }
+
+
+    /* Keep blocks together */
+    .certificate-table,
+    .student-details,
+    .signature-area {
+        page-break-inside:
+            avoid !important;
+
+        break-inside:
+            avoid !important;
+    }
+
+
+    /* Hide controls */
+    button,
+    .btn,
+    .modal-toolbar,
+    .modal-overlay {
+        display:
+            none !important;
+    }
+
+
+    /* Remove links styling */
+    a {
+        color:
+            inherit !important;
+
+        text-decoration:
+            none !important;
+    }
+
+
+    /* Force centered table */
+    .certificate-table th,
+    .certificate-table td,
+    .certificate-table tfoot td {
+        text-align:
+            center !important;
+
+        vertical-align:
+            middle !important;
+    }
+}
