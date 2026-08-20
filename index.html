@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ASCB - Certificate of Enrollment System</title>
+    <link rel="icon" type="image/png" href="ASCB_LOGO.png">
+    <title>Certificate of Enrollment</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,13 +27,22 @@
     ====================================================== -->
     <header class="system-header">
 
-        <div>
-            <h1>Certificate of Enrollment System</h1>
-            <p>Office of the Registrar</p>
+        <div class="system-header-brand">
+            <img src="ASCB_LOGO.png" class="system-header-logo" alt="ASCB Logo">
+            <div>
+                <h1>Certificate of Enrollment</h1>
+                <p>Andres Soriano Colleges of Bislig, Inc. &mdash; Office of the Registrar</p>
+            </div>
         </div>
 
         <div class="header-actions">
 
+            <div class="certificate-type-selector">
+                <select id="certificateType" onchange="changeCertificateType()">
+                    <option value="ENROLLMENT">Certificate of Enrollment</option>
+                    <option value="REGISTRATION">Certificate of Registration</option>
+                </select>
+            </div>
             <button
                 type="button"
                 class="btn btn-secondary"
@@ -46,10 +56,12 @@
                 class="btn btn-primary"
                 onclick="generateCertificate()"
             >
-                Generate Certificate
+                GENERATE
             </button>
 
         </div>
+
+
 
     </header>
 
@@ -191,19 +203,19 @@
                         </option>
 
                         <option>
-                            1ST YEAR
+                            1st Year
                         </option>
 
                         <option>
-                            2ND YEAR
+                            2nd Year
                         </option>
 
                         <option>
-                            3RD YEAR
+                            3rd Year
                         </option>
 
                         <option>
-                            4TH YEAR
+                            4th Year
                         </option>
 
                     </select>
@@ -225,15 +237,15 @@
                         </option>
 
                         <option>
-                            1ST TRIMESTER
+                            1st Trimester
                         </option>
 
                         <option>
-                            2ND TRIMESTER
+                            2nd Trimester
                         </option>
 
                         <option>
-                            3RD TRIMESTER
+                            3rd Trimester
                         </option>
 
                     </select>
@@ -284,18 +296,6 @@
 
                         <option>
                             OFFICIALLY ENROLLED
-                        </option>
-
-                        <option>
-                            ENROLLED
-                        </option>
-
-                        <option>
-                            REGULAR
-                        </option>
-
-                        <option>
-                            IRREGULAR
                         </option>
 
                         <option>
@@ -474,6 +474,14 @@
 
 
         <!-- =================================================
+             SCROLLABLE PREVIEW WRAPPER
+             (keeps the fixed 8.5x11in sheet fully viewable
+             and scrollable inside the modal, on any screen)
+        ================================================== -->
+
+        <div class="modal-print-scroll">
+
+        <!-- =================================================
              PRINT AREA
              LETTER / SHORT BOND
              8.5 x 11 INCHES
@@ -487,15 +495,40 @@
 
             <!-- =================================================
                  OFFICIAL HEADER
+                 LOGO + SCHOOL NAME + ADDRESS + OFFICE + EMAIL
             ================================================== -->
 
             <div class="document-header">
 
-                <img
-                    src="Capture.JPG"
-                    class="header-image"
-                    alt="ASCB Official Header"
-                >
+                <div class="header-inner">
+
+                    <img
+                        src="ASCB_LOGO.png"
+                        class="header-logo"
+                        alt="ASCB Logo"
+                    >
+
+                    <div class="header-text">
+
+                        <h2 class="header-school-name">
+                            Andres Soriano Colleges of Bislig, Inc.
+                        </h2>
+
+                        <p class="header-address">
+                            Andres Soriano Avenue, Mangagoy, Bislig City
+                        </p>
+
+                        <p class="header-office">
+                            Office of the Registrar
+                        </p>
+
+                        <p class="header-email">
+                            collegeregistrar.ascb@gmail.com &nbsp;|&nbsp; (086) 853-2306 (PhilCom)
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -531,7 +564,7 @@
 
                 <!-- TITLE -->
 
-                <h1 class="certificate-title">
+                <h1 class="certificate-title" id="previewCertificateTitle">
                     CERTIFICATE OF ENROLLMENT
                 </h1>
 
@@ -539,39 +572,39 @@
 
                 <!-- INTRODUCTION -->
 
-                <p class="certificate-intro">
+                <p class="certificate-intro" id="certificateIntro">
 
-                    This is to certify that
+                        This is to certify that
 
-                    <strong id="previewStudentName">
-                        ______________________________
-                    </strong>
+                        <strong id="previewStudentName">
+                            ______________________________
+                        </strong>
 
-                    is officially enrolled at
+                        is officially enrolled at
 
-                    <strong>
-                        Andres Soriano Colleges of Bislig, Inc.
-                    </strong>
+                        <strong>
+                            Andres Soriano Colleges of Bislig, Inc.
+                        </strong>
 
-                    in the
+                        in the
 
-                    <strong id="previewProgram">
-                        ______________________________
-                    </strong>
+                        <strong id="previewProgram">
+                            ______________________________
+                        </strong>
 
-                    program for the
+                        program for the
 
-                    <strong id="previewTrimester">
-                        ______________________________
-                    </strong>,
+                        <strong id="previewTrimester">
+                            ______________________________
+                        </strong>,
 
-                    Academic Year
+                        Academic Year
 
-                    <strong id="previewAcademicYear">
-                        ____________
-                    </strong>.
+                        <strong id="previewAcademicYear">
+                            ____________
+                        </strong>.
 
-                </p>
+                    </p>
 
 
 
@@ -579,7 +612,7 @@
 
                 <p class="summary-title">
 
-                    Below is the summary of the student's enrollment:
+                    Below is the Summary of the Student's Enrollment:
 
                 </p>
 
@@ -802,8 +835,10 @@
 
                     </h2>
 
+                </div>
 
-                    <h2>
+                <div class="Issued">
+                <h2>
 
                         Issued this
 
@@ -814,8 +849,7 @@
                         at Andres Soriano Colleges of Bislig, Inc.,
                         Mangagoy, Bislig City, Surigao del Sur.
 
-                    </h2>
-
+                </h2>
                 </div>
 
 
@@ -869,17 +903,12 @@
             ================================================== -->
 
             <div class="school-seal-warning">
-
-                <strong>
-                    NOT VALID WITHOUT
-                </strong>
-
-                <strong>
-                    SCHOOL SEAL
-                </strong>
-
+                <strong>NOT VALID WITHOUT</strong>
+                <strong><span>SCHOOL SEAL</span></strong>
             </div>
 
+
+        </div>
 
         </div>
 
