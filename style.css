@@ -105,6 +105,21 @@ body {
         0 8px 28px rgba(12, 43, 68, 0.18);
 }
 
+.system-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.system-header-logo {
+    width: 46px;
+    height: 46px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
 .system-header h1 {
     margin: 0;
 
@@ -117,7 +132,7 @@ body {
     margin: 4px 0 0;
 
     font-size: 11px;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.5px;
 
     text-transform: uppercase;
 
@@ -223,7 +238,7 @@ body {
     width: min(1240px, calc(100% - 40px));
 
     margin:
-        28px auto 45px;
+        99px auto 45px;
 }
 
 
@@ -454,10 +469,16 @@ body {
 
     background: #ffffff;
 
+    text-align: center;
+
     font-family: inherit;
     font-size: 11px;
 
     outline: none;
+}
+
+.subject-input-table .subject-description {
+    text-align: left;
 }
 
 .subject-input-table input:focus,
@@ -540,6 +561,23 @@ body {
     background: #dfe5ea;
 }
 
+.modal-print-scroll {
+    flex: 1 1 auto;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 22px 20px 40px;
+}
+
+.modal-print-scroll .print-area {
+    margin: 0;
+    flex-shrink: 0;
+}
+
 .modal-toolbar {
     flex:
         0 0 auto;
@@ -620,60 +658,202 @@ body {
 
 /* =========================================================
    OFFICIAL HEADER
+   LOGO + SCHOOL NAME + ADDRESS + OFFICE + EMAIL
    ========================================================= */
+
+/* =========================================================
+   OFFICIAL HEADER
+   ENHANCED FORMAL REGISTRAR HEADER
+   ========================================================= */
+
+/* =========================================================
+   ENHANCED OFFICIAL HEADER
+========================================================= */
 
 .document-header {
     position: relative;
-
     width: 100%;
-
-    overflow: hidden;
-
     z-index: 5;
 
-    line-height: 0;
+    padding: 0.20in 0.55in 0.18in;
 
-    border-bottom:
-        1px solid #d7dde2;
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff 0%,
+            #fbfcfe 100%
+        );
+
+    border-bottom: 3px solid var(--navy);
+
+    box-shadow:
+        0 1px 0 var(--gold);
 }
 
-.header-image {
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.28in;
+}
+
+/* =========================================================
+   BIGGER LOGO
+========================================================= */
+
+.header-logo {
     display: block;
 
-    width: 100%;
-    height: auto;
+    width: 1.35in;
+    height: 1.35in;
 
-    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    flex-shrink: 0;
+
+    filter:
+        drop-shadow(
+            0 2px 4px rgba(5, 10, 10, 0.18)
+        );
+}
+
+/* =========================================================
+   HEADER TEXT
+========================================================= */
+
+.header-text {
+    flex: 1;
+
+    text-align: center;
+
+    padding-right: 0.01in;
+}
+
+/* =========================================================
+   SCHOOL NAME
+========================================================= */
+
+.header-school-name {
+    margin: 0 0 5px;
+
+    color: var(--navy);
+
+    font-family:
+        "Libre Baskerville",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 34px;
+
+    line-height: 1.22;
+
+    font-weight: 700;
+
+    letter-spacing: 0.65px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 1.5px 1 rgba(18, 62, 103, 1.18);
+}
+
+/* =========================================================
+   ADDRESS
+========================================================= */
+
+.header-address {
+    margin: 2px 0 0;
+
+    color: #3d4a55;
+
+    font-family:
+        "Poppins",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    font-weight: 500;
+
+    letter-spacing: 0.25px;
+}
+
+/* =========================================================
+   OFFICE
+========================================================= */
+
+.header-office {
+    margin: 4px 0 0;
+
+    color: var(--gold);
+
+    font-family:
+        "Poppins",
+        Arial,
+        sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.header-email {
+    margin: 3px 0 0;
+
+    color: #667482;
+
+    font-family:
+        "Poppins",
+        Arial,
+        sans-serif;
+
+    font-size: 8.8px;
+
+    line-height: 1.3;
+
+    font-weight: 500;
+
+    letter-spacing: 0.15px;
 }
 
 
 /* =========================================================
-   WATERMARK
-   USE ONLY .document-watermark
-   ========================================================= */
+   FULL-PAGE ASCB WATERMARK
+   LETTER / SHORT BOND PAPER
+========================================================= */
 
-#printArea .document-watermark {
+#printArea .watermark-container {
     position: absolute !important;
 
-    left: 50% !important;
-    top: 57% !important;
+    /* FULL PAPER */
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
 
-    width: 3.10in !important;
-    height: 3.10in !important;
+    width: 100% !important;
+    height: 100% !important;
 
-    transform:
-        translate(-50%, -50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
-    display: block !important;
-
-    object-fit: contain !important;
-    object-position: center !important;
-
-    /*
-       0.05 = visible but formal
-       Hindi dapat matakpan ang text.
-    */
-    opacity: 0.05 !important;
+    overflow: hidden !important;
 
     z-index: 1 !important;
 
@@ -682,21 +862,61 @@ body {
 
 
 /* =========================================================
-   CONTENT ABOVE WATERMARK
-   ========================================================= */
+   ASCB WATERMARK LOGO
+========================================================= */
 
-#printArea .document-content {
-    position: relative;
+#printArea .document-watermark {
+    position: absolute !important;
 
-    z-index: 3;
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 6.2in !important;
+    height: 6.2in !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    display: block !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    /* VISIBLE WATERMARK */
+    opacity: 0.10 !important;
+
+    z-index: 1 !important;
+
+    pointer-events: none !important;
 }
+
+
+/* =========================================================
+   DOCUMENT CONTENT ABOVE WATERMARK
+========================================================= */
 
 #printArea .document-header {
-    position: relative;
-
-    z-index: 5;
+    position: relative !important;
+    z-index: 5 !important;
 }
 
+#printArea .document-content {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+#printArea .certificate-title,
+#printArea .certificate-intro,
+#printArea .summary-title,
+#printArea .student-details,
+#printArea .certificate-table,
+#printArea .certification-text,
+#printArea .signature-area {
+    position: relative !important;
+    z-index: 3 !important;
+}
 
 /* =========================================================
    DOCUMENT CONTENT
@@ -718,7 +938,7 @@ body {
     position: relative;
 
     margin:
-        0.08in
+        0.10in
         0
         0.15in;
 
@@ -821,6 +1041,7 @@ body {
         Georgia,
         "Times New Roman",
         serif;
+    text-decoration: underline;
 
     font-size:
         9.6px;
@@ -834,40 +1055,38 @@ body {
    STUDENT DETAILS
    ========================================================= */
 
+/* =========================================================
+   STUDENT INFORMATION
+   TRANSPARENT — WATERMARK REMAINS VISIBLE
+========================================================= */
+
+/* =========================================================
+   STUDENT INFORMATION
+   CENTERED / MIDDLE POSITION
+========================================================= */
+
 .student-details {
-    margin-bottom:
-        0.13in;
+    margin-left: 0.20in !important;
+    margin-right: 0.20in !important;
 
-    padding:
-        5px 9px 6px;
-
-    border-top:
-        1px solid #d6dde3;
-
-    border-bottom:
-        1px solid #d6dde3;
-
-    background:
-        rgba(247, 249, 251, 0.80);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .detail-row {
-    min-height:
-        19px;
+    min-height: 19px;
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
         1.65in
         0.12in
         1fr;
 
-    align-items:
-        center;
+    align-items: center;
 
-    color:
-        #22282e;
+    color: #22282e;
 
     font-family:
         "Libre Baskerville",
@@ -875,8 +1094,7 @@ body {
         "Times New Roman",
         serif;
 
-    font-size:
-        9.4px;
+    font-size: 9.4px;
 }
 
 .detail-label {
@@ -1056,11 +1274,41 @@ body {
     line-height:
         1.55;
 
+    text-indent: 0.5in;
+
     text-align:
         justify;
 }
 
 .certification-text p {
+    margin:
+        0 0 0.09in;
+}
+
+.Issued {
+    margin-top:
+        0.16in;
+
+    color:
+        #252a2f;
+
+    font-family:
+        "Libre Baskerville",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        9.2px;
+
+    line-height:
+        1.55;
+    
+    text-align:
+        justify;
+}
+
+.Issued p {
     margin:
         0 0 0.09in;
 }
@@ -1179,61 +1427,41 @@ body {
    ========================================================= */
 
 .school-seal-warning {
-    position:
-        absolute !important;
+    position: absolute !important;
 
-    left:
-        0.55in !important;
+    left: 0.55in !important;
+    bottom: 1.25in !important;
 
-    bottom:
-        1.25in !important;
+    width: 1.70in !important;
 
-    width:
-        1.70in !important;
+    margin: 0 !important;
+    padding: 0 !important;
 
-    margin:
-        0 !important;
+    color: #333333;
 
-    padding:
-        0 !important;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.25;
 
-    color:
-        #333333;
+    text-align: center; /* CENTER ANG SCHOOL SEAL */
 
-    font-family:
-        Arial,
-        sans-serif;
+    text-transform: uppercase;
 
-    font-size:
-        10px;
-
-    line-height:
-        1.25;
-
-    text-align:
-        left;
-
-    text-transform:
-        uppercase;
-
-    z-index:
-        10 !important;
+    z-index: 10 !important;
 }
 
 .school-seal-warning strong {
-    display:
-        block;
+    display: block;
 
-    font-weight:
-        700;
+    font-weight: 700;
 
-    letter-spacing:
-        0.15px;
+    letter-spacing: 0.20px;
 }
 
 .school-seal-warning span {
-    display:
-        block;
+    display: block;
+
+    text-align: center;
 }
 
 
@@ -1432,75 +1660,90 @@ body {
         width:
             100% !important;
 
-        height:
-            auto !important;
-
         overflow:
             hidden !important;
 
         z-index:
             5 !important;
+
+        -webkit-print-color-adjust:
+            exact !important;
+
+        print-color-adjust:
+            exact !important;
     }
 
-    #printArea .header-image {
-        display:
-            block !important;
+    @media print {
 
-        width:
-            100% !important;
+    #printArea .header-logo {
+        display: block !important;
 
-        height:
-            auto !important;
+        width: 1.35in !important;
+        height: 1.35in !important;
 
-        max-width:
-            none !important;
+        object-fit: contain !important;
     }
+
+    #printArea .header-school-name {
+        font-size: 34px !important;
+        line-height: 1.25 !important;
+    }
+
+    #printArea .header-address {
+        font-size: 12px !important;
+    }
+
+    #printArea .header-office {
+        font-size: 18px !important;
+    }
+
+    #printArea .header-email {
+        font-size: 8.8px !important;
+    }
+}
 
 
     /* =====================================================
        WATERMARK PRINT
        ===================================================== */
 
-    #printArea .document-watermark {
-        position:
-            absolute !important;
+    #printArea .watermark-container {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 2.20in !important;
+    bottom: 0 !important;
 
-        left:
-            50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
-        top:
-            57% !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+}
 
-        width:
-            3.10in !important;
+#printArea .document-watermark {
+    position: relative !important;
 
-        height:
-            3.10in !important;
+    width: 4.35in !important;
+    height: 4.35in !important;
 
-        transform:
-            translate(-50%, -50%) !important;
+    max-width: 4.35in !important;
+    max-height: 4.35in !important;
 
-        display:
-            block !important;
+    transform: none !important;
 
-        visibility:
-            visible !important;
+    display: block !important;
+    visibility: visible !important;
 
-        object-fit:
-            contain !important;
+    object-fit: contain !important;
+    object-position: center !important;
 
-        object-position:
-            center !important;
+    opacity: 0.055 !important;
 
-        opacity:
-            0.05 !important;
-
-        z-index:
-            1 !important;
-
-        pointer-events:
-            none !important;
-    }
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
 
 
     /* Content */
@@ -1573,4 +1816,130 @@ body {
         vertical-align:
             middle !important;
     }
+}
+/* =========================================================
+   FINAL PRINT CONTROL
+   ONE CERTIFICATE = ONE PAGE
+========================================================= */
+
+@page {
+    size: Letter portrait;
+    margin: 0;
+}
+
+@media print {
+
+    html,
+    body {
+        width: 8.5in !important;
+        height: 11in !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow: hidden !important;
+
+        background: #ffffff !important;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    @media print {
+
+    /* =========================================================
+   FULL-PAGE WATERMARK — PRINT
+========================================================= */
+
+#printArea .watermark-container {
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    overflow: hidden !important;
+
+    z-index: 1 !important;
+}
+
+#printArea .document-watermark {
+    position: absolute !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    width: 6.2in !important;
+    height: 6.2in !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    display: block !important;
+    visibility: visible !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    opacity: 0.10 !important;
+
+    z-index: 1 !important;
+}
+
+#printArea .document-content {
+    position: relative !important;
+    z-index: 3 !important;
+}
+
+#printArea .document-header {
+    position: relative !important;
+    z-index: 5 !important;
+}
+}
+}
+
+.certificate-type-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 230px;
+}
+
+.certificate-type-selector label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.certificate-type-selector select {
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #102a43;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+}
+
+.certificate-type-selector select:focus {
+    border-color: #102a43;
+    box-shadow: 0 0 0 3px rgba(16, 42, 67, 0.10);
 }
