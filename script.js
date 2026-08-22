@@ -1967,6 +1967,12 @@ function generateCertificate() {
     const status =
         document.getElementById("status").value;
 
+    const orNumber =
+        document.getElementById("orNumber").value.trim();
+
+    const preparedBy =
+        document.getElementById("preparedBy").value.trim();
+
 
     /* ========================================== VALIDATION */
 
@@ -2012,6 +2018,8 @@ function generateCertificate() {
     document.getElementById("previewEnrollmentDate").textContent =
         formatDate(enrollmentDate);
     document.getElementById("previewStatus").textContent = status;
+    document.getElementById("previewOrNumber").textContent = orNumber || "—";
+    document.getElementById("previewPreparedBy").textContent = preparedBy || "—";
 
 
     /* ========================================== SUBJECTS */
@@ -2365,6 +2373,8 @@ function clearForm() {
     document.getElementById("trimester").value = "";
     document.getElementById("academicYear").value = "2026–2027";
     document.getElementById("status").value = "OFFICIALLY ENROLLED";
+    document.getElementById("orNumber").value = "";
+    document.getElementById("preparedBy").value = "";
 
     setToday();
 
