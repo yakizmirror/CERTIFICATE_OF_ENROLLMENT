@@ -1430,7 +1430,7 @@ body {
     position: absolute !important;
 
     left: 0.55in !important;
-    bottom: 0.65in !important;
+    bottom: 1.25in !important;
 
     width: 1.70in !important;
 
@@ -1462,6 +1462,69 @@ body {
     display: block;
 
     text-align: center;
+}
+
+
+/* =========================================================
+   TRANSACTION NOTES
+   O.R. NUMBER + PREPARED BY
+   FIXED BELOW THE SCHOOL SEAL NOTICE, BOTTOM LEFT
+   ========================================================= */
+
+.transaction-notes {
+    position: absolute !important;
+
+    left: 0.55in !important;
+    bottom: .80in !important;
+
+    width: 2.15in !important;
+
+    margin: 0 !important;
+    padding: 6px 0 0 !important;
+
+    border-top: 0.5px solid #c9d2da;
+
+    z-index: 10 !important;
+}
+
+.transaction-row {
+    display: grid;
+
+    grid-template-columns:
+        0.72in
+        0.10in
+        1fr;
+
+    align-items: baseline;
+
+    color: #4a5561;
+
+    font-family: "Poppins", Arial, sans-serif;
+
+    font-size: 7.3px;
+    line-height: 1.55;
+
+    letter-spacing: 0.15px;
+}
+
+.transaction-label {
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.25px;
+
+    color: #667482;
+}
+
+.transaction-colon {
+    text-align: center;
+}
+
+.transaction-value {
+    color: #232a30;
+
+    font-weight: 600;
 }
 
 
@@ -1766,6 +1829,15 @@ body {
 
 
     #printArea .school-seal-warning {
+        position:
+            absolute !important;
+
+        z-index:
+            10 !important;
+    }
+
+
+    #printArea .transaction-notes {
         position:
             absolute !important;
 
