@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" href="ASCB_LOGO.png">
-    <title>Certificate of Enrollment</title>
+    <title>OFFICE OF THE REGISTRAR</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,12 +30,20 @@
         <div class="system-header-brand">
             <img src="ASCB_LOGO.png" class="system-header-logo" alt="ASCB Logo">
             <div>
-                <h1>Certificate of Enrollment</h1>
-                <p>Andres Soriano Colleges of Bislig, Inc. &mdash; Office of the Registrar</p>
+                <h1>Andres Soriano Colleges of Bislig, Inc.</h1>
+                <p>OFFICE OF THE REGISTRAR</p>
             </div>
         </div>
 
         <div class="header-actions">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="openForm137()"
+            >
+                REQUEST FORM 137-A
+            </button>
 
             <div class="certificate-type-selector">
                 <select id="certificateType" onchange="changeCertificateType()">
@@ -59,6 +67,8 @@
                 GENERATE
             </button>
 
+
+
         </div>
 
 
@@ -77,7 +87,7 @@
             <div class="card-title">
 
                 <div>
-                    <h2>Student Enrollment Information</h2>
+                    <h2>STUDENT INFORMATION</h2>
                     <p>
                         Enter the student's enrollment details.
                     </p>
@@ -224,7 +234,7 @@
                 <div class="form-group">
 
                     <label for="trimester">
-                        Semester / Trimester
+                       Trimester
                     </label>
 
                     <select id="trimester">
@@ -350,7 +360,7 @@
                 <div>
 
                     <h2>
-                        Enrollment Subjects
+                        SUBJECTS
                     </h2>
 
                     <p>
@@ -401,7 +411,7 @@
                     class="btn btn-add"
                     onclick="addSubjectsForTerm()"
                 >
-                    + Add Subjects for this Term
+                    Submit Subjects for this Term
                 </button>
 
             </div>
@@ -413,65 +423,57 @@
 
                 <table class="subject-input-table">
 
-                    <thead>
+                        <thead>
+                            <tr>
 
-                        <tr>
+                                <th width="17%">
+                                    Course Code
+                                </th>
 
-                            <th width="17%">
-                                Course Code
-                            </th>
+                                <th width="66%">
+                                    Course Description
+                                </th>
 
-                            <th>
-                                Course Description
-                            </th>
+                                <th width="10%">
+                                    Units
+                                </th>
 
-                            <th width="11%">
-                                Grade
-                            </th>
+                                <th width="7%">
+                                    Action
+                                </th>
 
-                            <th width="10%">
-                                Units
-                            </th>
-
-                            <th width="7%">
-                                Action
-                            </th>
-
-                        </tr>
-
-                    </thead>
+                            </tr>
+                        </thead>
 
 
-                    <tbody id="subjectRows">
-                        <!-- JavaScript generated rows -->
-                    </tbody>
+                        <tbody id="subjectRows">
+                            <!-- JavaScript generated rows -->
+                        </tbody>
 
 
-                    <tfoot>
+                        <tfoot>
+                            <tr>
 
-                        <tr>
+                                <td
+                                    colspan="2"
+                                    class="total-label"
+                                >
+                                    TOTAL UNITS
+                                </td>
 
-                            <td
-                                colspan="3"
-                                class="total-label"
-                            >
-                                TOTAL UNITS
-                            </td>
+                                <td
+                                    id="totalUnitsInput"
+                                    class="total-value"
+                                >
+                                    0
+                                </td>
 
-                            <td
-                                id="totalUnitsInput"
-                                class="total-value"
-                            >
-                                0
-                            </td>
+                                <td></td>
 
-                            <td></td>
+                            </tr>
+                        </tfoot>
 
-                        </tr>
-
-                    </tfoot>
-
-                </table>
+                    </table>
 
             </div>
 
@@ -848,10 +850,6 @@
                                 Course Description
                             </th>
 
-                            <th class="grade-column">
-                                Grades
-                            </th>
-
                             <th class="units-column">
                                 Units
                             </th>
@@ -872,7 +870,7 @@
 
                         <tr>
 
-                            <td colspan="3">
+                            <td colspan="2">
                                 TOTAL UNITS
                             </td>
 
@@ -1010,6 +1008,220 @@
 
 
 <!-- SCRIPT -->
+
+
+<!-- =========================================================
+     FORM 137 REQUEST MODULE
+     Added to the ASCB Certificate System
+========================================================= -->
+<div class="f137-modal" id="form137Modal" aria-hidden="true">
+    <div class="f137-backdrop" onclick="closeForm137()"></div>
+
+    <div class="f137-window">
+        <div class="f137-toolbar">
+            <div>
+                <strong>Form 137 Request</strong>
+                <span>Request Letter Generator</span>
+            </div>
+            <div class="f137-toolbar-actions">
+                <button type="button" class="btn btn-secondary" onclick="clearForm137()">Clear</button>
+                <button type="button" class="btn btn-secondary" onclick="closeForm137()">Close</button>
+                <button type="button" class="btn btn-primary" onclick="generateForm137()">Generate</button>
+                <button type="button" class="btn btn-primary" onclick="printForm137()">Print</button>
+            </div>
+        </div>
+
+        <div class="f137-body">
+            <aside class="f137-form-panel">
+                <section class="f137-card">
+                    <div class="f137-section-title">
+                        <span class="f137-icon">👤</span>
+                        <div>
+                            <h3>Student Information</h3>
+                            <p>Add one or more students for this request.</p>
+                        </div>
+                    </div>
+
+                    <div class="f137-form-grid">
+                        <div class="f137-field f137-span-2">
+                            <label for="f137_studentName">Student Name</label>
+                            <input id="f137_studentName" type="text" placeholder="Last Name, First Name, Middle Name">
+                        </div>
+
+                        <div class="f137-field">
+                            <label for="f137_courseSelect">Admitted To / Course</label>
+                            <div class="f137-inline">
+                                <select id="f137_courseSelect"></select>
+                                <button type="button" class="f137-plus" onclick="openF137CourseDialog()">+</button>
+                            </div>
+                        </div>
+
+                        <div class="f137-field">
+                            <label for="f137_schoolYear">Last School Year Attended</label>
+                            <input id="f137_schoolYear" type="text" placeholder="e.g. 2023-2024">
+                        </div>
+
+                        <div class="f137-field">
+                            <label for="f137_yearSection">Year &amp; Section</label>
+                            <input id="f137_yearSection" type="text" placeholder="e.g. XII-HUMSS B">
+                        </div>
+                    </div>
+
+                    <button type="button" class="f137-add-student" onclick="addF137Student()">
+                        + Add Student to This Request
+                    </button>
+
+                    <div class="f137-students-list" id="f137_studentsList"></div>
+                </section>
+
+                <section class="f137-card">
+                    <div class="f137-section-title">
+                        <span class="f137-icon">🏫</span>
+                        <div>
+                            <h3>Receiving School</h3>
+                            <p>One recipient per request letter.</p>
+                        </div>
+                    </div>
+
+                    <div class="f137-field">
+                        <label for="f137_schoolSelect">Previous / Last School Attended</label>
+                        <div class="f137-inline">
+                            <select id="f137_schoolSelect"></select>
+                            <button type="button" class="f137-plus" onclick="openF137SchoolDialog()">+</button>
+                        </div>
+                        <small>Double-click a saved school to remove it.</small>
+                    </div>
+
+                    <div class="f137-field">
+                        <label for="f137_schoolAddress">School Address</label>
+                        <input id="f137_schoolAddress" type="text" placeholder="School address">
+                    </div>
+                </section>
+
+                <section class="f137-card">
+                    <div class="f137-section-title">
+                        <span class="f137-icon">✍</span>
+                        <div>
+                            <h3>Request Details</h3>
+                            <p>Select the applicable request options.</p>
+                        </div>
+                    </div>
+
+                    <div class="f137-check-grid">
+                        <label><input type="checkbox" id="f137_firstRequest"> <span>1st Request</span></label>
+                        <label><input type="checkbox" id="f137_secondRequest"> <span>2nd Request</span></label>
+                        <label><input type="checkbox" id="f137_urgentRequest"> <span>Urgent</span></label>
+                        <label><input type="checkbox" id="f137_bearerRequest"> <span>Entrust to Bearer</span></label>
+                        <label class="f137-span-2"><input type="checkbox" id="f137_copyForASCB"> <span>Indicate: Copy for <strong>Andres Soriano Colleges of Bislig, Inc.</strong></span></label>
+                    </div>
+
+                    <div class="f137-field">
+                        <label for="f137_requestDate">Date</label>
+                        <input id="f137_requestDate" type="date">
+                    </div>
+                </section>
+            </aside>
+
+            <main class="f137-preview-panel">
+                <div class="f137-preview-label">DOCUMENT PREVIEW · SHORT BOND / LETTER</div>
+
+                <div class="f137-paper-wrap">
+                    <article class="f137-paper" id="f137PrintArea">
+                        <div class="document-header">
+                            <div class="header-inner">
+                                <img src="ASCB_LOGO.png" class="header-logo" alt="ASCB Logo">
+                                <div class="header-text">
+                                    <h2 class="header-school-name">Andres Soriano Colleges of Bislig, Inc.</h2>
+                                    <p class="header-address">Andres Soriano Avenue, Mangagoy, Bislig City, Surigao del Sur</p>
+                                    <p class="header-office">Office of the Registrar</p>
+                                    <p class="header-email">collegeregistrar.ascb@gmail.com &nbsp;|&nbsp; (086) 853-2306 (PhilCom)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="f137-watermark">
+                            <img src="ASCB_LOGO.png" alt="">
+                        </div>
+
+                        <div class="f137-paper-content">
+                            <div class="f137-date" id="f137_previewDate"></div>
+
+                            <div class="f137-recipient">
+                                <strong>The Principal</strong>
+                                <div id="f137_previewSchool">ANDRES SORIANO COLLEGES OF BISLIG, INC.</div>
+                                <div id="f137_previewSchoolAddress">Mangagoy, Bislig City</div>
+                            </div>
+
+                            <div class="f137-salutation">Sir/Madam:</div>
+
+                            <p class="f137-letter-text">
+                                May I have the honor to request for the original copy of the
+                                <strong>Form 137-A</strong> of the following student<span id="f137_pluralTag">s</span>
+                                who <span id="f137_isAreTag">are</span> temporarily enrolled in this school
+                                upon presentation of his/her Form-138 duly signed by the principal.
+                            </p>
+
+                            <table class="f137-student-table">
+                                <thead>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>ADMITTED TO</th>
+                                        <th>LAST SCHOOL YEAR<br>ATTENDED</th>
+                                        <th>YEAR &amp; SECTION</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="f137_studentTableBody"></tbody>
+                            </table>
+
+                            <p class="f137-letter-text-we f137-request-paragraph">
+                                We shall highly appreciate your kind consideration of this request
+                                and the prompt release of the above-mentioned academic record<span id="f137_pluralTag2">s</span>.
+                                <br><br>
+                                Thank you very much for your continued cooperation and support.
+                            </p>
+
+                            <div class="f137-options">
+                                <div><span id="f137_checkFirst" class="f137-print-check"></span> 1st Request</div>
+                                <div><span id="f137_checkSecond" class="f137-print-check"></span> 2nd Request</div>
+                                <div><span id="f137_checkUrgent" class="f137-print-check"></span> Urgent</div>
+                                <div><span id="f137_checkBearer" class="f137-print-check"></span> Please entrust to the bearer</div>
+                                <div class="f137-option-wide"><span id="f137_checkCopy" class="f137-print-check"></span> Indicate: Copy for <strong>Andres Soriano Colleges of Bislig, Inc.</strong></div>
+                            </div>
+
+                            <div class="f137-signature">
+                                <div>Very truly yours,</div>
+                                <div class="f137-signature-space"></div>
+                                <strong>REBECCA P. CAPONONG, MAEd</strong>
+                                <span>School Registrar</span>
+                            </div>
+
+                            <div class="f137-seal-warning"><strong>NOT VALID WITHOUT</strong><br><strong>SCHOOL SEAL</strong></div>
+                        </div>
+                    </article>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div class="f137-mini-modal" id="f137SchoolDialog">
+        <div class="f137-mini-card">
+            <button type="button" class="f137-mini-close" onclick="closeF137SchoolDialog()">×</button>
+            <h3>Add School</h3>
+            <input id="f137_newSchoolName" type="text" placeholder="School Name">
+            <input id="f137_newSchoolAddress" type="text" placeholder="School Address">
+            <button type="button" class="btn btn-primary" onclick="saveF137School()">Add School</button>
+        </div>
+    </div>
+
+    <div class="f137-mini-modal" id="f137CourseDialog">
+        <div class="f137-mini-card">
+            <button type="button" class="f137-mini-close" onclick="closeF137CourseDialog()">×</button>
+            <h3>Add Course</h3>
+            <input id="f137_newCourseName" type="text" placeholder="e.g. BS Psychology">
+            <button type="button" class="btn btn-primary" onclick="saveF137Course()">Add Course</button>
+        </div>
+    </div>
+</div>
 
 <script src="script.js"></script>
 
