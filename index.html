@@ -303,6 +303,38 @@
 
                 </div>
 
+
+                <!-- OR NUMBER -->
+                <div class="form-group">
+
+                    <label for="orNumber">
+                        O.R. Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="orNumber"
+                        placeholder="Official Receipt No."
+                    >
+
+                </div>
+
+
+                <!-- PREPARED BY -->
+                <div class="form-group">
+
+                    <label for="preparedBy">
+                        Prepared By
+                    </label>
+
+                    <input
+                        type="text"
+                        id="preparedBy"
+                        placeholder="Staff Name"
+                    >
+
+                </div>
+
             </div>
 
         </section>
@@ -941,6 +973,29 @@
             <div class="school-seal-warning">
                 <strong>NOT VALID WITHOUT</strong>
                 <strong><span>SCHOOL SEAL</span></strong>
+            </div>
+
+
+            <!-- =================================================
+                 TRANSACTION NOTES
+                 O.R. NUMBER + PREPARED BY
+                 FIXED BELOW THE SCHOOL SEAL NOTICE
+            ================================================== -->
+
+            <div class="transaction-notes">
+
+                <div class="transaction-row">
+                    <span class="transaction-label">O.R. No.</span>
+                    <span class="transaction-colon">:</span>
+                    <span id="previewOrNumber" class="transaction-value">—</span>
+                </div>
+
+                <div class="transaction-row">
+                    <span class="transaction-label">Prepared by</span>
+                    <span class="transaction-colon">:</span>
+                    <span id="previewPreparedBy" class="transaction-value">—</span>
+                </div>
+
             </div>
 
 
