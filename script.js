@@ -1451,6 +1451,11 @@ function setToday() {
    ASCB curriculum prospectus.
 ========================================================= */
 
+/* =========================================================
+   LOAD SUBJECT DROPDOWNS
+   Fine-filtered by Program + Year Level + Trimester.
+========================================================= */
+
 function loadSubjects() {
 
     const selects =
@@ -1516,6 +1521,135 @@ function loadSubjects() {
 
         }
     );
+}
+
+
+/* =========================================================
+   HANDLE FILTER CHANGE
+   Triggered when Program, Year Level, or Trimester changes.
+   Refreshes dropdowns AND auto-fills the subject table with
+   the matching prospectus subjects for that term.
+========================================================= */
+
+function handleFilterChange() {
+
+    loadSubjects();
+
+    autoPopulateSubjectsForTerm();
+}
+
+
+/* =========================================================
+   AUTO-POPULATE SUBJECTS FOR THE SELECTED TERM
+========================================================= */
+
+/* =========================================================
+   QUICK ADD SUBJECTS BY TERM
+   For irregular students — appends the subjects of a chosen
+   Year Level + Trimester to the existing table, without
+   clearing what's already there. Skips subjects already
+   added (matched by course code) to avoid duplicates.
+========================================================= */
+
+function addSubjectsForTerm() {
+
+    const program =
+        document.getElementById("program").value;
+
+    const year =
+        document.getElementById("quickAddYear").value;
+
+    const trimester =
+        document.getElementById("quickAddTrimester").value;
+
+    if (!program) {
+        alert("Pumili muna ng Course / Program.");
+        return;
+    }
+
+    if (!year || !trimester) {
+        alert("Pumili ng Year Level at Trimester na idadagdag.");
+        return;
+    }
+
+    if (!structuredPrograms[program]) {
+        alert("Walang structured prospectus ang program na ito.");
+        return;
+    }
+
+    const group =
+        structuredPrograms[program].find(
+            g => g.year === year && g.trimester === trimester
+        );
+
+    if (!group) {
+        alert("Walang nakatalang subjects para sa Year Level at Trimester na ito.");
+        return;
+    }
+
+    /* Collect codes already present sa table, para
+       hindi na madoble kapag pinindot ulit. */
+
+    const existingCodes = new Set();
+
+    document.querySelectorAll(".subject-row").forEach(
+        row => {
+
+            const code =
+                row.dataset.customCode || getRowSubjectCode(row);
+
+            if (code) {
+                existingCodes.add(code);
+            }
+        }
+    );
+
+    let addedCount = 0;
+
+    group.subjects.forEach(
+        subject => {
+
+            if (existingCodes.has(subject.code)) {
+                return;
+            }
+
+            addSubjectRow(subject);
+
+            addedCount++;
+        }
+    );
+
+    calculateTotalUnits();
+
+    if (addedCount === 0) {
+
+        alert("Naidagdag na lahat ng subjects para sa term na ito.");
+    }
+}
+
+
+/* =========================================================
+   GET ROW SUBJECT CODE
+   Helper — reads the course code currently selected in a
+   subject row's dropdown (used for duplicate checking).
+========================================================= */
+
+function getRowSubjectCode(row) {
+
+    const select = row.querySelector(".subject-select");
+
+    if (!select || !select.value || select.value === "__CUSTOM__") {
+        return null;
+    }
+
+    try {
+
+        return JSON.parse(select.value).code;
+
+    } catch (error) {
+
+        return null;
+    }
 }
 
 
