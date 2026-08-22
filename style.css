@@ -238,7 +238,7 @@ body {
     width: min(1240px, calc(100% - 40px));
 
     margin:
-        99px auto 45px;
+        20px auto 10px;
 }
 
 
@@ -249,7 +249,7 @@ body {
 .card {
     overflow: hidden;
 
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 
     background: var(--paper);
 
@@ -264,15 +264,15 @@ body {
 
 .card-title,
 .subjects-header {
-    min-height: 70px;
+    min-height: 50px;
 
-    padding: 17px 23px;
+    padding: 10px 20px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 20px;
+    gap: 10px;
 
     border-bottom:
         1px solid #e5e9ed;
@@ -291,13 +291,13 @@ body {
 
     color: var(--navy);
 
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
 }
 
 .card-title p,
 .subjects-header p {
-    margin: 4px 0 0;
+    margin: 5px 0 0;
 
     color: var(--muted);
 
@@ -380,15 +380,22 @@ body {
    ========================================================= */
 
 .table-wrapper {
-    padding:
-        18px 23px 23px;
-    background: transparent;
-    overflow-x: auto;
+    width: 100%;
+    max-width: 1255px;
+    margin: 20px auto 0;
+    padding: 0 2px 1px;
+    margin-top: -120px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1px;
+
+    box-sizing: border-box;
 }
+
 
 .subject-input-table {
     width: 100%;
-
     min-width: 780px;
 
     border-collapse: separate;
@@ -396,12 +403,11 @@ body {
 
     overflow: hidden;
 
-    border:
-        1px solid #d4dde4;
-
+    border: 1px solid #d4dde4;
     border-radius: 7px;
 
     font-size: 11px;
+    box-sizing: border-box;
 }
 
 .subject-input-table th {
@@ -1216,18 +1222,16 @@ body {
 }
 
 .code-column {
-    width:
-        1.05in;
-}
-
-.grade-column {
-    width:
-        0.72in;
+    width: 1.25in;
 }
 
 .units-column {
-    width:
-        0.55in;
+    width: 0.65in;
+}
+
+.certificate-table th:nth-child(2),
+.certificate-table td:nth-child(2) {
+    width: auto;
 }
 
 .certificate-table tfoot td {
@@ -1425,7 +1429,6 @@ body {
    NOT VALID WITHOUT SCHOOL SEAL
    BOTTOM LEFT
    ========================================================= */
-
 .school-seal-warning {
     position: absolute !important;
 
@@ -1463,6 +1466,9 @@ body {
 
     text-align: center;
 }
+
+
+
 
 
 /* =========================================================
@@ -2027,6 +2033,7 @@ body {
     gap: 10px;
 
     padding: 0 23px 18px;
+    transform: translateY(15px);
 }
 
 .quick-add-term label {
@@ -2054,4 +2061,792 @@ body {
 .quick-add-term select:focus {
     border-color: var(--blue);
     box-shadow: 0 0 0 3px rgba(23, 100, 154, 0.09);
+}
+
+
+/* =========================================================
+   FORM 137 MODULE — MATCHES ASCB SYSTEM DESIGN
+========================================================= */
+
+.f137-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+}
+
+.f137-modal.active {
+    display: block;
+}
+
+.f137-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 30, 48, 0.72);
+    backdrop-filter: blur(3px);
+}
+
+.f137-window {
+    position: absolute;
+    inset: 18px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f4f7fa;
+    box-shadow: 0 24px 70px rgba(5, 25, 42, .35);
+}
+
+.f137-toolbar {
+    min-height: 70px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: #fff;
+    background: linear-gradient(135deg, #0a3152, #124f7e 55%, #17649a);
+    border-bottom: 3px solid rgba(184, 148, 69, .9);
+}
+
+.f137-toolbar strong {
+    display: block;
+    font-size: 18px;
+}
+
+.f137-toolbar span {
+    display: block;
+    margin-top: 3px;
+    color: rgba(255,255,255,.78);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.f137-toolbar-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.f137-body {
+    min-height: 0;
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(360px, 430px) 1fr;
+    gap: 18px;
+    padding: 18px;
+    overflow: hidden;
+}
+
+.f137-form-panel {
+    min-width: 0;
+    overflow: auto;
+    padding-right: 4px;
+}
+
+.f137-card {
+    margin-bottom: 14px;
+    padding: 17px;
+    background: #fff;
+    border: 1px solid #d7e0e8;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(15, 45, 70, .06);
+}
+
+.f137-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.f137-icon {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    color: #fff;
+    background: var(--navy);
+}
+
+.f137-section-title h3 {
+    margin: 0;
+    color: var(--navy);
+    font-size: 14px;
+}
+
+.f137-section-title p {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.f137-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+}
+
+.f137-span-2 {
+    grid-column: 1 / -1;
+}
+
+.f137-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.f137-field label {
+    color: #354553;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.f137-field input,
+.f137-field select,
+.f137-mini-card input {
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #cbd5de;
+    border-radius: 6px;
+    background: #fff;
+    color: #1c2730;
+    font: inherit;
+    font-size: 11px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.f137-field input:focus,
+.f137-field select:focus,
+.f137-mini-card input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(23,100,154,.09);
+}
+
+.f137-field small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.f137-inline {
+    display: flex;
+    gap: 6px;
+}
+
+.f137-inline select {
+    min-width: 0;
+    flex: 1;
+}
+
+.f137-plus {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--navy);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.f137-add-student {
+    width: 100%;
+    margin-top: 13px;
+    height: 38px;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--blue);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.f137-students-list {
+    display: grid;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.f137-student-chip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 10px;
+    border: 1px solid #dbe3ea;
+    border-radius: 7px;
+    background: #f8fafc;
+}
+
+.f137-student-chip-name {
+    display: block;
+    color: var(--navy);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.f137-student-chip-meta {
+    display: block;
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.f137-remove-student {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #efc5c1;
+    border-radius: 5px;
+    color: #a92720;
+    background: #fff;
+    cursor: pointer;
+}
+
+.f137-check-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    margin-bottom: 13px;
+}
+
+.f137-check-grid label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #354553;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.f137-check-grid input {
+    accent-color: var(--blue);
+}
+
+.f137-preview-panel {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.f137-preview-label {
+    margin: 0 0 8px;
+    color: #647482;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.f137-paper-wrap {
+    min-height: 0;
+    flex: 1;
+    overflow: auto;
+    padding: 8px;
+}
+
+.f137-paper {
+    position: relative;
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fff;
+    color: #151a1f;
+    box-shadow: 0 12px 38px rgba(10,28,44,.25);
+}
+
+.f137-paper .document-header {
+    position: relative;
+    z-index: 5;
+}
+
+.f137-watermark {
+    position: absolute;
+    inset: 1.45in 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.f137-watermark img {
+    width: 6.2in;
+    height: 6.2in;
+    object-fit: contain;
+    opacity: .10;
+}
+
+.f137-paper-content {
+    position: relative;
+    z-index: 3;
+    padding: .18in .58in .45in;
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+}
+
+.f137-date {
+    margin-bottom: .22in;
+    text-align: right;
+    font-size: 10px;
+}
+
+.f137-recipient {
+    margin-bottom: .20in;
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.f137-salutation {
+    margin-bottom: .16in;
+    font-size: 10px;
+}
+
+.f137-letter-text {
+    margin: 0 0 .16in;
+    font-size: 10px;
+    line-height: 1.75;
+    text-align: justify;
+    text-indent: 35px;
+}
+.f137-letter-text-we {
+    margin: 0 0 .16in;
+    font-size: 10px;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+.f137-student-table {
+    width: 100%;
+    margin: .14in 0 .18in;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 8px;
+}
+
+.f137-student-table th,
+.f137-student-table td {
+    padding: 5px 4px;
+    border: 1px solid #9eabb6;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.f137-student-table th {
+    color: #fff;
+    background: var(--navy);
+    font-size: 7.5px;
+    letter-spacing: .2px;
+}
+
+.f137-student-table th:nth-child(1) { width: 29%; }
+.f137-student-table th:nth-child(2) { width: 24%; }
+.f137-student-table th:nth-child(3) { width: 23%; }
+.f137-student-table th:nth-child(4) { width: 24%; }
+
+.f137-student-table tbody tr:nth-child(even) td {
+    background: #f7f9fb;
+}
+
+.f137-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 18px;
+    margin-top: .10in;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 8.5px;
+}
+
+.f137-option-wide {
+    grid-column: 1 / -1;
+}
+
+.f137-print-check {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    border: 1px solid #778692;
+    vertical-align: -1px;
+}
+
+.f137-print-check.active::after {
+    content: "✓";
+    display: block;
+    margin-top: -3px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.f137-signature {
+    margin-top: .55in;
+    margin-left: 4.7in;
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 9.5px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.f137-signature-space {
+    height: .45in;
+}
+
+.f137-signature span {
+    display: block;
+    font-size: 8.5px;
+}
+
+.f137-seal-warning {
+    position: absolute !important;
+
+    left: .58in !important;
+    bottom: .20in !important;
+
+    transform: translateY(150px) !important;
+
+    color: black !important;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 7.5px;
+    line-height: 1.25;
+    text-align: center;
+
+    z-index: 9999 !important;
+}
+
+.f137-mini-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: none;
+    place-items: center;
+    background: rgba(8,30,48,.45);
+}
+
+.f137-mini-modal.active {
+    display: grid;
+}
+
+.f137-mini-card {
+    position: relative;
+    width: min(380px, calc(100% - 30px));
+    padding: 20px;
+    display: grid;
+    gap: 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+.f137-mini-card h3 {
+    margin: 0 0 4px;
+    color: var(--navy);
+}
+
+.f137-mini-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 28px;
+    height: 28px;
+    border: 0;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+    .f137-body {
+        grid-template-columns: 1fr;
+        overflow: auto;
+    }
+
+    .f137-preview-panel {
+        min-height: 900px;
+    }
+}
+
+@media print {
+    @page {
+        size: Letter portrait;
+        margin: 0;
+    }
+
+    html,
+    body {
+        width: 8.5in !important;
+        min-width: 8.5in !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+    }
+
+    /* Hide the enrollment system and print only Form 137. */
+    body.f137-printing > *:not(#form137Modal) {
+        display: none !important;
+    }
+
+    body.f137-printing #form137Modal {
+        display: block !important;
+        position: static !important;
+        inset: auto !important;
+        width: 8.5in !important;
+        height: auto !important;
+        background: #fff !important;
+        overflow: visible !important;
+    }
+
+    body.f137-printing #form137Modal .f137-backdrop,
+    body.f137-printing #form137Modal .f137-toolbar,
+    body.f137-printing #form137Modal .f137-form-panel,
+    body.f137-printing #form137Modal .f137-preview-label,
+    body.f137-printing #form137Modal .f137-mini-modal {
+        display: none !important;
+    }
+
+    body.f137-printing #form137Modal .f137-window,
+    body.f137-printing #form137Modal .f137-body,
+    body.f137-printing #form137Modal .f137-preview-panel,
+    body.f137-printing #form137Modal .f137-paper-wrap {
+        position: static !important;
+        display: block !important;
+        width: 8.5in !important;
+        min-width: 8.5in !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        background: #fff !important;
+        box-shadow: none !important;
+        border: 0 !important;
+    }
+
+    body.f137-printing #f137PrintArea {
+        position: relative !important;
+        display: block !important;
+        width: 8.5in !important;
+        height: 11in !important;
+        min-height: 11in !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        background: #fff !important;
+        box-shadow: none !important;
+    }
+
+    body.f137-printing #f137PrintArea .document-header,
+    body.f137-printing #f137PrintArea .f137-watermark,
+    body.f137-printing #f137PrintArea .f137-paper-content {
+        display: block !important;
+    }
+
+    body.f137-printing #f137PrintArea .f137-watermark {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    body.f137-printing #f137PrintArea .f137-watermark img {
+        width: 6.2in !important;
+        height: 6.2in !important;
+        opacity: .10 !important;
+    }
+
+    body.f137-printing #f137PrintArea .f137-paper-content {
+        position: relative !important;
+        z-index: 3 !important;
+    }
+
+    body.f137-printing #f137PrintArea .document-header {
+        position: relative !important;
+        z-index: 5 !important;
+    }
+
+    body.f137-printing * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+
+/* =========================================================
+   FORM 137 — FINAL PRINT FIX
+   IMPORTANT: the main certificate uses #printArea, while
+   Form 137 uses #f137PrintArea. The rules below explicitly
+   print the Form 137 paper instead of the certificate area.
+========================================================= */
+@media print {
+    @page { size: Letter portrait; margin: 0; }
+
+    html, body {
+        width: 8.5in !important;
+        height: 11in !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        background: #fff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Hide the entire application first. */
+    body > * {
+        visibility: hidden !important;
+    }
+
+    /* Restore the Form 137 modal/paper only. */
+    #form137Modal,
+    #form137Modal.f137-modal.active,
+    #form137Modal .f137-window,
+    #form137Modal .f137-preview-panel,
+    #form137Modal .f137-paper-wrap,
+    #f137PrintArea,
+    #f137PrintArea * {
+        visibility: visible !important;
+    }
+
+    #form137Modal {
+        display: block !important;
+        position: static !important;
+        inset: auto !important;
+        width: auto !important;
+        height: auto !important;
+        overflow: visible !important;
+        background: transparent !important;
+    }
+
+    #form137Modal .f137-backdrop,
+    #form137Modal .f137-toolbar,
+    #form137Modal .f137-form-panel,
+    #form137Modal .f137-preview-label,
+    #form137Modal .f137-mini-modal {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    #form137Modal .f137-window {
+        position: static !important;
+        inset: auto !important;
+        width: auto !important;
+        height: auto !important;
+        min-height: 0 !important;
+        display: block !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: 0 !important;
+    }
+
+    #form137Modal .f137-body {
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+    }
+
+    #form137Modal .f137-preview-panel {
+        display: block !important;
+        position: static !important;
+        width: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+    }
+
+    #form137Modal .f137-paper-wrap {
+        display: block !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    #f137PrintArea {
+        display: block !important;
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: 8.5in !important;
+        height: 11in !important;
+        min-height: 11in !important;
+        max-height: 11in !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
+        background: #fff !important;
+        box-shadow: none !important;
+        border: 0 !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+    }
+
+    #f137PrintArea .document-header {
+        display: block !important;
+        visibility: visible !important;
+        position: relative !important;
+        z-index: 5 !important;
+        width: 100% !important;
+    }
+
+    #f137PrintArea .header-logo {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    #f137PrintArea .f137-watermark {
+        display: flex !important;
+        visibility: visible !important;
+        position: absolute !important;
+        inset: 1.45in 0 0 !important;
+        z-index: 1 !important;
+    }
+
+    #f137PrintArea .f137-watermark img {
+        display: block !important;
+        visibility: visible !important;
+        width: 6.2in !important;
+        height: 6.2in !important;
+        opacity: .10 !important;
+        object-fit: contain !important;
+    }
+
+    #f137PrintArea .f137-paper-content {
+        position: relative !important;
+        z-index: 3 !important;
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    #f137PrintArea .f137-student-table,
+    #f137PrintArea .f137-options,
+    #f137PrintArea .f137-signature,
+    #f137PrintArea .f137-letter-text,
+    #f137PrintArea .f137-recipient,
+    #f137PrintArea .f137-salutation,
+    #f137PrintArea .f137-date,
+    #f137PrintArea .f137-seal-warning {
+        visibility: visible !important;
+    }
+
+    #f137PrintArea .f137-student-table {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    #f137PrintArea .f137-seal-warning {
+        display: block !important;
+    }
 }
