@@ -977,7 +977,7 @@ body {
 }
 
 .certificate-title::after {
-    content: "";
+    
 
     display: block;
 
