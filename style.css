@@ -382,7 +382,7 @@ body {
 .table-wrapper {
     padding:
         18px 23px 23px;
-
+    background: transparent;
     overflow-x: auto;
 }
 
@@ -1942,4 +1942,44 @@ body {
 .certificate-type-selector select:focus {
     border-color: #102a43;
     box-shadow: 0 0 0 3px rgba(16, 42, 67, 0.10);
+}
+
+/* =========================================================
+   QUICK ADD BY TERM
+   ========================================================= */
+
+.quick-add-term {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    padding: 0 23px 18px;
+}
+
+.quick-add-term label {
+    color: #354553;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.quick-add-term select {
+    height: 38px;
+    padding: 0 10px;
+
+    border: 1px solid #cbd5de;
+    border-radius: 6px;
+
+    background: #ffffff;
+    color: #1c2730;
+
+    font-family: inherit;
+    font-size: 12px;
+
+    outline: none;
+}
+
+.quick-add-term select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(23, 100, 154, 0.09);
 }
