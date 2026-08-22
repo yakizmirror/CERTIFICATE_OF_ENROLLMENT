@@ -1,14 +1,3 @@
-/* =========================================================
-   ASCB CERTIFICATE OF ENROLLMENT SYSTEM
-========================================================= */
-
-
-/* =========================================================
-   SUBJECT DATABASE — STRUCTURED PROGRAMS
-   Sourced directly from each program's ASCB Revised
-   Curriculum Prospectus. Grouped by Year > Trimester so the
-   dropdown can show the subjects in official curriculum order.
-========================================================= */
 
 const structuredPrograms = {
 
@@ -751,4 +740,2169 @@ const structuredPrograms = {
                 { code: "HRDM 104", description: "Training & Development", units: 3 },
                 { code: "HRDM 105", description: "Compensation Administration", units: 3 },
                 { code: "PATH Fit 3", description: "Dance & Sports", units: 2 }
-           
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "BA 5", description: "Good Governance and Social Responsibility", units: 3 },
+                { code: "BA 6", description: "Human Resource Management", units: 3 },
+                { code: "BA 7", description: "International Trade and Agreement", units: 3 },
+                { code: "HRDM 106", description: "Labor Relations & Negotiations", units: 3 },
+                { code: "HRDM 107", description: "Organizational Development", units: 3 },
+                { code: "PATH Fit 4", description: "Outdoor and Adventure Activities", units: 2 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "BA 8", description: "Business Research", units: 3 },
+                { code: "A&B 1", description: "Strategic Management", units: 3 },
+                { code: "HRDM 108", description: "Strategic Human Resource Management", units: 3 },
+                { code: "Elec 2", description: "Personal Finance", units: 3 },
+                { code: "Elec. 1", description: "Entrepreneurial Management", units: 3 },
+                { code: "BA 10", description: "Graphic Designs in Business", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "A&B 2", description: "Operations Management (TQM) with fieldtrip", units: 3 },
+                { code: "BA 9", description: "Thesis or Feasibility", units: 3 },
+                { code: "HRDM 109", description: "Special Topics in Human Resource Management", units: 3 },
+                { code: "Elec 4", description: "Project Management", units: 3 },
+                { code: "Elec 3", description: "Global / International Trade", units: 3 },
+                { code: "BA 11", description: "IT Tools in Business", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "Practicum", description: "Work Integrated Learning", units: 6 }
+            ]
+        }
+    ],
+
+
+    /* =====================================================
+       BSBA-MM — Effective SY 2024-2025, CMO No. 17 s.2017
+    ===================================================== */
+    "BSBA-MM": [
+        {
+            year: "1st Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "GE 1", description: "Understanding Self", units: 3 },
+                { code: "GE 2", description: "Readings in Philippine History", units: 3 },
+                { code: "GE 3", description: "The Contemporary World", units: 3 },
+                { code: "GE 4", description: "Mathematics in the Modern World", units: 3 },
+                { code: "GE 5", description: "Purposive Communication", units: 3 },
+                { code: "A1a", description: "Fundamentals of Accounting", units: 3 }
+            ]
+        },
+        {
+            year: "1st Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "GE 6", description: "Art Appreciation", units: 3 },
+                { code: "GE 7", description: "Science, Technology & Society", units: 3 },
+                { code: "GE 8", description: "Ethics", units: 3 },
+                { code: "A1*", description: "Fundamentals of Partnership & Corporation Accounting", units: 3 },
+                { code: "NSTP 1", description: "National Service Training Program", units: 3 },
+                { code: "PATH Fit 1", description: "Movement Competency Training", units: 2 },
+                { code: "BAa", description: "Principles of Management (Non-ABM & GAS graduates)", units: 3 }
+            ]
+        },
+        {
+            year: "1st Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "GE 9", description: "Gender and Society", units: 3 },
+                { code: "GE 10", description: "Philippine Popular Culture", units: 3 },
+                { code: "GE 11", description: "Living in an IT Era", units: 3 },
+                { code: "BA 1", description: "Basic Microeconomics", units: 3 },
+                { code: "MM 101", description: "Professional Salesmanship", units: 3 },
+                { code: "PATH Fit 2", description: "Exercise-based Fitness Activity", units: 2 },
+                { code: "NSTP 2", description: "National Service Training Program", units: 3 },
+                { code: "BAb", description: "Principles of Marketing (Non-ABM & GAS graduates)", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "GE 12", description: "Life and Works of Rizal", units: 3 },
+                { code: "GE Elec1", description: "Mathematics, Science & Technology", units: 3 },
+                { code: "GE Elec2", description: "Social Science and Philosophy", units: 3 },
+                { code: "BA 2", description: "Obligations and Contract", units: 3 },
+                { code: "MM 102", description: "Marketing Research", units: 3 },
+                { code: "MM 103", description: "Marketing Management", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "GE Elec3", description: "Arts and Humanities", units: 3 },
+                { code: "BA 3", description: "Human Behavior in an Organization with Case Analysis", units: 3 },
+                { code: "BA 4", description: "Income Taxation", units: 3 },
+                { code: "MM 104", description: "Distribution Management", units: 3 },
+                { code: "MM 105", description: "Advertisement", units: 3 },
+                { code: "PATH Fit 3", description: "Dance & Sports", units: 2 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "BA 5", description: "Good Governance and Social Responsibility", units: 3 },
+                { code: "BA 6", description: "Human Resource Management", units: 3 },
+                { code: "BA 7", description: "International Trade and Agreement", units: 3 },
+                { code: "MM 106", description: "Product Management", units: 3 },
+                { code: "MM 107", description: "Retail Management", units: 3 },
+                { code: "PATH Fit 4", description: "Outdoor and Adventure Activities", units: 2 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "BA 8", description: "Business Research", units: 3 },
+                { code: "A&B 1", description: "Strategic Management", units: 3 },
+                { code: "MM 108", description: "Pricing Strategy", units: 3 },
+                { code: "Elec 2", description: "Cooperative Management", units: 3 },
+                { code: "Elec. 1", description: "Entrepreneurial Management", units: 3 },
+                { code: "BA 10", description: "Graphic Design in Business", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "A&B 2", description: "Operations Management (TQM) with fieldtrip", units: 3 },
+                { code: "BA 9", description: "Thesis or Feasibility Study", units: 3 },
+                { code: "MM 109", description: "Special Topics in Marketing Management", units: 3 },
+                { code: "Elec 4", description: "E-Commerce and Internet Marketing", units: 3 },
+                { code: "Elec 3", description: "Franchising", units: 3 },
+                { code: "BA 11", description: "Application Tools in Business", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "Practicum", description: "Work Integrated Learning", units: 6 }
+            ]
+        }
+    ],
+
+
+    /* =====================================================
+       BEED — Effective SY 2024-2025, CMO 74 s.2017
+    ===================================================== */
+    BEED: [
+        {
+            year: "1st Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "GE 1", description: "Understanding the Self", units: 3 },
+                { code: "GE 2", description: "Readings in Philippine History", units: 3 },
+                { code: "GE 3", description: "The Contemporary World", units: 3 },
+                { code: "NSTP 1", description: "Civic Welfare Training Service 1", units: 3 },
+                { code: "CoEd 100", description: "The Child and Adolescent Learners and Learning Principles", units: 3 },
+                { code: "CoEd 101", description: "Building and Enhancing New Literacies Across the Curriculum", units: 3 }
+            ]
+        },
+        {
+            year: "1st Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "GE 4", description: "Mathematics in the Modern World", units: 3 },
+                { code: "GE 5", description: "Purposive Communication", units: 3 },
+                { code: "GE 6", description: "Art Appreciation", units: 3 },
+                { code: "PATH Fit 1", description: "Movement Competency Training", units: 2 },
+                { code: "NSTP 2", description: "Civic Welfare Training Service 2", units: 3 },
+                { code: "CoEd 102", description: "Teaching Math in the Primary Grades", units: 3 },
+                { code: "CoEd 103", description: "Facilitating Learner-Centered Teaching", units: 3 }
+            ]
+        },
+        {
+            year: "1st Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "GE 7", description: "Science, Technology and Society", units: 3 },
+                { code: "GE 8", description: "Ethics", units: 3 },
+                { code: "PATH Fit 2", description: "Exercise-based Fitness Activity", units: 2 },
+                { code: "CoEd 104", description: "The Teaching Profession", units: 3 },
+                { code: "CoEd 105", description: "Good Manners and Right Conduct (Edukasyon sa Pagpapakatao)", units: 3 },
+                { code: "CoEd 106", description: "Teaching Social Studies in Elementary Grades (Culture and Geography)", units: 3 },
+                { code: "CoEd 107", description: "Teaching Social Studies in Elementary Grades (Philippine History and Government)", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "GE 9", description: "Gender and Society", units: 3 },
+                { code: "GE 10", description: "Philippine Popular Culture", units: 3 },
+                { code: "GE 11", description: "Living in an IT Era", units: 3 },
+                { code: "PATH Fit 3", description: "Dance and Sports", units: 2 },
+                { code: "CoEd 200", description: "Content and Pedagogy for the Mother-Tongue", units: 3 },
+                { code: "CoEd 201", description: "Foundations of Special and Inclusive Education", units: 3 },
+                { code: "CoEd 202", description: "The Teacher and the School Curriculum", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "PATH Fit 4", description: "Outdoor and Adventure Activities", units: 2 },
+                { code: "TTL 1", description: "Technology for Teaching & Learning 1", units: 3 },
+                { code: "CoEd 203", description: "Teaching Science in Elementary Grades (Biology and Chemistry)", units: 3 },
+                { code: "CoEd 204", description: "Pagtuturo ng Filipino sa Elementarya (I) Estruktura at Gamit ng Wikang Filipino", units: 3 },
+                { code: "CoEd 205", description: "Teaching English in the Elementary Grades (Language Arts)", units: 3 },
+                { code: "CoEd 206", description: "Teaching English in Elementary Grades Through Literature", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "GE 12", description: "The Life and Works of Rizal", units: 3 },
+                { code: "TTL 2", description: "Technology for Teaching and Learning in the Elementary Grades", units: 3 },
+                { code: "CAL 1", description: "Assessment in Learning 1 (BEED)", units: 3 },
+                { code: "CoEd 207", description: "Teaching Science in Elementary Grades (Physics, Earth and Space Science)", units: 3 },
+                { code: "CoEd 208", description: "Pagtuturo ng Filipino sa Elementarya (II) Panitikan ng Pilipinas", units: 3 },
+                { code: "CoEd 209", description: "Teaching Math in the Intermediate Grades", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "CAL 2", description: "Assessment in Learning 2 (BEED)", units: 3 },
+                { code: "SEM 1", description: "Seminar in Teaching MEFSS 1", units: 3 },
+                { code: "CoEd 300", description: "Teaching PE and Health in the Elementary Grades", units: 3 },
+                { code: "CoEd 301", description: "Edukasyong Pantahanan at Pangkabuhayan", units: 3 },
+                { code: "CoEd 302", description: "Teaching Arts in the Elementary Grades", units: 3 },
+                { code: "CoEd 303", description: "Teaching Music in the Elementary Grades", units: 3 },
+                { code: "CoEd 304", description: "Research in Education", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "Elective 1", description: "Teaching Multi-Grade Classes", units: 3 },
+                { code: "Elective 2", description: "English for Specific Purposes", units: 3 },
+                { code: "Research 1", description: "Introduction to Thesis Writing", units: 3 },
+                { code: "SEM 2", description: "Seminar in Teaching MEFSS 2", units: 3 },
+                { code: "CoEd 305", description: "The Teacher and the Community, School Culture and Organizational Leadership", units: 3 },
+                { code: "CoEd 306", description: "Edukasyong Pantahanan at Pangkabuhayan with Entrepreneurship", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "Research 2", description: "Thesis Writing", units: 3 },
+                { code: "FS 1", description: "Observation of Teaching-Learning in Actual School Environment", units: 3 },
+                { code: "FS 2", description: "Participation and Teaching Assistantship", units: 3 }
+            ]
+        },
+        {
+            year: "4th Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "PRACTICUM", description: "Teaching Internship", units: 6 }
+            ]
+        }
+    ],
+
+
+    /* =====================================================
+       BSED-ENGLISH — Effective SY 2024-2025, CMO 75 s.2017
+    ===================================================== */
+    "BSED-ENGLISH": [
+        {
+            year: "1st Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "GE 1", description: "Understanding the Self", units: 3 },
+                { code: "GE 2", description: "Readings in Philippine History", units: 3 },
+                { code: "GE 3", description: "The Contemporary World", units: 3 },
+                { code: "GE 4", description: "Mathematics in the Modern World", units: 3 },
+                { code: "NSTP 1", description: "Civic Welfare Training Service 1", units: 3 },
+                { code: "CoEd 100", description: "The Child and Adolescent Learners and Learning Principles", units: 3 },
+                { code: "CSEE 101", description: "Introduction to Linguistics", units: 3 }
+            ]
+        },
+        {
+            year: "1st Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "GE 5", description: "Purposive Communication (with speech lab)", units: 3 },
+                { code: "GE 6", description: "Art Appreciation", units: 3 },
+                { code: "GE 7", description: "Science, Technology and Society", units: 3 },
+                { code: "PATH Fit 1", description: "Movement Competency Training", units: 2 },
+                { code: "NSTP 2", description: "Civic Welfare Training Service 2", units: 3 },
+                { code: "CSEE 102", description: "Language Culture & Society", units: 3 },
+                { code: "CSEE 103", description: "Structure of English", units: 3 }
+            ]
+        },
+        {
+            year: "1st Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "GE 8", description: "Ethics", units: 3 },
+                { code: "GE 9", description: "Gender and Society", units: 3 },
+                { code: "GE 10", description: "Philippine Popular Culture", units: 3 },
+                { code: "PATH Fit 2", description: "Exercise-based Fitness Activity", units: 2 },
+                { code: "CoEd 103", description: "Facilitating Learner-Centered Teaching", units: 3 },
+                { code: "CoEd 104", description: "The Teaching Profession", units: 3 },
+                { code: "CSEE 104", description: "Principles and Theories of Language Acquisition and Learning", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "GE 11", description: "Living in an IT Era", units: 3 },
+                { code: "PATH Fit 3", description: "Dance and Sports", units: 2 },
+                { code: "Elective 1E", description: "Stylistics & Discourse Analysis", units: 3 },
+                { code: "CoEd 202", description: "The Teacher and the School Curriculum", units: 3 },
+                { code: "CSEE 201", description: "Teaching and Assessment of the Macro Skills", units: 3 },
+                { code: "CSEE 202", description: "Speech and Theater Arts (with Speech Lab)", units: 3 },
+                { code: "CSEE 203", description: "Children and Adolescent Literature", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "PATH Fit 4", description: "Outdoor and Adventure Activities", units: 2 },
+                { code: "Elective 2E", description: "Creative Writing", units: 3 },
+                { code: "TTL 1", description: "Technology for Teaching and Learning 1", units: 3 },
+                { code: "CoEd 201", description: "Foundation of Special and Inclusive Education", units: 3 },
+                { code: "CSEE 204", description: "Contemporary, Popular, and Emergent Literature", units: 3 },
+                { code: "CSEE 205", description: "Teaching and Assessment of Grammar", units: 3 },
+                { code: "CSEE 305", description: "Survey of Philippine Literature in English", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "GE 12", description: "The Life and Works of Rizal", units: 3 },
+                { code: "TTL 2E", description: "Technology for Teaching and Learning 2 (Technology in Language Education) with computer lab", units: 3 },
+                { code: "CALE 1", description: "Assessment of Learning 1 (English)", units: 3 },
+                { code: "CSEE 206", description: "Language Programs and Policies in Multilingual Societies", units: 3 },
+                { code: "CSEE 207", description: "Mythology and Folklore", units: 3 },
+                { code: "CSEE 208", description: "Survey of Afro-Asian Literature", units: 3 },
+                { code: "CSEE 209", description: "Technical Writing", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "Research 1", description: "Introduction to Thesis Writing", units: 3 },
+                { code: "CALE 2", description: "Assessment in Learning 2 (English)", units: 3 },
+                { code: "SEM 1", description: "Seminar in Teaching MEFSS 1", units: 3 },
+                { code: "CoEd 101", description: "Building and Enhancing New Literacies Across the Curriculum", units: 3 },
+                { code: "CoEd 305", description: "The Teacher and the Community, School Culture and Organizational Leadership", units: 3 },
+                { code: "CSEE 301", description: "Survey of English and American Literature", units: 3 },
+                { code: "CSEE 303", description: "Campus Journalism (with Speech Lab)", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "SEM 2", description: "Seminar in Teaching MEFSS 2", units: 3 },
+                { code: "CSEE 302", description: "Literary Criticism", units: 3 },
+                { code: "CSEE 304", description: "Teaching and Assessment of Literature Studies", units: 3 },
+                { code: "CSEE 306", description: "Language Learning Materials Development", units: 3 },
+                { code: "CSEE 307", description: "Language Education Research", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "Research 2", description: "Thesis Writing", units: 3 },
+                { code: "FS 1", description: "Observation of Teaching-Learning in Actual School Environment", units: 3 },
+                { code: "FS 2", description: "Participation and Teaching Assistantship", units: 3 }
+            ]
+        },
+        {
+            year: "4th Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "PRACTICUM", description: "Teaching Internship", units: 6 }
+            ]
+        }
+    ],
+
+
+    /* =====================================================
+       BSED-MATH — Effective SY 2024-2025, CMO 75 s.2017
+    ===================================================== */
+    "BSED-MATH": [
+        {
+            year: "1st Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "GE 1", description: "Understanding the Self", units: 3 },
+                { code: "GE 2", description: "Readings in Philippine History", units: 3 },
+                { code: "GE 3", description: "The Contemporary World", units: 3 },
+                { code: "GE 4", description: "Mathematics in the Modern World", units: 3 },
+                { code: "NSTP 1", description: "Civic Welfare Training Service 1", units: 3 },
+                { code: "CSEM 101", description: "History of Mathematics", units: 3 }
+            ]
+        },
+        {
+            year: "1st Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "GE 5", description: "Purposive Communication (with speech lab)", units: 3 },
+                { code: "GE 6", description: "Art Appreciation", units: 3 },
+                { code: "GE 7", description: "Science, Technology and Society", units: 3 },
+                { code: "PATH Fit 1", description: "Movement Competency Training", units: 2 },
+                { code: "NSTP 2", description: "Civic Welfare Training Service 2", units: 3 },
+                { code: "CoEd 100", description: "The Child and Adolescent Learners and Learning Principles", units: 3 },
+                { code: "CSEM 102", description: "College and Advanced Algebra", units: 3 }
+            ]
+        },
+        {
+            year: "1st Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "GE 8", description: "Ethics", units: 3 },
+                { code: "GE 9", description: "Gender and Society", units: 3 },
+                { code: "PATH Fit 2", description: "Exercise-based Fitness Activity", units: 2 },
+                { code: "CoEd 101", description: "Building and Enhancing New Literacies Across the Curriculum", units: 3 },
+                { code: "CoEd 104", description: "The Teaching Profession", units: 3 },
+                { code: "CSEM 103", description: "Logic and Set Theory", units: 3 },
+                { code: "CSEM 104", description: "Mathematics of Investment", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "GE 10", description: "Philippine Popular Culture", units: 3 },
+                { code: "GE 11", description: "Living in an IT Era", units: 3 },
+                { code: "PATH Fit 3", description: "Dance and Sports", units: 2 },
+                { code: "CoEd 103", description: "Facilitating Learner-Centered Teaching", units: 3 },
+                { code: "CSEM 201", description: "Plane and Solid Geometry", units: 3 },
+                { code: "CSEM 203", description: "Trigonometry", units: 3 },
+                { code: "CSEM 205", description: "Elementary Statistics & Probability", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "PATH Fit 4", description: "Outdoor and Adventure Activities", units: 2 },
+                { code: "CALM 1", description: "Assessment in Learning 1 (Mathematics)", units: 3 },
+                { code: "CSEM 204", description: "Modern Geometry", units: 3 },
+                { code: "CSEM 210", description: "Advanced Statistics", units: 3 },
+                { code: "CSEM 206", description: "Number Theory", units: 3 },
+                { code: "CSEM 207", description: "Linear Algebra", units: 3 },
+                { code: "CSEM 202", description: "Abstract Algebra", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "GE 12", description: "The Life and Works of Rizal", units: 3 },
+                { code: "CALM 2", description: "Assessment in Learning 2 (Mathematics)", units: 3 },
+                { code: "CSEM 208", description: "Calculus 1 (with Analytic Geometry)", units: 4 },
+                { code: "CSEM 209", description: "Problem Solving, Mathematical Investigations and Modelling", units: 3 },
+                { code: "CSEM 303", description: "Assessment and Evaluation in Mathematics", units: 3 },
+                { code: "CSEM 301", description: "Principle and Strategies of Teaching Mathematics", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "SEM 1", description: "Seminar in Teaching MEFSS 1", units: 3 },
+                { code: "CoEd 201", description: "Foundations of Special and Inclusive Education", units: 3 },
+                { code: "TTL 1", description: "Technology for Teaching and Learning 1", units: 3 },
+                { code: "CSEM 302", description: "Calculus II", units: 4 },
+                { code: "CSEM 304", description: "Research in Mathematics", units: 4 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "Research 1", description: "Introduction to Thesis Writing", units: 3 },
+                { code: "SEM 2", description: "Seminar in Teaching MEFSS 2", units: 3 },
+                { code: "CoEd 202", description: "The Teacher and the School Curriculum", units: 3 },
+                { code: "CoEd 305", description: "The Teacher and the Community, School Culture and Organizational Leadership", units: 3 },
+                { code: "CSEM 305", description: "Calculus III", units: 3 },
+                { code: "TTL 2M", description: "Technology for Teaching and Learning 2 (Instrumentation and Technology in Mathematics) with computer lab", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "Research 2", description: "Thesis Writing", units: 3 },
+                { code: "FS 1", description: "Observation of Teaching-Learning in Actual School Environment", units: 3 },
+                { code: "FS 2", description: "Participation and Teaching Assistantship", units: 3 }
+            ]
+        },
+        {
+            year: "4th Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "PRACTICUM", description: "Teaching Internship", units: 6 }
+            ]
+        }
+    ],
+
+
+    /* =====================================================
+       BSED-SOCIAL — Effective SY 2024-2025, CMO 75 s.2017
+    ===================================================== */
+    "BSED-SOCIAL": [
+        {
+            year: "1st Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "GE 1", description: "Understanding the Self", units: 3 },
+                { code: "GE 2", description: "Readings in Philippine History", units: 3 },
+                { code: "GE 3", description: "The Contemporary World", units: 3 },
+                { code: "GE 4", description: "Mathematics in the Modern World", units: 3 },
+                { code: "NSTP 1", description: "Civic Welfare Training Service 1", units: 3 },
+                { code: "CSES 101", description: "Geography 1 (Human Geography)", units: 3 }
+            ]
+        },
+        {
+            year: "1st Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "GE 5", description: "Purposive Communication (with speech lab)", units: 3 },
+                { code: "GE 6", description: "Art Appreciation", units: 3 },
+                { code: "GE 7", description: "Science, Technology and Society", units: 3 },
+                { code: "PATH Fit 1", description: "Movement Competency Training", units: 2 },
+                { code: "NSTP 2", description: "Civic Welfare Training Service 2", units: 3 },
+                { code: "CoEd 100", description: "The Child and Adolescent Learners and Learning Principles", units: 3 },
+                { code: "CSES 102", description: "Geography 2 (Physical Geography)", units: 3 }
+            ]
+        },
+        {
+            year: "1st Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "GE 8", description: "Ethics", units: 3 },
+                { code: "GE 9", description: "Gender and Society", units: 3 },
+                { code: "GE 10", description: "Philippine Popular Culture", units: 3 },
+                { code: "CoEd 103", description: "Facilitating Learner-Centered Teaching", units: 3 },
+                { code: "CoEd 104", description: "The Teaching Profession", units: 3 },
+                { code: "CSES 103", description: "Geography 3 (Urban Geography)", units: 3 },
+                { code: "PATH Fit 2", description: "Exercise-based Fitness Activity", units: 2 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "GE 11", description: "Living in an IT Era", units: 3 },
+                { code: "PATH Fit 3", description: "Dance and Sports", units: 2 },
+                { code: "CoEd 202", description: "The Teacher and the School Curriculum", units: 3 },
+                { code: "CSES 201", description: "Foundation of Social Studies", units: 3 },
+                { code: "CSES 202", description: "Asian Studies", units: 3 },
+                { code: "CSES 203", description: "Places and Landscape in a Changing World", units: 3 },
+                { code: "CSES 204", description: "Micro Economics", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "PATH Fit 4", description: "Outdoor and Adventure Activities", units: 2 },
+                { code: "CALS 1", description: "Assessment of Learning 1 (Social Studies)", units: 3 },
+                { code: "CoEd 201", description: "Foundations of Special and Inclusive Education", units: 3 },
+                { code: "CSES 205", description: "World History 1 (Ancient & Medieval Era)", units: 3 },
+                { code: "CSES 206", description: "Macro Economics", units: 3 },
+                { code: "CSES 207", description: "Integrative Methods in Teaching Social Science discipline in Basic Education", units: 3 }
+            ]
+        },
+        {
+            year: "2nd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "GE 12", description: "The Life and Works of Rizal", units: 3 },
+                { code: "CSES 301", description: "Assessment and Evaluation in the Social Sciences", units: 3 },
+                { code: "CALS 2", description: "Assessment of Learning 2 (Social Studies)", units: 3 },
+                { code: "CSES 208", description: "World History 2 (Modern & Contemporary Era)", units: 3 },
+                { code: "CSES 209", description: "Law-Related Studies", units: 3 },
+                { code: "CSES 210", description: "Comparative Government and Politics", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "TTL 1", description: "Technology for Teaching and Learning 1", units: 3 },
+                { code: "SEM 1", description: "Seminar in Teaching MEFSS", units: 3 },
+                { code: "CoEd 101", description: "Building and Enhancing New Literacies Across the Curriculum", units: 3 },
+                { code: "Elective 1S", description: "Basic of School Management and Administration", units: 3 },
+                { code: "CSES 302", description: "Production of Social Studies Instructional Materials", units: 3 },
+                { code: "CSES 303", description: "Research in Social Studies", units: 3 },
+                { code: "CSES 304", description: "Socio-Cultural Anthropology", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "2nd Trimester",
+            subjects: [
+                { code: "Research 1", description: "Introduction to Thesis Writing", units: 3 },
+                { code: "Elective 2S", description: "Human Resources Management", units: 3 },
+                { code: "TTL 2S", description: "Technology for Teaching and Learning 2 (Social Studies) with computer lab", units: 3 },
+                { code: "SEM 2", description: "Seminar in Teaching MEFSS", units: 3 },
+                { code: "CoEd 305", description: "The Teacher and the Community, School Culture and Organizational Leadership", units: 3 },
+                { code: "CSES 305", description: "Teaching Approach in Secondary Social Studies", units: 3 },
+                { code: "CSES 306", description: "Comparative Economic Planning", units: 3 },
+                { code: "CSES 307", description: "Trends and Issues in Social Studies", units: 3 }
+            ]
+        },
+        {
+            year: "3rd Year", trimester: "3rd Trimester",
+            subjects: [
+                { code: "Research 2", description: "Thesis Writing", units: 3 },
+                { code: "FS 1", description: "Observation of Teaching-Learning in Actual School Environment", units: 3 },
+                { code: "FS 2", description: "Participation and Teaching Assistantship", units: 3 }
+            ]
+        },
+        {
+            year: "4th Year", trimester: "1st Trimester",
+            subjects: [
+                { code: "PRACTICUM", description: "Teaching Internship", units: 6 }
+            ]
+        }
+    ]
+
+};
+
+
+/* =========================================================
+   PROGRAM NAMES
+========================================================= */
+
+const programNames = {
+
+    "BSCS":
+        "Bachelor of Science in Computer Science (BSCS)",
+
+    "BSIS":
+        "Bachelor of Science in Information Systems (BSIS)",
+
+    "BSIT":
+        "Bachelor of Science in Information Technology (BSIT)",
+
+    "BSCRIM":
+        "Bachelor of Science in Criminology (BS Crim)",
+
+    "BSA":
+        "Bachelor of Science in Accountancy (BSA)",
+
+    "BSBA-FM":
+        "Bachelor of Science in Business Administration Major in Financial Management",
+
+    "BSBA-HRDM":
+        "Bachelor of Science in Business Administration Major in Human Resource Development Management",
+
+    "BSBA-MM":
+        "Bachelor of Science in Business Administration Major in Marketing Management",
+
+    "BEED":
+        "Bachelor of Elementary Education (BEED)",
+
+    "BSED-ENGLISH":
+        "Bachelor of Secondary Education Major in English",
+
+    "BSED-MATH":
+        "Bachelor of Secondary Education Major in Mathematics",
+
+    "BSED-SOCIAL":
+        "Bachelor of Secondary Education Major in Social Studies"
+};
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        loadSubjects();
+
+        addSubjectRow();
+
+        setToday();
+
+    }
+);
+
+
+/* =========================================================
+   SET TODAY
+========================================================= */
+
+function setToday() {
+
+    const dateInput =
+        document.getElementById("enrollmentDate");
+
+    if (!dateInput.value) {
+
+        const today = new Date();
+
+        const year = today.getFullYear();
+
+        const month =
+            String(today.getMonth() + 1).padStart(2, "0");
+
+        const day =
+            String(today.getDate()).padStart(2, "0");
+
+        dateInput.value = `${year}-${month}-${day}`;
+    }
+}
+
+
+/* =========================================================
+   LOAD SUBJECT DROPDOWNS
+   Every program is now a structured program (Year/Trimester
+   optgroups), sourced directly from each program's official
+   ASCB curriculum prospectus.
+========================================================= */
+
+/* =========================================================
+   LOAD SUBJECT DROPDOWNS
+   Fine-filtered by Program + Year Level + Trimester.
+========================================================= */
+
+function loadSubjects() {
+
+    const selects =
+        document.querySelectorAll(".subject-select");
+
+    const program =
+        document.getElementById("program").value;
+
+    const isStructured =
+        program && structuredPrograms[program];
+
+    selects.forEach(
+        select => {
+
+            const oldValue = select.value;
+
+            select.innerHTML =
+                `
+                <option value="">Select Subject</option>
+                <option value="__CUSTOM__">+ Add Custom Subject</option>
+                `;
+
+            if (isStructured) {
+
+                structuredPrograms[program].forEach(
+                    group => {
+
+                        const optgroup =
+                            document.createElement("optgroup");
+
+                        optgroup.label =
+                            `${group.year} — ${group.trimester}`;
+
+                        group.subjects.forEach(
+                            subject => {
+
+                                const option =
+                                    document.createElement("option");
+
+                                option.value =
+                                    JSON.stringify(subject);
+
+                                option.textContent =
+                                    `${subject.code} — ${subject.description} (${subject.units} units)`;
+
+                                optgroup.appendChild(option);
+                            }
+                        );
+
+                        select.appendChild(optgroup);
+                    }
+                );
+
+            }
+
+            if (
+                oldValue &&
+                [...select.options].some(o => o.value === oldValue)
+            ) {
+
+                select.value = oldValue;
+            }
+
+        }
+    );
+}
+
+
+/* =========================================================
+   HANDLE FILTER CHANGE
+   Triggered when Program, Year Level, or Trimester changes.
+   Refreshes dropdowns AND auto-fills the subject table with
+   the matching prospectus subjects for that term.
+========================================================= */
+
+function handleFilterChange() {
+
+    loadSubjects();
+
+    autoPopulateSubjectsForTerm();
+}
+
+
+/* =========================================================
+   AUTO-POPULATE SUBJECTS FOR THE SELECTED TERM
+========================================================= */
+
+/* =========================================================
+   QUICK ADD SUBJECTS BY TERM
+   For irregular students — appends the subjects of a chosen
+   Year Level + Trimester to the existing table, without
+   clearing what's already there. Skips subjects already
+   added (matched by course code) to avoid duplicates.
+========================================================= */
+
+function addSubjectsForTerm() {
+
+    const program =
+        document.getElementById("program").value;
+
+    const year =
+        document.getElementById("quickAddYear").value;
+
+    const trimester =
+        document.getElementById("quickAddTrimester").value;
+
+    if (!program) {
+        alert("Pumili muna ng Course / Program.");
+        return;
+    }
+
+    if (!year || !trimester) {
+        alert("Pumili ng Year Level at Trimester na idadagdag.");
+        return;
+    }
+
+    if (!structuredPrograms[program]) {
+        alert("Walang structured prospectus ang program na ito.");
+        return;
+    }
+
+    const group =
+        structuredPrograms[program].find(
+            g => g.year === year && g.trimester === trimester
+        );
+
+    if (!group) {
+        alert("Walang nakatalang subjects para sa Year Level at Trimester na ito.");
+        return;
+    }
+
+    /* Collect codes already present sa table, para
+       hindi na madoble kapag pinindot ulit. */
+
+    const existingCodes = new Set();
+
+    document.querySelectorAll(".subject-row").forEach(
+        row => {
+
+            const code =
+                row.dataset.customCode || getRowSubjectCode(row);
+
+            if (code) {
+                existingCodes.add(code);
+            }
+        }
+    );
+
+    let addedCount = 0;
+
+    group.subjects.forEach(
+        subject => {
+
+            if (existingCodes.has(subject.code)) {
+                return;
+            }
+
+            addSubjectRow(subject);
+
+            addedCount++;
+        }
+    );
+
+    calculateTotalUnits();
+
+    if (addedCount === 0) {
+
+        alert("Naidagdag na lahat ng subjects para sa term na ito.");
+    }
+}
+
+
+/* =========================================================
+   GET ROW SUBJECT CODE
+   Helper — reads the course code currently selected in a
+   subject row's dropdown (used for duplicate checking).
+========================================================= */
+
+function getRowSubjectCode(row) {
+
+    const select = row.querySelector(".subject-select");
+
+    if (!select || !select.value || select.value === "__CUSTOM__") {
+        return null;
+    }
+
+    try {
+
+        return JSON.parse(select.value).code;
+
+    } catch (error) {
+
+        return null;
+    }
+}
+
+
+/* =========================================================
+   ADD SUBJECT ROW
+========================================================= */
+
+function addSubjectRow(subjectData = null) {
+
+    const tbody =
+        document.getElementById("subjectRows");
+
+    const row = document.createElement("tr");
+
+    row.className = "subject-row";
+
+    row.innerHTML =
+        `
+        <td>
+            <select class="subject-select" onchange="selectSubject(this)">
+                <option value="">Select Subject</option>
+            </select>
+        </td>
+
+        <td>
+            <input type="text" class="subject-description" placeholder="Course Description">
+        </td>
+
+        <td>
+            <input type="number" class="subject-units" min="0" step="1" value="0" oninput="calculateTotalUnits()">
+        </td>
+
+        <td style="text-align:center">
+            <button type="button" class="btn btn-danger" onclick="removeSubjectRow(this)">Remove</button>
+        </td>
+        `;
+
+    tbody.appendChild(row);
+
+    loadSubjects();
+
+    if (subjectData) {
+
+        const select = row.querySelector(".subject-select");
+        const description = row.querySelector(".subject-description");
+        const units = row.querySelector(".subject-units");
+
+        select.value = JSON.stringify(subjectData);
+        description.value = subjectData.description;
+        units.value = subjectData.units;
+    }
+
+    calculateTotalUnits();
+}
+
+
+/* =========================================================
+   SELECT SUBJECT
+========================================================= */
+
+function selectSubject(select) {
+
+    const row = select.closest(".subject-row");
+
+    if (select.value === "__CUSTOM__") {
+
+        const code = prompt("Enter Course Code:");
+
+        if (!code) {
+            select.value = "";
+            return;
+        }
+
+        const description = prompt("Enter Course Description:");
+
+        if (!description) {
+            select.value = "";
+            return;
+        }
+
+        const units = prompt("Enter Units:", "3");
+
+        row.querySelector(".subject-description").value = description;
+        row.querySelector(".subject-units").value = units || 0;
+
+        /* Store custom code on row itself. */
+        row.dataset.customCode = code;
+
+        calculateTotalUnits();
+
+        return;
+    }
+
+    if (!select.value) {
+
+        row.querySelector(".subject-description").value = "";
+        row.querySelector(".subject-units").value = 0;
+
+        delete row.dataset.customCode;
+
+        calculateTotalUnits();
+
+        return;
+    }
+
+    try {
+
+        const subject = JSON.parse(select.value);
+
+        row.querySelector(".subject-description").value = subject.description;
+        row.querySelector(".subject-units").value = subject.units;
+
+        delete row.dataset.customCode;
+
+        calculateTotalUnits();
+
+    } catch (error) {
+
+        console.error(error);
+    }
+}
+
+
+/* =========================================================
+   REMOVE SUBJECT
+========================================================= */
+
+function removeSubjectRow(button) {
+
+    const rows =
+        document.querySelectorAll(".subject-row");
+
+    if (rows.length <= 1) {
+
+        alert("At least one subject row is required.");
+
+        return;
+    }
+
+    button.closest(".subject-row").remove();
+
+    calculateTotalUnits();
+}
+
+
+/* =========================================================
+   TOTAL UNITS
+========================================================= */
+
+function calculateTotalUnits() {
+
+    const unitsInputs =
+        document.querySelectorAll(".subject-units");
+
+    let total = 0;
+
+    unitsInputs.forEach(
+        input => {
+
+            const value = parseFloat(input.value) || 0;
+
+            total += value;
+        }
+    );
+
+    document.getElementById("totalUnitsInput").textContent = total;
+}
+
+
+/* =========================================================
+   FORMAT DATE
+========================================================= */
+
+function formatDate(dateString) {
+
+    if (!dateString) {
+
+        return "________________";
+    }
+
+    const date = new Date(dateString + "T00:00:00");
+
+    return date.toLocaleDateString(
+        "en-US",
+        { month: "long", day: "numeric", year: "numeric" }
+    );
+}
+
+
+/* =========================================================
+   GENERATE CERTIFICATE
+========================================================= */
+
+/* =========================================================
+   CERTIFICATE TYPE
+========================================================= */
+
+function changeCertificateType() {
+
+    const certificateType =
+        document.getElementById("certificateType").value;
+
+    const title =
+        document.getElementById("previewCertificateTitle");
+
+    const intro =
+        document.getElementById("certificateIntro");
+
+    if (certificateType === "REGISTRATION") {
+
+        title.textContent = "CERTIFICATE OF REGISTRATION";
+
+        intro.innerHTML = `
+            This is to certify that
+
+            <strong id="previewStudentName">
+                ______________________________
+            </strong>
+
+            is officially enrolled at
+
+            <strong>
+                Andres Soriano Colleges of Bislig, Inc.
+            </strong>
+
+            in the
+
+            <strong id="previewProgram">
+                ______________________________
+            </strong>
+
+            program for the
+
+            <strong id="previewTrimester">
+                ______________________________
+            </strong>,
+
+            Academic Year
+
+            <strong id="previewAcademicYear">
+                ____________
+            </strong>.
+        `;
+
+    } else {
+
+        title.textContent = "CERTIFICATE OF ENROLLMENT";
+
+        intro.innerHTML = `
+            This is to certify that
+
+            <strong id="previewStudentName">
+                ______________________________
+            </strong>
+
+            is officially enrolled at
+
+            <strong>
+                Andres Soriano Colleges of Bislig, Inc.
+            </strong>
+
+            in the
+
+            <strong id="previewProgram">
+                ______________________________
+            </strong>
+
+            program for the
+
+            <strong id="previewTrimester">
+                ______________________________
+            </strong>,
+
+            Academic Year
+
+            <strong id="previewAcademicYear">
+                ____________
+            </strong>.
+        `;
+    }
+}
+
+function generateCertificate() {
+
+    const certificateType =
+        document.getElementById("certificateType").value;
+
+    changeCertificateType();
+
+    const studentName =
+        document.getElementById("studentName").value.trim();
+
+    const studentId =
+        document.getElementById("studentId").value.trim();
+
+    const program =
+        document.getElementById("program").value;
+
+    const yearLevel =
+        document.getElementById("yearLevel").value;
+
+    const trimester =
+        document.getElementById("trimester").value;
+
+    const academicYear =
+        document.getElementById("academicYear").value.trim();
+
+    const enrollmentDate =
+        document.getElementById("enrollmentDate").value;
+
+    const status =
+        document.getElementById("status").value;
+
+    const orNumber =
+        document.getElementById("orNumber").value.trim();
+
+    const preparedBy =
+        document.getElementById("preparedBy").value.trim();
+
+
+    /* ========================================== VALIDATION */
+
+    if (!studentName) {
+        alert("Please enter the student's name.");
+        return;
+    }
+
+    if (!studentId) {
+        alert("Please enter the Student ID.");
+        return;
+    }
+
+    if (!program) {
+        alert("Please select a Course / Program.");
+        return;
+    }
+
+    if (!yearLevel) {
+        alert("Please select the Year Level.");
+        return;
+    }
+
+    if (!trimester) {
+        alert("Please select the Trimester.");
+        return;
+    }
+
+
+    /* ========================================== BASIC INFO */
+
+    document.getElementById("previewStudentName").textContent = studentName;
+    document.getElementById("previewName2").textContent = studentName;
+    document.getElementById("previewStudentId").textContent = studentId;
+    document.getElementById("previewProgram").textContent = programNames[program];
+    document.getElementById("previewCourse").textContent = getShortProgram(program);
+    document.getElementById("previewYearLevel").textContent = yearLevel;
+    document.getElementById("previewTrimester").textContent =
+        `${trimester}, AY ${academicYear}`;
+    document.getElementById("previewTerm").textContent =
+        `${trimester}, AY ${academicYear}`;
+    document.getElementById("previewAcademicYear").textContent = academicYear;
+    document.getElementById("previewEnrollmentDate").textContent =
+        formatDate(enrollmentDate);
+    document.getElementById("previewStatus").textContent = status;
+    document.getElementById("previewOrNumber").textContent = orNumber || "—";
+    document.getElementById("previewPreparedBy").textContent = preparedBy || "—";
+
+
+    /* ========================================== SUBJECTS */
+
+    const rows =
+        document.querySelectorAll(".subject-row");
+
+    const previewBody =
+        document.getElementById("previewSubjects");
+
+    previewBody.innerHTML = "";
+
+    let totalUnits = 0;
+
+    rows.forEach(
+        row => {
+
+            const select = row.querySelector(".subject-select");
+            const description = row.querySelector(".subject-description");
+            const units = row.querySelector(".subject-units");
+
+            if (
+                !description.value.trim() &&
+                (!select.value || select.value === "__CUSTOM__")
+            ) {
+                return;
+            }
+
+            let code = "";
+
+            if (row.dataset.customCode) {
+
+                code = row.dataset.customCode;
+
+            } else if (select.value && select.value !== "__CUSTOM__") {
+
+                try {
+
+                    const subject = JSON.parse(select.value);
+
+                    code = subject.code;
+
+                } catch (error) {
+
+                    code = "";
+                }
+            }
+
+            const unitValue = parseFloat(units.value) || 0;
+
+            totalUnits += unitValue;
+
+            const tr = document.createElement("tr");
+
+            tr.innerHTML =
+                `
+                <td>${escapeHTML(code)}</td>
+                <td>${escapeHTML(description.value)}</td>
+                <td>${unitValue}</td>
+                `;
+
+            previewBody.appendChild(tr);
+        }
+    );
+
+    document.getElementById("previewTotalUnits").textContent = totalUnits;
+
+
+    /* ========================================== ISSUED DATE */
+
+    document.getElementById("previewIssuedDate").textContent =
+        formatDate(new Date().toISOString().split("T")[0]);
+
+
+    /* ========================================== OPEN MODAL */
+
+    document.getElementById("certificateModal").classList.add("active");
+}
+
+
+/* =========================================================
+   SHORT PROGRAM
+========================================================= */
+
+function getShortProgram(program) {
+
+    const shortNames = {
+
+        "BSCS": "BSCS",
+        "BSIS": "BSIS",
+        "BSIT": "BSIT",
+        "BSCRIM": "BS Crim",
+        "BSA": "BSA",
+        "BSBA-FM": "BSBA-FM",
+        "BSBA-HRDM": "BSBA-HRDM",
+        "BSBA-MM": "BSBA-MM",
+        "BEED": "BEED",
+        "BSED-ENGLISH": "BSED-English",
+        "BSED-MATH": "BSED-Mathematics",
+        "BSED-SOCIAL": "BSED-Social Studies"
+    };
+
+    return shortNames[program] || program;
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* =========================================================
+   CLOSE CERTIFICATE
+========================================================= */
+
+function closeCertificate() {
+
+    document.getElementById("certificateModal").classList.remove("active");
+}
+
+
+/* =========================================================
+   PRINT CERTIFICATE — ONE COPY ONLY
+========================================================= */
+
+function printCertificate() {
+
+    const printArea = document.getElementById("printArea");
+
+    if (!printArea) {
+        alert("Certificate print area not found.");
+        return;
+    }
+
+    const printWindow = window.open(
+        "",
+        "_blank",
+        "width=900,height=1000"
+    );
+
+    if (!printWindow) {
+        alert("Please allow pop-ups for this website to print the certificate.");
+        return;
+    }
+
+    const styles = [...document.querySelectorAll("link[rel='stylesheet'], style")]
+        .map(style => {
+            if (style.tagName === "STYLE") {
+                return `<style>${style.innerHTML}</style>`;
+            }
+
+            return `<link rel="stylesheet" href="${style.href}">`;
+        })
+        .join("");
+
+    printWindow.document.open();
+
+    printWindow.document.write(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+
+            <meta charset="UTF-8">
+
+            <title>${document.getElementById("previewCertificateTitle").textContent}</title>
+
+            ${styles}
+
+            <style>
+
+                @page {
+                    size: Letter portrait;
+                    margin: 0;
+                }
+
+                html,
+                body {
+                    width: 8.5in;
+                    height: 11in;
+                    margin: 0;
+                    padding: 0;
+                    background: #ffffff;
+                    overflow: hidden;
+                }
+
+                body {
+                    font-family: Arial, sans-serif;
+                }
+
+                .print-area {
+                    width: 8.5in !important;
+                    height: 11in !important;
+                    min-height: 11in !important;
+                    max-height: 11in !important;
+
+                    margin: 0 !important;
+                    padding: 0 !important;
+
+                    overflow: hidden !important;
+
+                    box-shadow: none !important;
+                    background: #ffffff !important;
+                }
+
+                /* WATERMARK */
+
+                .watermark-container {
+                    position: absolute !important;
+
+                    left: 0 !important;
+                    right: 0 !important;
+
+                    top: 2.20in !important;
+                    bottom: 0 !important;
+
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+
+                    overflow: hidden !important;
+
+                    z-index: 1 !important;
+                    pointer-events: none !important;
+                }
+
+                .document-watermark {
+                    position: relative !important;
+
+                    width: 4.35in !important;
+                    height: 4.35in !important;
+
+                    max-width: 4.35in !important;
+                    max-height: 4.35in !important;
+
+                    transform: none !important;
+
+                    display: block !important;
+                    visibility: visible !important;
+
+                    object-fit: contain !important;
+
+                    opacity: 0.055 !important;
+
+                    z-index: 1 !important;
+                    pointer-events: none !important;
+                }
+
+                .document-content {
+                    position: relative !important;
+                    z-index: 3 !important;
+                }
+
+                .document-header {
+                    position: relative !important;
+                    z-index: 5 !important;
+                }
+
+                .student-details,
+                .certificate-title,
+                .certificate-intro,
+                .summary-title,
+                .certificate-table,
+                .certification-text,
+                .signature-area {
+                    position: relative !important;
+                    z-index: 3 !important;
+                }
+
+                /* HIDE UI CONTROLS */
+
+                button,
+                .btn,
+                .modal-toolbar,
+                .modal-overlay {
+                    display: none !important;
+                }
+
+                /* PRINT COLORS */
+
+                * {
+                    -webkit-print-color-adjust: exact !important;
+                    print-color-adjust: exact !important;
+                }
+
+            </style>
+
+        </head>
+
+        <body>
+
+            ${printArea.outerHTML}
+
+        </body>
+        </html>
+    `);
+
+    printWindow.document.close();
+
+    printWindow.focus();
+
+    /*
+       Wait for logo/fonts/images to finish loading
+       before opening print dialog.
+    */
+
+    setTimeout(() => {
+
+        printWindow.print();
+
+        /*
+           Close the temporary print window
+           after printing.
+        */
+
+        setTimeout(() => {
+            printWindow.close();
+        }, 500);
+
+    }, 700);
+}
+
+/* =========================================================
+   CLEAR FORM
+========================================================= */
+
+function clearForm() {
+
+    const confirmation =
+        confirm("Clear all enrollment information and subjects?");
+
+    if (!confirmation) {
+        return;
+    }
+
+    document.getElementById("studentName").value = "";
+    document.getElementById("studentId").value = "";
+    document.getElementById("program").value = "";
+    document.getElementById("yearLevel").value = "";
+    document.getElementById("trimester").value = "";
+    document.getElementById("academicYear").value = "2026–2027";
+    document.getElementById("status").value = "OFFICIALLY ENROLLED";
+    document.getElementById("orNumber").value = "";
+    document.getElementById("preparedBy").value = "";
+
+    setToday();
+
+    document.getElementById("subjectRows").innerHTML = "";
+
+    addSubjectRow();
+
+    calculateTotalUnits();
+}
+
+function closeModal() {
+
+    const modal = document.getElementById("certificateModal");
+
+    if (modal) {
+
+        modal.classList.remove("active");
+        modal.style.display = "none";
+    }
+}
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        closeModal();
+    }
+});
+
+
+/* =========================================================
+   FORM 137 REQUEST MODULE
+   Added to the ASCB Certificate System
+========================================================= */
+
+const F137_SCHOOLS_KEY = "ascb_form137_schools";
+const F137_COURSES_KEY = "ascb_form137_courses";
+const F137_FORM_KEY = "ascb_form137_current_form";
+const F137_MAX_STUDENTS = 8;
+
+const F137_DEFAULT_SCHOOLS = [
+    { name: "ANDRES SORIANO COLLEGES OF BISLIG, INC.", address: "Mangagoy, Bislig City" },
+    { name: "TABON M. ESTRELLA NATIONAL HIGH SCHOOL", address: "Tabon, Bislig City" },
+    { name: "STAND ALONE SENIOR HIGH SCHOOL", address: "Comawas, Bislig City" },
+    { name: "SOUTHERN TECHNOLOGICAL INSTITUTE OF THE PHILIPPINES, INC.", address: "Andres Soriano Avenue, Mangagoy, Bislig City" },
+    { name: "AGUSAN NATIONAL HIGH SCHOOL", address: "Butuan City, Surigao del Sur" },
+    { name: "BERNARDO D. CARPIO NATIONAL HIGH SCHOOL", address: "Pioneer Village, Buhangin, Davao City" },
+    { name: "BISLIG CITY NATIONAL HIGH SCHOOL", address: "Purok 10 Villa Josefa Poblacion, Bislig City" },
+    { name: "HINATUAN NATIONAL COMPREHENSIVE HIGH SCHOOL", address: "Sto. Niño, Hinatuan, Surigao del Sur" },
+    { name: "LAWIGAN NATIONAL HIGH SCHOOL", address: "Lawigan, Bislig City" },
+    { name: "LINGIG NATIONAL HIGH SCHOOL", address: "Lingig 1 District" },
+    { name: "MAHARLIKA NATIONAL HIGH SCHOOL", address: "Maharlika, Bislig City" }
+];
+
+const F137_DEFAULT_COURSES = [
+    "BSIT", "BSCS", "BSIS", "BEED", "BSBA-MM", "BSBA-FM", "BSBA-HRDM", "BSED-ENGLISH"
+];
+
+let f137Students = [];
+
+function f137El(id) {
+    return document.getElementById(id);
+}
+
+function f137Escape(value) {
+    const div = document.createElement("div");
+    div.textContent = value == null ? "" : String(value);
+    return div.innerHTML;
+}
+
+function f137Today() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+}
+
+function f137FormatDate(value) {
+    if (!value) return "";
+    const d = new Date(value + "T00:00:00");
+    if (Number.isNaN(d.getTime())) return "";
+    return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+}
+
+function f137GetSchools() {
+    try {
+        const saved = localStorage.getItem(F137_SCHOOLS_KEY);
+        return saved ? JSON.parse(saved) : [...F137_DEFAULT_SCHOOLS];
+    } catch {
+        return [...F137_DEFAULT_SCHOOLS];
+    }
+}
+
+function f137GetCourses() {
+    try {
+        const saved = localStorage.getItem(F137_COURSES_KEY);
+        return saved ? JSON.parse(saved) : [...F137_DEFAULT_COURSES];
+    } catch {
+        return [...F137_DEFAULT_COURSES];
+    }
+}
+
+function f137InitStorage() {
+    if (!localStorage.getItem(F137_SCHOOLS_KEY)) {
+        localStorage.setItem(F137_SCHOOLS_KEY, JSON.stringify(F137_DEFAULT_SCHOOLS));
+    }
+    if (!localStorage.getItem(F137_COURSES_KEY)) {
+        localStorage.setItem(F137_COURSES_KEY, JSON.stringify(F137_DEFAULT_COURSES));
+    }
+}
+
+function f137LoadSchools(selected = "") {
+    const select = f137El("f137_schoolSelect");
+    if (!select) return;
+    select.innerHTML = `<option value="">Select School</option>`;
+    f137GetSchools().forEach(school => {
+        const option = document.createElement("option");
+        option.value = school.name;
+        option.textContent = school.name;
+        option.dataset.address = school.address || "";
+        select.appendChild(option);
+    });
+    if (selected) {
+        select.value = selected;
+        f137UpdateSchoolAddress();
+    }
+}
+
+function f137LoadCourses(selected = "") {
+    const select = f137El("f137_courseSelect");
+    if (!select) return;
+    select.innerHTML = `<option value="">Select Course</option>`;
+    f137GetCourses().forEach(course => {
+        const option = document.createElement("option");
+        option.value = course;
+        option.textContent = course;
+        select.appendChild(option);
+    });
+    if (selected) select.value = selected;
+}
+
+function f137UpdateSchoolAddress() {
+    const select = f137El("f137_schoolSelect");
+    const address = f137El("f137_schoolAddress");
+    const option = select.options[select.selectedIndex];
+    if (option && select.value) address.value = option.dataset.address || "";
+}
+
+function openForm137() {
+    f137El("form137Modal").classList.add("active");
+    f137El("form137Modal").setAttribute("aria-hidden", "false");
+    f137InitStorage();
+    f137LoadSchools();
+    f137LoadCourses();
+    if (!f137El("f137_requestDate").value) f137El("f137_requestDate").value = f137Today();
+    f137LoadSaved();
+    f137UpdatePreview();
+}
+
+function closeForm137() {
+    const modal = f137El("form137Modal");
+    if (modal) {
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+    }
+    f137CloseMiniDialogs();
+}
+
+function f137Setup() {
+    f137InitStorage();
+    f137LoadSchools();
+    f137LoadCourses();
+    f137El("f137_requestDate").value = f137Today();
+
+    f137El("f137_schoolSelect").addEventListener("change", () => {
+        f137UpdateSchoolAddress();
+        f137UpdatePreview();
+        f137Save();
+    });
+
+    f137El("f137_schoolAddress").addEventListener("input", () => {
+        f137UpdatePreview();
+        f137Save();
+    });
+
+    ["f137_requestDate","f137_firstRequest","f137_secondRequest","f137_urgentRequest","f137_bearerRequest","f137_copyForASCB"]
+        .forEach(id => {
+            const el = f137El(id);
+            el.addEventListener("input", () => { f137UpdatePreview(); f137Save(); });
+            el.addEventListener("change", () => { f137UpdatePreview(); f137Save(); });
+        });
+
+    ["f137_studentName","f137_schoolYear","f137_yearSection"].forEach(id => {
+        const el = f137El(id);
+        el.addEventListener("input", f137Save);
+    });
+
+    f137El("f137_schoolSelect").addEventListener("dblclick", f137DeleteSelectedSchool);
+    f137El("f137_courseSelect").addEventListener("dblclick", f137DeleteSelectedCourse);
+
+    f137El("f137_firstRequest").addEventListener("change", () => {
+        if (f137El("f137_firstRequest").checked) f137El("f137_secondRequest").checked = false;
+        f137UpdatePreview(); f137Save();
+    });
+
+    f137El("f137_secondRequest").addEventListener("change", () => {
+        if (f137El("f137_secondRequest").checked) f137El("f137_firstRequest").checked = false;
+        f137UpdatePreview(); f137Save();
+    });
+}
+
+function addF137Student() {
+    const name = f137El("f137_studentName").value.trim();
+    const course = f137El("f137_courseSelect").value;
+    const year = f137El("f137_schoolYear").value.trim();
+    const section = f137El("f137_yearSection").value.trim();
+
+    if (!name || !course || !year || !section) {
+        alert("Kumpletuhin muna ang Student Name, Course, School Year, at Year & Section.");
+        return;
+    }
+
+    if (f137Students.length >= F137_MAX_STUDENTS) {
+        alert(`Maximum ${F137_MAX_STUDENTS} students per request.`);
+        return;
+    }
+
+    f137Students.push({ name, course, schoolYear: year, yearSection: section });
+
+    f137El("f137_studentName").value = "";
+    f137El("f137_courseSelect").value = "";
+    f137El("f137_schoolYear").value = "";
+    f137El("f137_yearSection").value = "";
+
+    f137RenderStudentList();
+    f137UpdatePreview();
+    f137Save();
+    f137El("f137_studentName").focus();
+}
+
+function f137RemoveStudent(index) {
+    f137Students.splice(index, 1);
+    f137RenderStudentList();
+    f137UpdatePreview();
+    f137Save();
+}
+
+function f137RenderStudentList() {
+    const container = f137El("f137_studentsList");
+    container.innerHTML = "";
+    f137Students.forEach((student, index) => {
+        const item = document.createElement("div");
+        item.className = "f137-student-chip";
+        item.innerHTML = `
+            <span>
+                <span class="f137-student-chip-name">${index + 1}. ${f137Escape(student.name)}</span>
+                <span class="f137-student-chip-meta">${f137Escape(student.course)} • ${f137Escape(student.schoolYear)} • ${f137Escape(student.yearSection)}</span>
+            </span>
+            <button type="button" class="f137-remove-student" onclick="f137RemoveStudent(${index})">×</button>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function f137BuildRows() {
+    if (f137Students.length) return f137Students;
+    return [{
+        name: f137El("f137_studentName").value.trim() || "STUDENT NAME",
+        course: f137El("f137_courseSelect").value || "COURSE",
+        schoolYear: f137El("f137_schoolYear").value.trim() || "SCHOOL YEAR",
+        yearSection: f137El("f137_yearSection").value.trim() || "YEAR & SECTION"
+    }];
+}
+
+function f137UpdatePreview() {
+    const rows = f137BuildRows();
+    const school = f137El("f137_schoolSelect").value || "ANDRES SORIANO COLLEGES OF BISLIG, INC.";
+    const address = f137El("f137_schoolAddress").value.trim() || "Mangagoy, Bislig City";
+    const plural = rows.length > 1;
+
+    f137El("f137_previewDate").textContent = f137FormatDate(f137El("f137_requestDate").value);
+    f137El("f137_previewSchool").textContent = school;
+    f137El("f137_previewSchoolAddress").textContent = address;
+    f137El("f137_pluralTag").textContent = plural ? "s" : "";
+    f137El("f137_pluralTag2").textContent = plural ? "s" : "";
+    f137El("f137_isAreTag").textContent = plural ? "are" : "is";
+
+    const body = f137El("f137_studentTableBody");
+    body.innerHTML = "";
+    rows.forEach(student => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${f137Escape(student.name)}</td>
+            <td>${f137Escape(student.course)}</td>
+            <td>${f137Escape(student.schoolYear)}</td>
+            <td>${f137Escape(student.yearSection)}</td>
+        `;
+        body.appendChild(tr);
+    });
+
+    const checks = [
+        ["f137_checkFirst","f137_firstRequest"],
+        ["f137_checkSecond","f137_secondRequest"],
+        ["f137_checkUrgent","f137_urgentRequest"],
+        ["f137_checkBearer","f137_bearerRequest"],
+        ["f137_checkCopy","f137_copyForASCB"]
+    ];
+    checks.forEach(([target, source]) => {
+        f137El(target).classList.toggle("active", !!f137El(source).checked);
+    });
+}
+
+function generateForm137() {
+    const hasPending =
+        f137El("f137_studentName").value.trim() ||
+        f137El("f137_courseSelect").value ||
+        f137El("f137_schoolYear").value.trim() ||
+        f137El("f137_yearSection").value.trim();
+
+    if (hasPending) {
+        const name = f137El("f137_studentName").value.trim();
+        const course = f137El("f137_courseSelect").value;
+        const year = f137El("f137_schoolYear").value.trim();
+        const section = f137El("f137_yearSection").value.trim();
+
+        if (name && course && year && section && f137Students.length < F137_MAX_STUDENTS) {
+            f137Students.push({ name, course, schoolYear: year, yearSection: section });
+            f137El("f137_studentName").value = "";
+            f137El("f137_courseSelect").value = "";
+            f137El("f137_schoolYear").value = "";
+            f137El("f137_yearSection").value = "";
+            f137RenderStudentList();
+        }
+    }
+
+    f137UpdatePreview();
+
+    if (!f137Students.length) {
+        alert("Mag-add muna ng kahit isang student.");
+        return;
+    }
+
+    if (!f137El("f137_schoolSelect").value) {
+        alert("Pumili muna ng receiving school.");
+        return;
+    }
+
+    f137Save();
+    alert("Form 137 request letter generated successfully.");
+}
+
+function f137OpenMini(id) {
+    f137El(id).classList.add("active");
+}
+
+function f137CloseMiniDialogs() {
+    ["f137SchoolDialog","f137CourseDialog"].forEach(id => {
+        const el = f137El(id);
+        if (el) el.classList.remove("active");
+    });
+}
+
+function openF137SchoolDialog() {
+    f137El("f137_newSchoolName").value = "";
+    f137El("f137_newSchoolAddress").value = "";
+    f137OpenMini("f137SchoolDialog");
+    setTimeout(() => f137El("f137_newSchoolName").focus(), 50);
+}
+
+function closeF137SchoolDialog() {
+    f137El("f137SchoolDialog").classList.remove("active");
+}
+
+function saveF137School() {
+    const name = f137El("f137_newSchoolName").value.trim();
+    const address = f137El("f137_newSchoolAddress").value.trim();
+    if (!name) { alert("Enter the school name."); return; }
+
+    const schools = f137GetSchools();
+    if (schools.some(s => s.name.toLowerCase() === name.toLowerCase())) {
+        alert("This school is already saved.");
+        return;
+    }
+
+    schools.push({ name, address });
+    localStorage.setItem(F137_SCHOOLS_KEY, JSON.stringify(schools));
+    f137LoadSchools(name);
+    f137El("f137_schoolAddress").value = address;
+    closeF137SchoolDialog();
+    f137UpdatePreview();
+    f137Save();
+}
+
+function openF137CourseDialog() {
+    f137El("f137_newCourseName").value = "";
+    f137OpenMini("f137CourseDialog");
+    setTimeout(() => f137El("f137_newCourseName").focus(), 50);
+}
+
+function closeF137CourseDialog() {
+    f137El("f137CourseDialog").classList.remove("active");
+}
+
+function saveF137Course() {
+    const course = f137El("f137_newCourseName").value.trim();
+    if (!course) { alert("Enter the course name."); return; }
+
+    const courses = f137GetCourses();
+    if (courses.some(c => c.toLowerCase() === course.toLowerCase())) {
+        alert("This course is already saved.");
+        return;
+    }
+
+    courses.push(course);
+    localStorage.setItem(F137_COURSES_KEY, JSON.stringify(courses));
+    f137LoadCourses(course);
+    closeF137CourseDialog();
+    f137Save();
+}
+
+function f137DeleteSelectedSchool() {
+    const select = f137El("f137_schoolSelect");
+    if (!select.value) return;
+    if (!confirm("Remove this school from the saved dropdown?")) return;
+    const schools = f137GetSchools().filter(s => s.name !== select.value);
+    localStorage.setItem(F137_SCHOOLS_KEY, JSON.stringify(schools));
+    f137LoadSchools();
+    f137El("f137_schoolAddress").value = "";
+    f137UpdatePreview();
+    f137Save();
+}
+
+function f137DeleteSelectedCourse() {
+    const select = f137El("f137_courseSelect");
+    if (!select.value) return;
+    if (!confirm("Remove this course from the saved dropdown?")) return;
+    const courses = f137GetCourses().filter(c => c !== select.value);
+    localStorage.setItem(F137_COURSES_KEY, JSON.stringify(courses));
+    f137LoadCourses();
+    f137Save();
+}
+
+function f137Save() {
+    const data = {
+        students: f137Students,
+        school: f137El("f137_schoolSelect")?.value || "",
+        schoolAddress: f137El("f137_schoolAddress")?.value || "",
+        studentName: f137El("f137_studentName")?.value || "",
+        course: f137El("f137_courseSelect")?.value || "",
+        schoolYear: f137El("f137_schoolYear")?.value || "",
+        yearSection: f137El("f137_yearSection")?.value || "",
+        requestDate: f137El("f137_requestDate")?.value || "",
+        firstRequest: !!f137El("f137_firstRequest")?.checked,
+        secondRequest: !!f137El("f137_secondRequest")?.checked,
+        urgentRequest: !!f137El("f137_urgentRequest")?.checked,
+        bearerRequest: !!f137El("f137_bearerRequest")?.checked,
+        copyForASCB: !!f137El("f137_copyForASCB")?.checked
+    };
+    localStorage.setItem(F137_FORM_KEY, JSON.stringify(data));
+}
+
+function f137LoadSaved() {
+    try {
+        const saved = localStorage.getItem(F137_FORM_KEY);
+        if (!saved) {
+            f137RenderStudentList();
+            return;
+        }
+        const data = JSON.parse(saved);
+        f137Students = Array.isArray(data.students) ? data.students : [];
+        f137LoadSchools(data.school || "");
+        f137El("f137_schoolAddress").value = data.schoolAddress || f137El("f137_schoolAddress").value;
+        f137LoadCourses(data.course || "");
+        f137El("f137_studentName").value = data.studentName || "";
+        f137El("f137_schoolYear").value = data.schoolYear || "";
+        f137El("f137_yearSection").value = data.yearSection || "";
+        f137El("f137_requestDate").value = data.requestDate || f137Today();
+        f137El("f137_firstRequest").checked = !!data.firstRequest;
+        f137El("f137_secondRequest").checked = !!data.secondRequest;
+        f137El("f137_urgentRequest").checked = !!data.urgentRequest;
+        f137El("f137_bearerRequest").checked = !!data.bearerRequest;
+        f137El("f137_copyForASCB").checked = !!data.copyForASCB;
+        f137RenderStudentList();
+    } catch (error) {
+        console.error("Form 137 load error:", error);
+    }
+}
+
+function clearForm137() {
+    if (!confirm("Clear all Form 137 request information?")) return;
+    f137Students = [];
+    ["f137_studentName","f137_schoolYear","f137_yearSection","f137_schoolAddress"].forEach(id => {
+        f137El(id).value = "";
+    });
+    f137El("f137_courseSelect").value = "";
+    f137El("f137_schoolSelect").value = "";
+    f137El("f137_requestDate").value = f137Today();
+    ["f137_firstRequest","f137_secondRequest","f137_urgentRequest","f137_bearerRequest","f137_copyForASCB"].forEach(id => {
+        f137El(id).checked = false;
+    });
+    f137RenderStudentList();
+    f137UpdatePreview();
+    f137Save();
+}
+
+function printForm137() {
+    f137UpdatePreview();
+
+    const area = f137El("f137PrintArea");
+    const modal = f137El("form137Modal");
+
+    if (!area || !modal) {
+        alert("Form 137 print area is not available.");
+        return;
+    }
+
+    if (!f137Students.length) {
+        alert("Mag-add muna ng kahit isang student bago mag-print.");
+        return;
+    }
+
+    if (!f137El("f137_schoolSelect").value) {
+        alert("Pumili muna ng receiving school bago mag-print.");
+        return;
+    }
+
+    /* Keep Form 137 in the document and let the print stylesheet
+       hide everything except #f137PrintArea. No popup, iframe,
+       or new window is used. */
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("f137-printing");
+
+    const doPrint = () => {
+        window.print();
+        setTimeout(() => {
+            document.body.classList.remove("f137-printing");
+        }, 1000);
+    };
+
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => requestAnimationFrame(() => requestAnimationFrame(doPrint)));
+    } else {
+        requestAnimationFrame(() => requestAnimationFrame(doPrint));
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    f137Setup();
+});
