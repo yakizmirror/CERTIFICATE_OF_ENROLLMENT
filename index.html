@@ -364,57 +364,30 @@
                     </h2>
 
                     <p>
-                        Select subjects from the prospectus or add your own subject.
+                        Load the full term from the prospectus using the Year Level &amp; Trimester above, or add a subject yourself.
                     </p>
 
                 </div>
 
-                                <button
-                    type="button"
-                    class="btn btn-add"
-                    onclick="addSubjectRow()"
-                >
-                    + Add Subject
-                </button>
+                <div class="subjects-header-actions">
 
-            </div>
+                    <button
+                        type="button"
+                        class="btn btn-outline"
+                        onclick="addSubjectsForTerm()"
+                    >
+                        ⬇ Load Subjects for Term
+                    </button>
 
+                    <button
+                        type="button"
+                        class="btn btn-add"
+                        onclick="addSubjectRow()"
+                    >
+                        + Add Subject
+                    </button>
 
-            <!-- =============================================
-                 QUICK ADD BY TERM
-                 For irregular students — add subjects from
-                 any Year Level / Trimester combination, one
-                 term at a time.
-            ============================================== -->
-
-            <div class="quick-add-term">
-
-                <label>Add subjects from:</label>
-
-                <select id="quickAddYear">
-                    <option value="">Year Level</option>
-                    <option>1st Year</option>
-                    <option>2nd Year</option>
-                    <option>3rd Year</option>
-                    <option>4th Year</option>
-                </select>
-
-                <select id="quickAddTrimester">
-                    <option value="">Trimester</option>
-                    <option>1st Trimester</option>
-                    <option>2nd Trimester</option>
-                    <option>3rd Trimester</option>
-                </select>
-
-                <button
-                    type="button"
-                    class="btn btn-add"
-                    onclick="addSubjectsForTerm()"
-                >
-                    Submit Subjects for this Term
-                </button>
-
-            </div>
+                </div>
 
             </div>
 
