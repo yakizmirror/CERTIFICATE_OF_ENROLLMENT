@@ -1898,7 +1898,7 @@ function changeCertificateType() {
                 ______________________________
             </strong>,
 
-            Academic Year
+            <strong>Academic Year</strong>
 
             <strong id="previewAcademicYear">
                 ____________
@@ -1934,7 +1934,7 @@ function changeCertificateType() {
                 ______________________________
             </strong>,
 
-            Academic Year
+            <strong>Academic Year</strong>
 
             <strong id="previewAcademicYear">
                 ____________
