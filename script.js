@@ -2396,7 +2396,6 @@ function closeModal() {
     if (modal) {
 
         modal.classList.remove("active");
-        modal.style.display = "none";
     }
 }
 
