@@ -1514,30 +1514,13 @@ function loadSubjects() {
 
 
 /* =========================================================
-   HANDLE FILTER CHANGE
-   Triggered when Program, Year Level, or Trimester changes.
-   Refreshes dropdowns AND auto-fills the subject table with
-   the matching prospectus subjects for that term.
-========================================================= */
-
-function handleFilterChange() {
-
-    loadSubjects();
-
-    autoPopulateSubjectsForTerm();
-}
-
-
-/* =========================================================
-   AUTO-POPULATE SUBJECTS FOR THE SELECTED TERM
-========================================================= */
-
-/* =========================================================
-   QUICK ADD SUBJECTS BY TERM
-   For irregular students — appends the subjects of a chosen
-   Year Level + Trimester to the existing table, without
-   clearing what's already there. Skips subjects already
-   added (matched by course code) to avoid duplicates.
+   ADD SUBJECTS FOR TERM
+   Uses the Year Level + Trimester already selected in
+   STUDENT INFORMATION (no separate/duplicate selectors) and
+   appends that term's prospectus subjects to the table,
+   without clearing what's already there. Skips subjects
+   already added (matched by course code) to avoid duplicates,
+   and clears out the single unused starter row if present.
 ========================================================= */
 
 function addSubjectsForTerm() {
@@ -1546,10 +1529,10 @@ function addSubjectsForTerm() {
         document.getElementById("program").value;
 
     const year =
-        document.getElementById("quickAddYear").value;
+        document.getElementById("yearLevel").value;
 
     const trimester =
-        document.getElementById("quickAddTrimester").value;
+        document.getElementById("trimester").value;
 
     if (!program) {
         alert("Pumili muna ng Course / Program.");
@@ -1557,7 +1540,7 @@ function addSubjectsForTerm() {
     }
 
     if (!year || !trimester) {
-        alert("Pumili ng Year Level at Trimester na idadagdag.");
+        alert("Pumili muna ng Year Level at Trimester sa Student Information bago mag-load ng subjects.");
         return;
     }
 
@@ -1593,6 +1576,12 @@ function addSubjectsForTerm() {
         }
     );
 
+    /* If the table only has the untouched starter row (blank,
+       nothing selected, nothing typed), drop it first so the
+       loaded term doesn't leave a stray empty row behind. */
+
+    removeUnusedStarterRow();
+
     let addedCount = 0;
 
     group.subjects.forEach(
@@ -1613,6 +1602,39 @@ function addSubjectsForTerm() {
     if (addedCount === 0) {
 
         alert("Naidagdag na lahat ng subjects para sa term na ito.");
+    }
+}
+
+
+/* =========================================================
+   REMOVE UNUSED STARTER ROW
+   Helper — if the subject table has exactly one row and it's
+   completely empty (no subject picked, no custom code, no
+   description typed), remove it. Keeps the table tidy when
+   loading a term into a freshly-opened form.
+========================================================= */
+
+function removeUnusedStarterRow() {
+
+    const rows =
+        document.querySelectorAll(".subject-row");
+
+    if (rows.length !== 1) {
+        return;
+    }
+
+    const row = rows[0];
+
+    const select = row.querySelector(".subject-select");
+    const description = row.querySelector(".subject-description");
+
+    const isEmpty =
+        !row.dataset.customCode &&
+        (!select || !select.value) &&
+        (!description || !description.value.trim());
+
+    if (isEmpty) {
+        row.remove();
     }
 }
 
@@ -1995,8 +2017,7 @@ function generateCertificate() {
     document.getElementById("previewProgram").textContent = programNames[program];
     document.getElementById("previewCourse").textContent = getShortProgram(program);
     document.getElementById("previewYearLevel").textContent = yearLevel;
-    document.getElementById("previewTrimester").textContent =
-        `${trimester}, AY ${academicYear}`;
+    document.getElementById("previewTrimester").textContent = trimester;
     document.getElementById("previewTerm").textContent =
         `${trimester}, AY ${academicYear}`;
     document.getElementById("previewAcademicYear").textContent = academicYear;
