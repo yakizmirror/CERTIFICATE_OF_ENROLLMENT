@@ -433,7 +433,7 @@ body {
     border: 1px solid #d4dde4;
     border-radius: var(--r-sm);
 
-    font-size: 11px;
+    font-size: 9.2px;
     box-sizing: border-box;
 
     box-shadow: var(--shadow-sm);
@@ -441,7 +441,7 @@ body {
 
 .subject-input-table th {
     padding:
-        11px 9px;
+        8.2px 1px;
 
     color: #ffffff;
 
@@ -1187,21 +1187,21 @@ body {
         sans-serif;
 
     font-size:
-        8.5px;
+        12px;
 
     background:
-        rgba(255, 255, 255, 0.94);
+        transparent;
 }
 
 .certificate-table th {
     padding:
-        5px;
+        6px;
 
     color:
         #ffffff;
 
     background:
-        var(--navy);
+        #0c3557;
 
     border:
         1px solid #0c3557;
@@ -1213,10 +1213,10 @@ body {
         middle !important;
 
     font-size:
-        8px;
+        11px;
 
     font-weight:
-        600;
+        700;
 
     text-transform:
         uppercase;
@@ -1227,16 +1227,16 @@ body {
 
 .certificate-table td {
     height:
-        19px;
+        22px;
 
     padding:
-        3px 5px;
+        4px 6px;
 
     color:
         #20272d;
 
     background:
-        rgba(255, 255, 255, 0.92);
+        transparent;
 
     border:
         1px solid #aeb8c1;
@@ -1246,11 +1246,14 @@ body {
 
     vertical-align:
         middle !important;
+
+    font-size:
+        12px;
 }
 
 .certificate-table tbody tr:nth-child(even) td {
     background:
-        rgba(247, 249, 251, 0.90);
+        transparent;
 }
 
 .certificate-table td:first-child {
@@ -1271,12 +1274,22 @@ body {
     width: auto;
 }
 
+.certificate-table td:nth-child(2) {
+    font-size: 10px;
+}
+
+@media print {
+    .certificate-table td:nth-child(2) {
+        font-size: 10px !important;
+    }
+}
+
 .certificate-table tfoot td {
     height:
-        21px;
+        24px;
 
     background:
-        #eef3f7;
+        transparent;
 
     color:
         var(--navy);
@@ -1284,11 +1297,28 @@ body {
     font-weight:
         700;
 
+    font-size:
+        13px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.2px;
+
     text-align:
         center !important;
 
     vertical-align:
         middle !important;
+}
+
+.certificate-table tfoot td.cert-total-label {
+    text-align:
+        right !important;
+
+    padding-right:
+        14px !important;
 }
 
 
@@ -1480,7 +1510,7 @@ body {
     color: #333333;
 
     font-family: Arial, sans-serif;
-    font-size: 10px;
+    font-size: 8.2px;
     line-height: 1.25;
 
     text-align: center; /* CENTER ANG SCHOOL SEAL */
@@ -1930,6 +1960,14 @@ body {
 
         vertical-align:
             middle !important;
+    }
+
+    .certificate-table tfoot td.cert-total-label {
+        text-align:
+            right !important;
+
+        padding-right:
+            14px !important;
     }
 }
 /* =========================================================
