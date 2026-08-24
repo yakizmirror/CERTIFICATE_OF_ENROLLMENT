@@ -2748,40 +2748,24 @@ body {
 }
 
 .f137-signature {
-
     margin-top: .55in;
-
     margin-left: 4.7in;
-
     font-family: "Libre Baskerville", Georgia, serif;
-
     font-size: 9.5px;
-
     line-height: 1.6;
-
     text-align: center;
-
+    
+    
 }
 
 .f137-signature-space {
-
     height: .45in;
-
-}
-
-/* Underline sa name lang */
-.f137-signature strong {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
+    
 }
 
 .f137-signature span {
-
     display: block;
-
     font-size: 8.5px;
-
 }
 
 .f137-seal-warning {
