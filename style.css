@@ -1608,7 +1608,6 @@ body {
 }
 
 .signature-line {
-    text-decoration: underline;
     padding-bottom: 2px;
     border-bottom: 1px solid #30353a;
     color: #111111;
