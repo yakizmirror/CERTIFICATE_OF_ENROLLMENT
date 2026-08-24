@@ -2269,6 +2269,7 @@ body {
     color: #64748b;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    
 }
 
 .certificate-type-selector select {
@@ -2279,7 +2280,7 @@ body {
     background-color: rgba(255, 255, 255, 0.10);
     color: #ffffff;
     font-family: "Poppins", sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     cursor: pointer;
     outline: none;
@@ -2361,11 +2362,11 @@ body {
 
 .f137-window {
     position: absolute;
-    inset: 18px;
+    inset: 80px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 14px;
+    border-radius: 10px;
     background: #f4f7fa;
     box-shadow: 0 24px 70px rgba(5, 25, 42, .35);
     animation: modal-rise 0.28s var(--ease);
@@ -2713,30 +2714,30 @@ body {
 .f137-date {
     margin-bottom: .22in;
     text-align: right;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .f137-recipient {
     margin-bottom: .20in;
-    font-size: 10px;
+    font-size: 16px;
     line-height: 1.55;
 }
 
 .f137-salutation {
     margin-bottom: .16in;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .f137-letter-text {
     margin: 0 0 .16in;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.75;
     text-align: justify;
     text-indent: 35px;
 }
 .f137-letter-text-we {
     margin: 0 0 .16in;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.75;
     text-align: justify;
 }
@@ -2747,7 +2748,7 @@ body {
     border-collapse: collapse;
     table-layout: fixed;
     font-family: "Poppins", Arial, sans-serif;
-    font-size: 8px;
+    font-size: 10px;
 }
 
 .f137-student-table th,
@@ -2761,7 +2762,7 @@ body {
 .f137-student-table th {
     color: #fff;
     background: var(--navy);
-    font-size: 7.5px;
+    font-size: 10.2px;
     letter-spacing: .2px;
 }
 
@@ -2780,7 +2781,7 @@ body {
     gap: 8px 18px;
     margin-top: .10in;
     font-family: "Poppins", Arial, sans-serif;
-    font-size: 8.5px;
+    font-size: 10px;
 }
 
 .f137-option-wide {
@@ -2830,7 +2831,7 @@ body {
     position: absolute !important;
 
     left: .58in !important;
-    bottom: .20in !important;
+    bottom: .90in !important;
 
     transform: translateY(150px) !important;
 
