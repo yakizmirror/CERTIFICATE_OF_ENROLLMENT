@@ -426,6 +426,51 @@ body {
 
 
 /* =========================================================
+   SUBJECTS HEADER — refined layout
+   Top-aligns the heading/description against the action
+   buttons instead of vertically centering them (which looked
+   cramped once the description wraps to two lines), and keeps
+   the description from stretching edge-to-edge next to the
+   buttons.
+   ========================================================= */
+
+.subjects-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    row-gap: 12px;
+}
+
+.subjects-header-text {
+    flex: 1 1 380px;
+    min-width: 240px;
+    max-width: 560px;
+
+    padding-top: 1px;
+}
+
+.subjects-header p {
+    color: #5d6b78;
+
+    line-height: 1.5;
+}
+
+.subjects-header-actions {
+    flex-shrink: 0;
+
+    padding-top: 1px;
+}
+
+.btn-icon {
+    display: inline-block;
+
+    margin-right: 2px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
    FORM
    ========================================================= */
 
@@ -1413,6 +1458,10 @@ body {
     width: 0.65in;
 }
 
+.grades-column {
+    width: 0.75in;
+}
+
 .certificate-table th:nth-child(2),
 .certificate-table td:nth-child(2) {
     width: auto;
@@ -1608,6 +1657,7 @@ body {
 }
 
 .signature-line {
+    text-decoration: underline;
     padding-bottom: 2px;
     border-bottom: 1px solid #30353a;
     color: #111111;
@@ -1813,6 +1863,15 @@ body {
     .subjects-header .btn {
         width:
             100%;
+    }
+
+    .subjects-header-text {
+        flex-basis: auto;
+        max-width: 100%;
+    }
+
+    .subjects-header-actions {
+        width: 100%;
     }
 
     .toolbar-buttons {
