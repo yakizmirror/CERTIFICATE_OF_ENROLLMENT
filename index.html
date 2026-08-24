@@ -49,6 +49,7 @@
                 <select id="certificateType" onchange="changeCertificateType()">
                     <option value="ENROLLMENT">Certificate of Enrollment</option>
                     <option value="REGISTRATION">Certificate of Registration</option>
+                    <option value="GRADE_EVALUATION">Grade Evaluation</option>
                 </select>
             </div>
             <button
@@ -375,14 +376,14 @@
 
             <div class="subjects-header">
 
-                <div>
+                <div class="subjects-header-text">
 
                     <h2>
                         SUBJECTS
                     </h2>
 
                     <p>
-                        Load the full term from the prospectus using the Year Level &amp; Trimester above, or add a subject yourself.
+                        Load subjects from the prospectus, or add them yourself. Type in each subject's grade manually — used when generating a Grade Evaluation.
                     </p>
 
                 </div>
@@ -394,7 +395,7 @@
                         class="btn btn-outline"
                         onclick="addSubjectsForTerm()"
                     >
-                        ⬇ Load Subjects for Term
+                        <span class="btn-icon">⬇</span> Load Subjects for Term
                     </button>
 
                     <button
@@ -402,7 +403,7 @@
                         class="btn btn-add"
                         onclick="addSubjectRow()"
                     >
-                        + Add Subject
+                        <span class="btn-icon">+</span> Add Subject
                     </button>
 
                 </div>
@@ -417,12 +418,16 @@
                         <thead>
                             <tr>
 
-                                <th width="17%">
+                                <th width="15%">
                                     Course Code
                                 </th>
 
-                                <th width="66%">
+                                <th width="50%">
                                     Course Description
+                                </th>
+
+                                <th width="13%">
+                                    Grade
                                 </th>
 
                                 <th width="10%">
@@ -446,7 +451,7 @@
                             <tr>
 
                                 <td
-                                    colspan="2"
+                                    colspan="3"
                                     class="total-label"
                                 >
                                     TOTAL UNITS
@@ -673,7 +678,7 @@
 
                 <p class="summary-title">
 
-                    Below is the Summary of the Student's Enrollment:
+                    <span id="summaryTitleText">Below is the Summary of the Student's Enrollment:</span>
 
                 </p>
 
@@ -781,7 +786,7 @@
 
 
 
-                    <div class="detail-row">
+                    <div class="detail-row" id="detailRowEnrollmentDate">
 
                         <span class="detail-label">
                             Date of Enrollment
@@ -800,7 +805,7 @@
 
 
 
-                    <div class="detail-row">
+                    <div class="detail-row" id="detailRowStatus">
 
                         <span class="detail-label">
                             Status
@@ -831,7 +836,7 @@
 
                     <thead>
 
-                        <tr>
+                        <tr id="certTableHeadRow">
 
                             <th class="code-column">
                                 Course Code
@@ -861,7 +866,7 @@
 
                         <tr>
 
-                            <td colspan="2" class="cert-total-label">
+                            <td colspan="2" class="cert-total-label" id="certTotalLabelCell">
                                 TOTAL UNITS
                             </td>
 
@@ -882,9 +887,9 @@
                      CERTIFICATION
                 ================================================== -->
 
-                <div class="certification-text">
+                <div class="certification-text" id="certificationTextBlock">
 
-                    <h2>
+                    <h2 id="certificationTextContent">
 
                         This certification is issued upon the request
                         of the student for whatever lawful purpose it
@@ -894,7 +899,7 @@
 
                 </div>
 
-                <div class="Issued">
+                <div class="Issued" id="issuedDateBlock">
                 <h2>
 
                         Issued this
