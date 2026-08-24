@@ -1690,6 +1690,10 @@ function addSubjectRow(subjectData = null) {
         </td>
 
         <td>
+            <input type="text" class="subject-grade" placeholder="e.g. 1.5">
+        </td>
+
+        <td>
             <input type="number" class="subject-units" min="0" step="1" value="0" oninput="calculateTotalUnits()">
         </td>
 
@@ -1869,7 +1873,122 @@ function changeCertificateType() {
     const intro =
         document.getElementById("certificateIntro");
 
-    if (certificateType === "REGISTRATION") {
+    const summaryTitleText =
+        document.getElementById("summaryTitleText");
+
+    const certificationTextContent =
+        document.getElementById("certificationTextContent");
+
+    const headRow =
+        document.getElementById("certTableHeadRow");
+
+    const totalLabelCell =
+        document.getElementById("certTotalLabelCell");
+
+    const certificationTextBlock =
+        document.getElementById("certificationTextBlock");
+
+    const issuedDateBlock =
+        document.getElementById("issuedDateBlock");
+
+    const detailRowEnrollmentDate =
+        document.getElementById("detailRowEnrollmentDate");
+
+    const detailRowStatus =
+        document.getElementById("detailRowStatus");
+
+    const isGradeEvaluation =
+        certificateType === "GRADE_EVALUATION";
+
+
+    /* ===================================== GRADE EVALUATION — HIDE/SHOW BLOCKS
+       Grade Evaluation drops the intro sentence, the certification
+       text, the "Issued this..." line, and the Date of Enrollment /
+       Status rows — everything else stays the same as Enrollment
+       and Registration. */
+
+    intro.style.display = isGradeEvaluation ? "none" : "";
+    certificationTextBlock.style.display = isGradeEvaluation ? "none" : "";
+    issuedDateBlock.style.display = isGradeEvaluation ? "none" : "";
+    detailRowEnrollmentDate.style.display = isGradeEvaluation ? "none" : "";
+    detailRowStatus.style.display = isGradeEvaluation ? "none" : "";
+
+
+    /* ===================================== SUBJECT TABLE HEAD */
+
+    if (isGradeEvaluation) {
+
+        headRow.innerHTML = `
+            <th class="code-column">Course Code</th>
+            <th>Course Description</th>
+            <th class="grades-column">Grades</th>
+            <th class="units-column">Units</th>
+        `;
+
+    } else {
+
+        headRow.innerHTML = `
+            <th class="code-column">Course Code</th>
+            <th>Course Description</th>
+            <th class="units-column">Units</th>
+        `;
+    }
+
+    totalLabelCell.colSpan = isGradeEvaluation ? 3 : 2;
+
+
+    /* ===================================== SUMMARY & CERTIFICATION TEXT */
+
+    summaryTitleText.textContent =
+        isGradeEvaluation
+            ? "Below is the Summary of the Student's Grades:"
+            : "Below is the Summary of the Student's Enrollment:";
+
+    certificationTextContent.textContent =
+        isGradeEvaluation
+            ? "This Grade Evaluation is issued upon the request of the student for whatever lawful purpose it may serve."
+            : "This certification is issued upon the request of the student for whatever lawful purpose it may serve.";
+
+
+    /* ===================================== TITLE & INTRO */
+
+    if (isGradeEvaluation) {
+
+        title.textContent = "GRADE EVALUATION";
+
+        intro.innerHTML = `
+            This is to certify that
+
+            <strong id="previewStudentName">
+                ______________________________
+            </strong>
+
+            is officially enrolled at
+
+            <strong>
+                Andres Soriano Colleges of Bislig, Inc.
+            </strong>
+
+            in the
+
+            <strong id="previewProgram">
+                ______________________________
+            </strong>
+
+            program, and has earned the following grades for the
+
+            <strong id="previewTrimester">
+                ______________________________
+            </strong>,
+
+            <strong>Academic Year</strong>
+
+            <strong id="previewAcademicYear">
+                ____________
+            </strong>.
+        `;
+
+    } else if (certificateType === "REGISTRATION") {
 
         title.textContent = "CERTIFICATE OF REGISTRATION";
 
@@ -2008,6 +2127,19 @@ function generateCertificate() {
         return;
     }
 
+    if (certificateType === "GRADE_EVALUATION") {
+
+        const hasGrade =
+            [...document.querySelectorAll(".subject-grade")].some(
+                input => input.value.trim() !== ""
+            );
+
+        if (!hasGrade) {
+            alert("Please type in at least one subject's grade before generating the Grade Evaluation.");
+            return;
+        }
+    }
+
 
     /* ========================================== BASIC INFO */
 
@@ -2038,6 +2170,9 @@ function generateCertificate() {
 
     previewBody.innerHTML = "";
 
+    const isGradeEvaluation =
+        certificateType === "GRADE_EVALUATION";
+
     let totalUnits = 0;
 
     rows.forEach(
@@ -2045,6 +2180,7 @@ function generateCertificate() {
 
             const select = row.querySelector(".subject-select");
             const description = row.querySelector(".subject-description");
+            const grade = row.querySelector(".subject-grade");
             const units = row.querySelector(".subject-units");
 
             if (
@@ -2081,11 +2217,18 @@ function generateCertificate() {
             const tr = document.createElement("tr");
 
             tr.innerHTML =
-                `
-                <td>${escapeHTML(code)}</td>
-                <td>${escapeHTML(description.value)}</td>
-                <td>${unitValue}</td>
-                `;
+                isGradeEvaluation
+                    ? `
+                        <td>${escapeHTML(code)}</td>
+                        <td>${escapeHTML(description.value)}</td>
+                        <td>${escapeHTML(grade ? grade.value.trim() : "")}</td>
+                        <td>${unitValue}</td>
+                        `
+                    : `
+                        <td>${escapeHTML(code)}</td>
+                        <td>${escapeHTML(description.value)}</td>
+                        <td>${unitValue}</td>
+                        `;
 
             previewBody.appendChild(tr);
         }
