@@ -1609,20 +1609,11 @@ body {
 
 .signature-line {
     text-decoration: underline;
-    padding-bottom:
-        2px;
-
-    border-bottom:
-        1px solid #30353a;
-
-    color:
-        #111111;
-
-    font-size:
-        9.2px;
-
-    font-weight:
-        700;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #30353a;
+    color: #111111;
+    font-size: 9.2px;
+    font-weight: 700;
 }
 
 .signature-position {
