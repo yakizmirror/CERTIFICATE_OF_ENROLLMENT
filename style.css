@@ -399,6 +399,10 @@ body {
     letter-spacing: 0.3px;
 }
 
+.card-title h2 {
+    font-size: 18px;
+}
+
 .card-title h2::before,
 .subjects-header h2::before {
     content: "";
@@ -907,7 +911,36 @@ body {
     width: 100%;
     z-index: 5;
 
-    padding: 0.20in 0.55in 0.18in;
+    padding: 0;
+
+    background: #ffffff;
+}
+
+/* =========================================================
+   LETTERHEAD BANNER IMAGE
+   Full-width image fitted to the paper (8.5in)
+========================================================= */
+
+.letterhead-banner {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+}
+
+/* =========================================================
+   SUBTITLE STRIP (OFFICE + CONTACT DETAILS)
+   Sits directly under the letterhead banner
+========================================================= */
+
+.header-subtitle {
+    text-align: center;
+
+    margin-top: -0.62in;
+
+    padding: 0 0.55in 0.14in;
 
     background:
         linear-gradient(
@@ -915,104 +948,6 @@ body {
             #ffffff 0%,
             #fbfcfe 100%
         );
-
-    border-bottom: 3px solid var(--navy);
-
-    box-shadow:
-        0 1px 0 var(--gold);
-}
-
-.header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 0.28in;
-}
-
-/* =========================================================
-   BIGGER LOGO
-========================================================= */
-
-.header-logo {
-    display: block;
-
-    width: 1.35in;
-    height: 1.35in;
-
-    object-fit: contain;
-    object-position: center;
-
-    flex-shrink: 0;
-
-    filter:
-        drop-shadow(
-            0 2px 4px rgba(5, 10, 10, 0.18)
-        );
-}
-
-/* =========================================================
-   HEADER TEXT
-========================================================= */
-
-.header-text {
-    flex: 1;
-
-    text-align: center;
-
-    padding-right: 0.01in;
-}
-
-/* =========================================================
-   SCHOOL NAME
-========================================================= */
-
-.header-school-name {
-    margin: 0 0 5px;
-
-    color: var(--navy);
-
-    font-family:
-        "Libre Baskerville",
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 34px;
-
-    line-height: 1.22;
-
-    font-weight: 700;
-
-    letter-spacing: 0.65px;
-
-    text-transform: uppercase;
-
-    text-shadow:
-        0 1.5px 1 rgba(18, 62, 103, 1.18);
-}
-
-/* =========================================================
-   ADDRESS
-========================================================= */
-
-.header-address {
-    margin: 2px 0 0;
-
-    color: #3d4a55;
-
-    font-family:
-        "Poppins",
-        Arial,
-        sans-serif;
-
-    font-size: 12px;
-
-    line-height: 1.4;
-
-    font-weight: 500;
-
-    letter-spacing: 0.25px;
 }
 
 /* =========================================================
@@ -1022,7 +957,7 @@ body {
 .header-office {
     margin: 4px 0 0;
 
-    color: var(--gold);
+    color: var(--navy);
 
     font-family:
         "Poppins",
@@ -1345,8 +1280,8 @@ body {
 }
 
 .status-text {
-    color:
-        var(--success);
+    color:black;
+        
 
     font-weight:
         700;
@@ -1387,13 +1322,13 @@ body {
         6px;
 
     color:
-        #ffffff;
+        #000000;
 
     background:
-        #0c3557;
+        transparent;
 
     border:
-        1px solid #0c3557;
+        1px solid #000000;
 
     text-align:
         center !important;
@@ -1428,7 +1363,7 @@ body {
         transparent;
 
     border:
-        1px solid #aeb8c1;
+        1px solid #000000;
 
     text-align:
         center !important;
@@ -1445,9 +1380,9 @@ body {
         transparent;
 }
 
-.certificate-table td:first-child {
+.certificate-table tbody td:first-child {
     font-weight:
-        600;
+        400;
 }
 
 .code-column {
@@ -1485,7 +1420,7 @@ body {
         transparent;
 
     color:
-        var(--navy);
+        #000000;
 
     font-weight:
         700;
@@ -1567,7 +1502,8 @@ body {
 
     line-height:
         1.55;
-    
+    text-indent: 0.5in;
+
     text-align:
         justify;
 }
@@ -2004,22 +1940,13 @@ body {
 
     @media print {
 
-    #printArea .header-logo {
+    #printArea .letterhead-banner {
         display: block !important;
 
-        width: 1.35in !important;
-        height: 1.35in !important;
+        width: 100% !important;
+        height: auto !important;
 
         object-fit: contain !important;
-    }
-
-    #printArea .header-school-name {
-        font-size: 34px !important;
-        line-height: 1.25 !important;
-    }
-
-    #printArea .header-address {
-        font-size: 12px !important;
     }
 
     #printArea .header-office {
@@ -3134,9 +3061,11 @@ body {
         width: 100% !important;
     }
 
-    #f137PrintArea .header-logo {
+    #f137PrintArea .letterhead-banner {
         display: block !important;
         visibility: visible !important;
+        width: 100% !important;
+        height: auto !important;
     }
 
     #f137PrintArea .f137-watermark {
