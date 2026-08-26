@@ -1855,6 +1855,39 @@ function formatDate(dateString) {
 
 
 /* =========================================================
+   ORDINAL DAY SUFFIX (1st, 2nd, 3rd, 4th... 25th...)
+========================================================= */
+
+function getOrdinalSuffix(day) {
+
+    const remainder10 = day % 10;
+    const remainder100 = day % 100;
+
+    if (remainder10 === 1 && remainder100 !== 11) return "st";
+    if (remainder10 === 2 && remainder100 !== 12) return "nd";
+    if (remainder10 === 3 && remainder100 !== 13) return "rd";
+
+    return "th";
+}
+
+function formatDateOrdinal(dateString) {
+
+    if (!dateString) {
+
+        return "________________";
+    }
+
+    const date = new Date(dateString + "T00:00:00");
+
+    const month = date.toLocaleDateString("en-US", { month: "long" });
+    const day = date.getDate();
+    const year = date.getFullYear();
+
+    return `${month} ${day}${getOrdinalSuffix(day)}, ${year}`;
+}
+
+
+/* =========================================================
    GENERATE CERTIFICATE
 ========================================================= */
 
@@ -1912,6 +1945,10 @@ function changeCertificateType() {
     issuedDateBlock.style.display = isGradeEvaluation ? "none" : "";
     detailRowEnrollmentDate.style.display = isGradeEvaluation ? "none" : "";
     detailRowStatus.style.display = isGradeEvaluation ? "none" : "";
+
+    document
+        .querySelector(".signature-area")
+        .classList.toggle("signature-area--grade-eval", isGradeEvaluation);
 
 
     /* ===================================== SUBJECT TABLE HEAD */
@@ -2240,7 +2277,7 @@ function generateCertificate() {
     /* ========================================== ISSUED DATE */
 
     document.getElementById("previewIssuedDate").textContent =
-        formatDate(new Date().toISOString().split("T")[0]);
+        formatDateOrdinal(new Date().toISOString().split("T")[0]);
 
 
     /* ========================================== OPEN MODAL */
