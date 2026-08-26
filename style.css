@@ -723,7 +723,7 @@ body {
     color:
         var(--navy);
 
-    font-size: 11px !important;
+    font-size: 12px !important;
 }
 
 .total-value {
@@ -732,7 +732,7 @@ body {
     color:
         var(--navy);
 
-    font-size: 14px !important;
+    font-size: 12px !important;
 }
 
 
@@ -960,9 +960,9 @@ body {
     color: var(--navy);
 
     font-family:
-        "Poppins",
-        Arial,
-        sans-serif;
+        "Times New Roman",
+        Times,
+        serif;
 
     font-size: 18px;
 
@@ -985,9 +985,9 @@ body {
     color: #667482;
 
     font-family:
-        "Poppins",
-        Arial,
-        sans-serif;
+        "Times New Roman",
+        Times,
+        serif;
 
     font-size: 8.8px;
 
@@ -1110,15 +1110,14 @@ body {
         0.15in;
 
     color:
-        var(--navy);
+        #000000;
 
     text-align:
         center;
 
     font-family:
-        "Libre Baskerville",
-        Georgia,
         "Times New Roman",
+        Times,
         serif;
 
     font-size:
@@ -1171,13 +1170,12 @@ body {
         35px;
 
     font-family:
-        "Libre Baskerville",
-        Georgia,
         "Times New Roman",
+        Times,
         serif;
 
     font-size:
-        14px;
+        13.5px;
 
     line-height:
         1.7;
@@ -1198,20 +1196,19 @@ body {
 
 .summary-title {
     margin:
-        0 0 0.07in;
+        0 0 0.07in 0.55in;
 
     color:
         #252b31;
 
     font-family:
-        "Libre Baskerville",
-        Georgia,
         "Times New Roman",
+        Times,
         serif;
     text-decoration: underline;
 
     font-size:
-        9.6px;
+        12px;
 
     font-weight:
         700;
@@ -1233,8 +1230,10 @@ body {
 ========================================================= */
 
 .student-details {
-    margin-left: 0.20in !important;
-    margin-right: 0.20in !important;
+    width: 6.2in !important;
+    max-width: 6.2in !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 
     background: transparent !important;
     border: none !important;
@@ -1256,12 +1255,11 @@ body {
     color: #22282e;
 
     font-family:
-        "Libre Baskerville",
-        Georgia,
         "Times New Roman",
+        Times,
         serif;
 
-    font-size: 9.4px;
+    font-size: 12px;
 }
 
 .detail-label {
@@ -1294,7 +1292,10 @@ body {
 
 .certificate-table {
     width:
-        100%;
+        6.2in;
+
+    max-width:
+        6.2in;
 
     border-collapse:
         collapse;
@@ -1303,12 +1304,12 @@ body {
         fixed;
 
     margin:
-        0.08in 0 0;
+        0.08in auto 0;
 
     font-family:
-        "Poppins",
-        Arial,
-        sans-serif;
+        "Times New Roman",
+        Times,
+        serif;
 
     font-size:
         12px;
@@ -1319,7 +1320,7 @@ body {
 
 .certificate-table th {
     padding:
-        6px;
+        4px;
 
     color:
         #000000;
@@ -1328,7 +1329,7 @@ body {
         transparent;
 
     border:
-        1px solid #000000;
+        1px solid transparent;
 
     text-align:
         center !important;
@@ -1337,7 +1338,7 @@ body {
         middle !important;
 
     font-size:
-        11px;
+        12px;
 
     font-weight:
         700;
@@ -1351,10 +1352,10 @@ body {
 
 .certificate-table td {
     height:
-        22px;
+        18px;
 
     padding:
-        4px 6px;
+        3px 5px;
 
     color:
         #20272d;
@@ -1363,7 +1364,7 @@ body {
         transparent;
 
     border:
-        1px solid #000000;
+        1px solid transparent;
 
     text-align:
         center !important;
@@ -1383,14 +1384,28 @@ body {
 .certificate-table tbody td:first-child {
     font-weight:
         400;
+
+    text-align:
+        center !important;
+
+    white-space:
+        nowrap !important;
+
+    overflow:
+        visible;
+}
+
+.certificate-table th:first-child {
+    text-align:
+        center !important;
 }
 
 .code-column {
-    width: 1.25in;
+    width: 1.05in;
 }
 
 .units-column {
-    width: 0.65in;
+    width: 0.5in;
 }
 
 .grades-column {
@@ -1403,18 +1418,18 @@ body {
 }
 
 .certificate-table td:nth-child(2) {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 @media print {
     .certificate-table td:nth-child(2) {
-        font-size: 10px !important;
+        font-size: 12px !important;
     }
 }
 
 .certificate-table tfoot td {
     height:
-        24px;
+        20px;
 
     background:
         transparent;
@@ -1426,7 +1441,7 @@ body {
         700;
 
     font-size:
-        13px;
+        12px;
 
     text-transform:
         uppercase;
@@ -1458,22 +1473,24 @@ body {
     margin-top:
         0.16in;
 
+    padding:
+        0 18px;
+
     color:
         #252a2f;
 
     font-family:
-        "Libre Baskerville",
-        Georgia,
         "Times New Roman",
+        Times,
         serif;
 
     font-size:
-        9.2px;
+        13.5px;
 
     line-height:
-        1.55;
+        1.7;
 
-    text-indent: 0.5in;
+    text-indent: 0;
 
     text-align:
         justify;
@@ -1484,25 +1501,46 @@ body {
         0 0 0.09in;
 }
 
+.certification-text h2 {
+    margin:
+        0;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size:
+        13.5px;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.55;
+}
+
 .Issued {
     margin-top:
         0.16in;
+
+    padding:
+        0 18px;
 
     color:
         #252a2f;
 
     font-family:
-        "Libre Baskerville",
-        Georgia,
         "Times New Roman",
+        Times,
         serif;
 
     font-size:
-        9.2px;
+        13.5px;
 
     line-height:
-        1.55;
-    text-indent: 0.5in;
+        1.7;
+    text-indent: 0;
 
     text-align:
         justify;
@@ -1511,6 +1549,30 @@ body {
 .Issued p {
     margin:
         0 0 0.09in;
+}
+
+#previewIssuedDate {
+    font-weight:
+        700;
+}
+
+.Issued h2 {
+    margin:
+        0;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size:
+        13.5px;
+
+    font-weight:
+        400;
+
+    line-height:
+        1.55;
 }
 
 
@@ -1547,17 +1609,21 @@ body {
         avoid;
 }
 
+.signature-area--grade-eval {
+    margin-top:
+        0.55in;
+}
+
 .signature-box {
     width:
-        2.45in;
+        3.4in;
 
     text-align:
         center;
 
     font-family:
-        "Libre Baskerville",
-        Georgia,
         "Times New Roman",
+        Times,
         serif;
 }
 
@@ -1580,13 +1646,12 @@ body {
         left;
 
     font-family:
-        "Libre Baskerville",
-        Georgia,
         "Times New Roman",
+        Times,
         serif;
 
     font-size:
-        9.2px;
+        12px;
 
     font-weight:
         400;
@@ -1596,8 +1661,9 @@ body {
     padding-bottom: 2px;
     border-bottom: 1px solid #30353a;
     color: #111111;
-    font-size: 9.2px;
+    font-size: 14px;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .signature-position {
@@ -1608,7 +1674,7 @@ body {
         #333333;
 
     font-size:
-        8.7px;
+        12px;
 }
 
 
@@ -2080,6 +2146,20 @@ body {
 
         vertical-align:
             middle !important;
+    }
+
+    .certificate-table th:first-child {
+        text-align:
+            center !important;
+    }
+
+    /* Hide table grid lines when printing */
+    .certificate-table,
+    .certificate-table th,
+    .certificate-table td,
+    .certificate-table tfoot td {
+        border-color:
+            transparent !important;
     }
 
     .certificate-table tfoot td.cert-total-label {
