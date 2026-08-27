@@ -4,7 +4,7 @@
    SHORT BOND / LETTER — 8.5 x 11 INCHES
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 
 /* =========================================================
@@ -959,10 +959,7 @@ body {
 
     color: var(--navy);
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size: 18px;
 
@@ -984,10 +981,7 @@ body {
 
     color: #667482;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size: 8.8px;
 
@@ -1038,8 +1032,8 @@ body {
     left: 50% !important;
     top: 50% !important;
 
-    width: 6.2in !important;
-    height: 6.2in !important;
+    width: 5.4in !important;
+    height: 5.4in !important;
 
     max-width: none !important;
     max-height: none !important;
@@ -1115,10 +1109,7 @@ body {
     text-align:
         center;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size:
         17px;
@@ -1169,10 +1160,7 @@ body {
     text-indent:
         35px;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size:
         13.5px;
@@ -1201,10 +1189,7 @@ body {
     color:
         #252b31;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
     text-decoration: underline;
 
     font-size:
@@ -1254,10 +1239,7 @@ body {
 
     color: #22282e;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size: 12px;
 }
@@ -1282,7 +1264,7 @@ body {
         
 
     font-weight:
-        700;
+        400;
 }
 
 
@@ -1306,10 +1288,7 @@ body {
     margin:
         0.08in auto 0;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size:
         12px;
@@ -1479,10 +1458,7 @@ body {
     color:
         #252a2f;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size:
         13.5px;
@@ -1505,10 +1481,7 @@ body {
     margin:
         0;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size:
         13.5px;
@@ -1530,10 +1503,7 @@ body {
     color:
         #252a2f;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size:
         13.5px;
@@ -1560,10 +1530,7 @@ body {
     margin:
         0;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size:
         13.5px;
@@ -1621,10 +1588,7 @@ body {
     text-align:
         center;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 }
 
 
@@ -1645,10 +1609,7 @@ body {
     text-align:
         left;
 
-    font-family:
-        "Times New Roman",
-        Times,
-        serif;
+    font-family: "Poppins", sans-serif;
 
     font-size:
         12px;
@@ -1695,7 +1656,7 @@ body {
 
     color: #333333;
 
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", Arial, sans-serif;
     font-size: 8.2px;
     line-height: 1.25;
 
@@ -2232,8 +2193,8 @@ body {
     left: 50% !important;
     top: 50% !important;
 
-    width: 6.2in !important;
-    height: 6.2in !important;
+    width: 5.4in !important;
+    height: 5.4in !important;
 
     max-width: none !important;
     max-height: none !important;
@@ -2715,7 +2676,7 @@ body {
     position: relative;
     z-index: 3;
     padding: .18in .58in .45in;
-    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-family: "Poppins", Georgia, "Times New Roman", serif;
 }
 
 .f137-date {
@@ -2816,7 +2777,7 @@ body {
 .f137-signature {
     margin-top: .55in;
     margin-left: 4.7in;
-    font-family: "Libre Baskerville", Georgia, serif;
+    font-family: "Poppins", Georgia, serif;
     font-size: 9.5px;
     line-height: 1.6;
     text-align: center;
@@ -3190,5 +3151,291 @@ body {
 
     #f137PrintArea .f137-seal-warning {
         display: block !important;
+    }
+}
+
+
+/* =========================================================
+   MOTION SYSTEM
+   Orchestrated entrances, hover micro-interactions, and
+   ambient polish. Everything here respects the global
+   prefers-reduced-motion rule set near the top of this file.
+   ========================================================= */
+
+@keyframes header-drop {
+    from { opacity: 0; transform: translateY(-14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes pop-in {
+    0%   { opacity: 0; transform: scale(0.92) translateY(6px); }
+    70%  { opacity: 1; transform: scale(1.015) translateY(0); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes row-in {
+    from { opacity: 0; transform: translateY(-6px) scale(0.985); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes chip-in {
+    from { opacity: 0; transform: translateX(-8px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes soft-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(23, 100, 154, 0.28); }
+    50%      { box-shadow: 0 0 0 5px rgba(23, 100, 154, 0); }
+}
+
+@keyframes logo-breathe {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50%      { transform: scale(1.05) rotate(-1.5deg); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+/* ---- Page entrance choreography ---- */
+
+.system-header {
+    animation: header-drop 0.55s var(--ease) both;
+}
+
+.system-header-logo {
+    transition: transform 0.4s var(--ease);
+}
+
+.system-header-brand:hover .system-header-logo {
+    animation: logo-breathe 1.6s var(--ease) infinite;
+}
+
+.main-content > * {
+    opacity: 0;
+    animation: fade-up 0.55s var(--ease) both;
+}
+
+.main-content > *:nth-child(1) { animation-delay: 0.06s; }
+.main-content > *:nth-child(2) { animation-delay: 0.13s; }
+.main-content > *:nth-child(3) { animation-delay: 0.20s; }
+.main-content > *:nth-child(4) { animation-delay: 0.27s; }
+.main-content > *:nth-child(5) { animation-delay: 0.34s; }
+.main-content > *:nth-child(6) { animation-delay: 0.41s; }
+.main-content > *:nth-child(n+7) { animation-delay: 0.46s; }
+
+
+/* ---- Cards ---- */
+
+.card {
+    transition:
+        box-shadow 0.3s var(--ease),
+        transform 0.3s var(--ease);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card-title h2::after,
+.subjects-header h2::after {
+    content: "";
+}
+
+
+/* ---- Buttons ---- */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.35) 50%,
+        transparent 70%
+    );
+    background-size: 220% 100%;
+    background-position: 150% 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: background-position 0.6s var(--ease), opacity 0.2s var(--ease);
+}
+
+.btn:hover::before {
+    background-position: -50% 0;
+    opacity: 1;
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.97);
+}
+
+.btn-primary,
+.btn-add {
+    transition:
+        transform 0.16s var(--ease),
+        box-shadow 0.16s var(--ease),
+        background 0.16s var(--ease);
+}
+
+.btn-danger {
+    transition:
+        transform 0.16s var(--ease),
+        box-shadow 0.16s var(--ease),
+        background 0.16s var(--ease),
+        border-color 0.16s var(--ease);
+}
+
+.btn-danger:hover {
+    transform: translateY(-1px) scale(1.03);
+}
+
+.btn-danger:active {
+    transform: scale(0.94);
+}
+
+
+/* ---- Form fields ---- */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    transition:
+        border-color 0.18s var(--ease),
+        box-shadow 0.18s var(--ease),
+        transform 0.18s var(--ease);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(23, 100, 154, 0.14);
+    transform: translateY(-1px);
+}
+
+.form-group label {
+    transition: color 0.18s var(--ease);
+}
+
+.form-group:focus-within label {
+    color: var(--blue);
+}
+
+.subject-input-table input,
+.subject-input-table select {
+    transition:
+        border-color 0.16s var(--ease),
+        box-shadow 0.16s var(--ease),
+        background 0.16s var(--ease);
+}
+
+.subject-input-table input:focus,
+.subject-input-table select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(23, 100, 154, 0.14);
+}
+
+.subject-input-table tbody tr td {
+    transition: background 0.2s var(--ease);
+}
+
+
+/* ---- Dynamically inserted rows / chips ---- */
+
+.subject-row,
+.row-enter {
+    animation: row-in 0.32s var(--ease) both;
+}
+
+.f137-student-chip {
+    animation: chip-in 0.3s var(--ease) both;
+}
+
+.f137-remove-student,
+.f137-plus {
+    transition: transform 0.16s var(--ease), color 0.16s var(--ease), background 0.16s var(--ease);
+}
+
+.f137-remove-student:hover {
+    transform: scale(1.2) rotate(90deg);
+}
+
+.f137-plus:hover {
+    transform: scale(1.15);
+}
+
+
+/* ---- Modals ---- */
+
+.modal-overlay,
+.f137-backdrop {
+    transition: background 0.25s var(--ease);
+}
+
+.modal-window,
+.f137-window,
+.f137-mini-card {
+    animation: pop-in 0.32s var(--ease) both;
+}
+
+
+/* ---- Selects / dropdown ---- */
+
+.certificate-type-selector select {
+    transition: box-shadow 0.2s var(--ease), transform 0.16s var(--ease);
+}
+
+.certificate-type-selector select:focus {
+    animation: soft-pulse 1.4s var(--ease) 1;
+}
+
+
+/* ---- Table rows (general) ---- */
+
+.certificate-table tbody tr,
+.f137-student-table tbody tr {
+    transition: background 0.2s var(--ease);
+}
+
+
+/* ---- Status / totals ---- */
+
+.total-value,
+.cert-total-label {
+    transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+
+/* ---- Reduced motion & print safety ---- */
+/* (the blanket prefers-reduced-motion rule near the top of
+   this file already neutralizes every animation/transition
+   added above — nothing further needed for that case) */
+
+@media print {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
