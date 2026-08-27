@@ -3200,4 +3200,199 @@ function printForm137() {
 
 document.addEventListener("DOMContentLoaded", () => {
     f137Setup();
+    initBlueFireworks();
 });
+
+/* =========================================================
+   BLUE FIREWORKS CLICK EFFECT
+   Fires a small blue firework burst from the click point
+   whenever a button or dropdown is interacted with.
+   ========================================================= */
+function initBlueFireworks() {
+
+    const canvas = document.createElement("canvas");
+    canvas.id = "fireworksCanvas";
+    canvas.style.position = "fixed";
+    canvas.style.top = "0";
+    canvas.style.left = "0";
+    canvas.style.width = "100vw";
+    canvas.style.height = "100vh";
+    canvas.style.pointerEvents = "none";
+    canvas.style.zIndex = "999999";
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext("2d");
+    let dpr = window.devicePixelRatio || 1;
+
+    function resizeCanvas() {
+        dpr = window.devicePixelRatio || 1;
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const BLUE_SHADES = [
+        "#17649a", "#2196f3", "#5ec8ff", "#0b2d4a",
+        "#123e67", "#8fd6ff", "#3d8fd6", "#bfe9ff"
+    ];
+
+    let particles = [];
+    let rafId = null;
+
+    function spawnBurst(x, y) {
+        const count = 56;
+        for (let i = 0; i < count; i++) {
+            const angle = (Math.PI * 2 * i) / count + Math.random() * 0.25;
+            const speed = 4.2 + Math.random() * 6.2;
+            particles.push({
+                x, y,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                gravity: 0.05,
+                drag: 0.985,
+                life: 1,
+                decay: 0.009 + Math.random() * 0.009,
+                size: 2.6 + Math.random() * 3.6,
+                color: BLUE_SHADES[Math.floor(Math.random() * BLUE_SHADES.length)],
+                trail: []
+            });
+        }
+        // A few bright sparkle "core" particles for extra pop
+        for (let i = 0; i < 14; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const speed = 1 + Math.random() * 2.4;
+            particles.push({
+                x, y,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                gravity: 0.022,
+                drag: 0.98,
+                life: 1,
+                decay: 0.015 + Math.random() * 0.012,
+                size: 4.5 + Math.random() * 2.5,
+                color: "#eaf7ff",
+                trail: []
+            });
+        }
+
+        if (!rafId) {
+            rafId = requestAnimationFrame(animate);
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+
+        particles.forEach((p) => {
+            p.trail.push({ x: p.x, y: p.y });
+            if (p.trail.length > 5) p.trail.shift();
+
+            p.vx *= p.drag;
+            p.vy *= p.drag;
+            p.vy += p.gravity;
+            p.x += p.vx;
+            p.y += p.vy;
+            p.life -= p.decay;
+        });
+
+        particles = particles.filter((p) => p.life > 0);
+
+        particles.forEach((p) => {
+            ctx.save();
+            ctx.globalAlpha = Math.max(p.life, 0);
+
+            // trail
+            if (p.trail.length > 1) {
+                ctx.strokeStyle = p.color;
+                ctx.lineWidth = p.size * 0.6;
+                ctx.lineCap = "round";
+                ctx.beginPath();
+                ctx.moveTo(p.trail[0].x, p.trail[0].y);
+                for (let i = 1; i < p.trail.length; i++) {
+                    ctx.lineTo(p.trail[i].x, p.trail[i].y);
+                }
+                ctx.stroke();
+            }
+
+            // glow core
+            const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 4);
+            gradient.addColorStop(0, p.color);
+            gradient.addColorStop(1, "rgba(23, 100, 154, 0)");
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size * 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.restore();
+        });
+
+        if (particles.length > 0) {
+            rafId = requestAnimationFrame(animate);
+        } else {
+            rafId = null;
+        }
+    }
+
+    function triggerAt(clientX, clientY) {
+        spawnBurst(clientX, clientY);
+    }
+
+    function handleClick(e) {
+        const target = e.target.closest(".btn, select, .f137-plus, .certificate-type-selector");
+        if (!target) return;
+
+        // Center the burst on the clicked element itself, not the exact
+        // cursor position, so it always blooms from the middle of it.
+        const rect = target.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        triggerAt(cx, cy);
+
+        // small "pressed pop" animation on the element itself
+        target.classList.add("fw-pop");
+        setTimeout(() => target.classList.remove("fw-pop"), 260);
+    }
+
+    document.addEventListener("click", handleClick, true);
+
+    // Inject the pop keyframe + hover polish styles once
+    const style = document.createElement("style");
+    style.textContent = `
+        .btn, select, .f137-plus {
+            transition: transform 0.18s cubic-bezier(.34,1.56,.64,1),
+                        box-shadow 0.25s ease,
+                        filter 0.25s ease;
+        }
+        .btn:hover, .f137-plus:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(23, 100, 154, 0.28);
+            filter: brightness(1.04);
+        }
+        .btn:active, .f137-plus:active {
+            transform: translateY(0) scale(0.96);
+        }
+        select:hover {
+            box-shadow: 0 0 0 3px rgba(23, 100, 154, 0.15);
+        }
+        select:focus {
+            box-shadow: 0 0 0 3px rgba(23, 100, 154, 0.28);
+        }
+        .fw-pop {
+            animation: fwPopAnim 0.26s ease;
+        }
+        @keyframes fwPopAnim {
+            0%   { transform: scale(1); }
+            35%  { transform: scale(0.93); }
+            65%  { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    `;
+    document.head.appendChild(style);
+}
