@@ -1690,7 +1690,7 @@ function addSubjectRow(subjectData = null) {
         </td>
 
         <td>
-            <input type="text" class="subject-grade" placeholder="e.g. 1.5">
+            <input type="text" class="subject-grade" placeholder="e.g. 1.5" oninput="calculateGWA()">
         </td>
 
         <td>
@@ -1831,6 +1831,66 @@ function calculateTotalUnits() {
     );
 
     document.getElementById("totalUnitsInput").textContent = total;
+
+    calculateGWA();
+}
+
+
+/* =========================================================
+   GWA (GENERAL WEIGHTED AVERAGE)
+   GWA = sum(grade x units) / sum(units), counting only rows
+   that have both a valid numeric grade and units. Rows with
+   a blank or non-numeric grade (e.g. INC, DRP) are excluded
+   from the computation entirely.
+========================================================= */
+
+function calculateGWA() {
+
+    const rows =
+        document.querySelectorAll(".subject-row");
+
+    let gradedUnits = 0;
+    let weightedSum = 0;
+
+    rows.forEach(
+        row => {
+
+            const gradeInput = row.querySelector(".subject-grade");
+            const unitsInput = row.querySelector(".subject-units");
+
+            if (!gradeInput || !unitsInput) {
+                return;
+            }
+
+            const grade = parseFloat(gradeInput.value);
+            const units = parseFloat(unitsInput.value) || 0;
+
+            if (isNaN(grade) || units <= 0) {
+                return;
+            }
+
+            weightedSum += grade * units;
+            gradedUnits += units;
+        }
+    );
+
+    const gwa =
+        gradedUnits > 0
+            ? (weightedSum / gradedUnits)
+            : 0;
+
+    const gwaCell =
+        document.getElementById("gwaValueInput");
+
+    if (gwaCell) {
+
+        gwaCell.textContent =
+            gradedUnits > 0
+                ? gwa.toFixed(2)
+                : "0.00";
+    }
+
+    return gwa;
 }
 
 
@@ -1972,6 +2032,20 @@ function changeCertificateType() {
     }
 
     totalLabelCell.colSpan = isGradeEvaluation ? 3 : 2;
+
+    const certGwaRow =
+        document.getElementById("certGwaRow");
+
+    const certGwaLabelCell =
+        document.getElementById("certGwaLabelCell");
+
+    if (certGwaRow) {
+        certGwaRow.style.display = isGradeEvaluation ? "" : "none";
+    }
+
+    if (certGwaLabelCell) {
+        certGwaLabelCell.colSpan = isGradeEvaluation ? 3 : 2;
+    }
 
 
     /* ===================================== SUMMARY & CERTIFICATION TEXT */
@@ -2211,6 +2285,8 @@ function generateCertificate() {
         certificateType === "GRADE_EVALUATION";
 
     let totalUnits = 0;
+    let gwaWeightedSum = 0;
+    let gwaGradedUnits = 0;
 
     rows.forEach(
         row => {
@@ -2251,6 +2327,14 @@ function generateCertificate() {
 
             totalUnits += unitValue;
 
+            const gradeValue = parseFloat(grade ? grade.value : "");
+
+            if (!isNaN(gradeValue) && unitValue > 0) {
+
+                gwaWeightedSum += gradeValue * unitValue;
+                gwaGradedUnits += unitValue;
+            }
+
             const tr = document.createElement("tr");
 
             tr.innerHTML =
@@ -2272,6 +2356,17 @@ function generateCertificate() {
     );
 
     document.getElementById("previewTotalUnits").textContent = totalUnits;
+
+    const previewGWACell =
+        document.getElementById("previewGWA");
+
+    if (previewGWACell) {
+
+        previewGWACell.textContent =
+            gwaGradedUnits > 0
+                ? (gwaWeightedSum / gwaGradedUnits).toFixed(2)
+                : "0.00";
+    }
 
 
     /* ========================================== ISSUED DATE */
