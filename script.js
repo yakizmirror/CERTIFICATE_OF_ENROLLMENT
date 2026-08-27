@@ -2497,7 +2497,7 @@ function printCertificate() {
                 }
 
                 body {
-                    font-family: Arial, sans-serif;
+                    font-family: "Poppins", Arial, sans-serif;
                 }
 
                 .print-area {
