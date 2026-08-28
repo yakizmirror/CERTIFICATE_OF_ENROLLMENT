@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" href="ASCB_LOGO.png">
-    <title>OFFICE OF THE REGISTRAR</title>
+    <title>Office of the Registrar</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,12 +28,19 @@
     <header class="system-header">
 
         <div class="system-header-brand">
-            <img src="ASCB_LOGO.png" class="system-header-logo" alt="ASCB Logo">
+            <div class="corner-logo-flip">
+                <div class="corner-logo-flip-inner">
+                    <img src="registrar-badge.png" class="corner-logo-face corner-logo-front" alt="Office of the Registrar Badge">
+                    <img src="asc-badge.png" class="corner-logo-face corner-logo-back" alt="Andres Soriano Colleges of Bislig Badge">
+                </div>
+            </div>
             <div>
                 <h1>Andres Soriano Colleges of Bislig, Inc.</h1>
                 <p>OFFICE OF THE REGISTRAR</p>
             </div>
         </div>
+
+
 
         <div class="header-actions">
 
@@ -42,14 +49,14 @@
                 class="btn btn-secondary"
                 onclick="openForm137()"
             >
-                Request Form 137-A
+                FORM 137-A
             </button>
 
             <div class="certificate-type-selector">
                 <select id="certificateType" onchange="changeCertificateType()">
-                    <option value="ENROLLMENT">Certificate of Enrollment</option>
-                    <option value="REGISTRATION">Certificate of Registration</option>
-                    <option value="GRADE_EVALUATION">Grade Evaluation</option>
+                    <option value="ENROLLMENT">CERTIFICATE OF ENROLLMENT</option>
+                    <option value="REGISTRATION">CERTIFICATE OF REGISTRATION</option>
+                    <option value="GRADE_EVALUATION">GRADE EVALUATION</option>
                 </select>
             </div>
             <button
@@ -57,7 +64,7 @@
                 class="btn btn-secondary"
                 onclick="clearForm()"
             >
-                Clear
+                CLEAR DATA
             </button>
 
             <button
@@ -65,7 +72,7 @@
                 class="btn btn-primary"
                 onclick="generateCertificate()"
             >
-                Submit
+                SUBMIT DATA
             </button>
 
 
@@ -82,6 +89,10 @@
     ====================================================== -->
     <main class="main-content">
 
+        <div class="system-header-datetime" id="headerDateTime">
+            <span class="header-datetime-date" id="headerDateText">--</span>
+            <span class="header-datetime-time" id="headerTimeText">--</span>
+        </div>
         <!-- STUDENT INFORMATION -->
         <section class="card">
 
@@ -1040,10 +1051,10 @@
                 <span>Request Letter Generator</span>
             </div>
             <div class="f137-toolbar-actions">
-                <button type="button" class="btn btn-secondary" onclick="clearForm137()">Clear</button>
-                <button type="button" class="btn btn-secondary" onclick="closeForm137()">Close</button>
-                <button type="button" class="btn btn-primary" onclick="generateForm137()">Generate</button>
-                <button type="button" class="btn btn-primary" onclick="printForm137()">Print</button>
+                <button type="button" class="btn btn-secondary" onclick="clearForm137()">CLEAR DATA</button>
+                <button type="button" class="btn btn-secondary" onclick="closeForm137()">CLOSE</button>
+                <button type="button" class="btn btn-primary" onclick="generateForm137()">GENERATE DATA</button>
+                <button type="button" class="btn btn-primary" onclick="printForm137()">PRINT</button>
             </div>
         </div>
 
@@ -1053,7 +1064,7 @@
                     <div class="f137-section-title">
                         <span class="f137-icon">👤</span>
                         <div>
-                            <h3>Student Information</h3>
+                            <h3>STUDENT INFORMATION</h3>
                             <p>Add one or more students for this request.</p>
                         </div>
                     </div>
@@ -1084,7 +1095,7 @@
                     </div>
 
                     <button type="button" class="f137-add-student" onclick="addF137Student()">
-                        + Add Student to This Request
+                        + Add New Student
                     </button>
 
                     <div class="f137-students-list" id="f137_studentsList"></div>
@@ -1094,7 +1105,7 @@
                     <div class="f137-section-title">
                         <span class="f137-icon">🏫</span>
                         <div>
-                            <h3>Receiving School</h3>
+                            <h3>RECEIVING SCHOOL</h3>
                             <p>One recipient per request letter.</p>
                         </div>
                     </div>
