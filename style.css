@@ -1995,6 +1995,41 @@ body {
     }
 
 
+    /* Stop the modal's scrollable wrapper from clipping content
+       near the bottom of the printed page (school seal notice,
+       signature area). #printArea escapes normal flow via
+       "position: absolute" above, but its ancestors' overflow and
+       constrained height still clip anything rendered outside
+       their box, since #printArea (11in tall) is normally taller
+       than the browser window. */
+    #certificateModal.modal,
+    #certificateModal .modal-window,
+    #certificateModal .modal-print-scroll {
+        position:
+            static !important;
+
+        overflow:
+            visible !important;
+
+        height:
+            auto !important;
+
+        max-height:
+            none !important;
+
+        inset:
+            auto !important;
+    }
+
+    #certificateModal .modal-print-scroll {
+        display:
+            block !important;
+
+        padding:
+            0 !important;
+    }
+
+
     /* Header */
     #printArea .document-header {
         position:
