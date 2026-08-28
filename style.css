@@ -173,8 +173,8 @@ body {
 }
 
 .system-header-logo {
-    width: 46px;
-    height: 46px;
+    width: 72px;
+    height: 72px;
 
     object-fit: contain;
 
@@ -201,6 +201,55 @@ body {
     text-transform: uppercase;
 
     color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================================
+   HEADER DATE & TIME
+   ========================================================= */
+
+.system-header-datetime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2px;
+
+    padding: 8px 20px;
+
+    background: rgba(255, 255, 255, 0.10);
+    border: 5px solid rgba(255, 255, 255, 0.22);
+    border-radius: var(--r-sm);
+
+    color: #000000;
+
+    white-space: nowrap;
+}
+
+.header-datetime-date {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+
+    color: rgba(0, 0, 0, 0.78);
+}
+
+.header-datetime-time {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+
+    font-variant-numeric: tabular-nums;
+
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 900px) {
+    .system-header-datetime {
+        display: none;
+    }
 }
 
 
@@ -330,7 +379,7 @@ body {
 
 .main-content {
     width: min(1240px, calc(100% - 40px));
-
+    
     margin:
         26px auto 24px;
 }
@@ -343,7 +392,7 @@ body {
 .card {
     overflow: hidden;
 
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 
     background: var(--paper);
 
@@ -355,6 +404,8 @@ body {
     box-shadow: var(--shadow-md);
 
     transition: box-shadow 0.25s var(--ease), transform 0.25s var(--ease);
+
+    
 }
 
 .card:hover {
@@ -363,9 +414,9 @@ body {
 
 .card-title,
 .subjects-header {
-    min-height: 56px;
+    min-height: 42px;
 
-    padding: 14px 24px;
+    padding: 9px 18px;
 
     display: flex;
     align-items: center;
@@ -479,7 +530,7 @@ body {
    ========================================================= */
 
 .form-grid {
-    padding: 24px;
+    padding: 16px;
 
     display: grid;
 
@@ -487,14 +538,14 @@ body {
         repeat(4, 1fr);
 
     gap:
-        18px 18px;
+        12px 14px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
 
-    gap: 7px;
+    gap: 5px;
 }
 
 .form-group label {
@@ -508,10 +559,10 @@ body {
 .form-group input,
 .form-group select {
     width: 100%;
-    height: 42px;
+    height: 36px;
 
     padding:
-        0 12px;
+        0 10px;
 
     color: #1c2730;
     background: #ffffff;
@@ -2330,13 +2381,13 @@ body {
 
 .f137-window {
     position: absolute;
-    inset: 80px;
+    inset: 88px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
     background: #f4f7fa;
-    box-shadow: 0 24px 70px rgba(5, 25, 42, .35);
+    box-shadow: 4 24px 70px rgba(5, 25, 42, .35);
     animation: modal-rise 0.28s var(--ease);
 }
 
@@ -2377,8 +2428,8 @@ body {
     flex: 1;
     display: grid;
     grid-template-columns: minmax(360px, 430px) 1fr;
-    gap: 18px;
-    padding: 18px;
+    gap: 1px;
+    padding: 5px;
     overflow: hidden;
 }
 
@@ -2628,7 +2679,7 @@ body {
     margin: 0 0 8px;
     color: #647482;
     font-size: 10px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: .5px;
 }
 
@@ -2872,6 +2923,110 @@ body {
         min-height: 900px;
     }
 }
+
+/* =========================================================
+   RGB ANIMATED DROPDOWNS + HEADER (LOGO & TITLE)
+   ========================================================= */
+@keyframes rgbGlow {
+    0%   { box-shadow: 0 0 0 2px #0b2d4a, 0 0 10px 2px rgba(11, 45, 74, 0.55); }
+    20%  { box-shadow: 0 0 0 2px #123e67, 0 0 10px 2px rgba(18, 62, 103, 0.55); }
+    40%  { box-shadow: 0 0 0 2px #17649a, 0 0 10px 2px rgba(23, 100, 154, 0.55); }
+    60%  { box-shadow: 0 0 0 2px #4fa8dd, 0 0 10px 2px rgba(79, 168, 221, 0.55); }
+    80%  { box-shadow: 0 0 0 2px #b89445, 0 0 10px 2px rgba(184, 148, 69, 0.55); }
+    100% { box-shadow: 0 0 0 2px #0b2d4a, 0 0 10px 2px rgba(11, 45, 74, 0.55); }
+}
+
+@keyframes lightningSweep {
+    0%   { background-position: -150% 0; }
+    100% { background-position: 250% 0; }
+}
+
+@keyframes logoFlipSpin {
+    0%   { transform: rotateY(0deg) rotateZ(0deg); }
+    100% { transform: rotateY(360deg) rotateZ(360deg); }
+}
+
+/* ---- Header flipping logo (2 logos alternating) ---- */
+.corner-logo-flip {
+    position: relative;
+    flex-shrink: 0;
+
+    width: 100px;
+    height: 100px;
+
+    perspective: 800px;
+}
+
+.corner-logo-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transform-style: preserve-3d;
+
+    animation: cornerLogoFlip 4s linear infinite;
+}
+
+.corner-logo-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.35));
+}
+
+.corner-logo-back {
+    transform: rotateY(180deg);
+}
+
+@keyframes cornerLogoFlip {
+    0%   { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+.system-header-brand {
+    perspective: 600px;
+}
+
+.system-header-logo {
+    border-radius: 50%;
+    animation:
+        rgbGlow 4s linear infinite,
+        logoFlipSpin 3.2s linear infinite;
+}
+
+.system-header h1,
+.system-header p {
+    background-image: linear-gradient(
+        100deg,
+        #ffffff 0%,
+        #8ecdfa 16%,
+        #4fa8dd 32%,
+        #ffd98a 48%,
+        #e0b563 56%,
+        #4fa8dd 68%,
+        #8ecdfa 84%,
+        #ffffff 100%
+    );
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+
+    animation: lightningSweep 5s linear infinite;
+}
+
 
 @media print {
     @page {
