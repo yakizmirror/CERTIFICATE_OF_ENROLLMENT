@@ -2445,191 +2445,36 @@ function printCertificate() {
         return;
     }
 
-    const printWindow = window.open(
-        "",
-        "_blank",
-        "width=900,height=1000"
-    );
-
-    if (!printWindow) {
-        alert("Please allow pop-ups for this website to print the certificate.");
-        return;
-    }
-
-    const styles = [...document.querySelectorAll("link[rel='stylesheet'], style")]
-        .map(style => {
-            if (style.tagName === "STYLE") {
-                return `<style>${style.innerHTML}</style>`;
-            }
-
-            return `<link rel="stylesheet" href="${style.href}">`;
-        })
-        .join("");
-
-    printWindow.document.open();
-
-    printWindow.document.write(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-
-            <meta charset="UTF-8">
-
-            <title>${document.getElementById("previewCertificateTitle").textContent}</title>
-
-            ${styles}
-
-            <style>
-
-                @page {
-                    size: Letter portrait;
-                    margin: 0;
-                }
-
-                html,
-                body {
-                    width: 8.5in;
-                    height: 11in;
-                    margin: 0;
-                    padding: 0;
-                    background: #ffffff;
-                    overflow: hidden;
-                }
-
-                body {
-                    font-family: "Poppins", Arial, sans-serif;
-                }
-
-                .print-area {
-                    width: 8.5in !important;
-                    height: 11in !important;
-                    min-height: 11in !important;
-                    max-height: 11in !important;
-
-                    margin: 0 !important;
-                    padding: 0 !important;
-
-                    overflow: hidden !important;
-
-                    box-shadow: none !important;
-                    background: #ffffff !important;
-                }
-
-                /* WATERMARK */
-
-                .watermark-container {
-                    position: absolute !important;
-
-                    left: 0 !important;
-                    right: 0 !important;
-
-                    top: 2.20in !important;
-                    bottom: 0 !important;
-
-                    display: flex !important;
-                    align-items: center !important;
-                    justify-content: center !important;
-
-                    overflow: hidden !important;
-
-                    z-index: 1 !important;
-                    pointer-events: none !important;
-                }
-
-                .document-watermark {
-                    position: relative !important;
-
-                    width: 4.35in !important;
-                    height: 4.35in !important;
-
-                    max-width: 4.35in !important;
-                    max-height: 4.35in !important;
-
-                    transform: none !important;
-
-                    display: block !important;
-                    visibility: visible !important;
-
-                    object-fit: contain !important;
-
-                    opacity: 0.055 !important;
-
-                    z-index: 1 !important;
-                    pointer-events: none !important;
-                }
-
-                .document-content {
-                    position: relative !important;
-                    z-index: 3 !important;
-                }
-
-                .document-header {
-                    position: relative !important;
-                    z-index: 5 !important;
-                }
-
-                .student-details,
-                .certificate-title,
-                .certificate-intro,
-                .summary-title,
-                .certificate-table,
-                .certification-text,
-                .signature-area {
-                    position: relative !important;
-                    z-index: 3 !important;
-                }
-
-                /* HIDE UI CONTROLS */
-
-                button,
-                .btn,
-                .modal-toolbar,
-                .modal-overlay {
-                    display: none !important;
-                }
-
-                /* PRINT COLORS */
-
-                * {
-                    -webkit-print-color-adjust: exact !important;
-                    print-color-adjust: exact !important;
-                }
-
-            </style>
-
-        </head>
-
-        <body>
-
-            ${printArea.outerHTML}
-
-        </body>
-        </html>
-    `);
-
-    printWindow.document.close();
-
-    printWindow.focus();
-
     /*
-       Wait for logo/fonts/images to finish loading
-       before opening print dialog.
+       Print the certificate (COR, COE, Grade Evaluation) directly
+       from THIS page — no popup window, no rebuilt document, and
+       no moving #printArea out of the modal — so the on-screen
+       preview never disappears/flashes, and the printed output
+       always matches it exactly (same already-loaded banner image,
+       same fonts, same layout).
+
+       #printArea normally sits inside the modal's scrollable
+       wrapper (".modal-print-scroll", "overflow-y: auto", only as
+       tall as the browser window), while #printArea itself is
+       11in tall. The "#printArea .modal-print-scroll { overflow:
+       visible; height: auto; }" print-only rules further down in
+       style.css are what stop that wrapper from clipping content
+       near the bottom of the page (school seal notice, signature
+       area) when printing — #printArea keeps the DOM position it
+       already has in the preview.
     */
 
-    setTimeout(() => {
+    const doPrint = () => {
+        window.print();
+    };
 
-        printWindow.print();
-
-        /*
-           Close the temporary print window
-           after printing.
-        */
-
-        setTimeout(() => {
-            printWindow.close();
-        }, 500);
-
-    }, 700);
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() =>
+            requestAnimationFrame(() => requestAnimationFrame(doPrint))
+        );
+    } else {
+        requestAnimationFrame(() => requestAnimationFrame(doPrint));
+    }
 }
 
 /* =========================================================
